@@ -1,0 +1,612 @@
+<style class="WebKit-mso-list-quirks-style">
+    <!--
+    /* Style Definitions */
+     p.MsoNormal, li.MsoNormal, div.MsoNormal
+        {mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-parent:"";
+        margin:0cm;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:宋体;
+        mso-bidi-font-family:微软雅黑;}
+    a:link, span.MsoHyperlink
+        {mso-style-priority:99;
+        color:#0563C1;
+        mso-themecolor:hyperlink;
+        text-decoration:underline;
+        text-underline:single;}
+    a:visited, span.MsoHyperlinkFollowed
+        {mso-style-noshow:yes;
+        mso-style-priority:99;
+        color:#954F72;
+        mso-themecolor:followedhyperlink;
+        text-decoration:underline;
+        text-underline:single;}
+    p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+        {mso-style-priority:34;
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        margin:0cm;
+        text-indent:21.0pt;
+        mso-char-indent-count:2.0;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:宋体;
+        mso-bidi-font-family:微软雅黑;}
+    p.1, li.1, div.1
+        {mso-style-name:标题1;
+        mso-style-update:auto;
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"Title 字符";
+        margin:0cm;
+        mso-pagination:widow-orphan;
+        font-size:12.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:DengXian;
+        mso-fareast-theme-font:minor-fareast;
+        mso-bidi-font-family:微软雅黑;
+        font-weight:bold;
+        mso-bidi-font-weight:normal;
+        mso-bidi-font-style:italic;}
+    p.Highlight, li.Highlight, div.Highlight
+        {mso-style-name:Highlight;
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"Highlight 字符";
+        margin:0cm;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:宋体;
+        mso-bidi-font-family:微软雅黑;
+        font-weight:bold;
+        mso-bidi-font-weight:normal;
+        font-style:italic;
+        mso-bidi-font-style:normal;}
+    span.Title
+        {mso-style-name:"Title 字符";
+        mso-style-unhide:no;
+        mso-style-locked:yes;
+        mso-style-link:标题1;
+        mso-ansi-font-size:12.0pt;
+        mso-bidi-font-size:12.0pt;
+        font-family:DengXian;
+        mso-fareast-font-family:DengXian;
+        mso-fareast-theme-font:minor-fareast;
+        font-weight:bold;
+        mso-bidi-font-weight:normal;
+        mso-bidi-font-style:italic;}
+    p.subtext, li.subtext, div.subtext
+        {mso-style-name:subtext;
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"subtext 字符";
+        margin:0cm;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+        mso-bidi-font-family:微软雅黑;
+        font-style:italic;
+        mso-bidi-font-style:normal;}
+    span.Highlight0
+        {mso-style-name:"Highlight 字符";
+        mso-style-unhide:no;
+        mso-style-locked:yes;
+        mso-style-link:Highlight;
+        font-weight:bold;
+        mso-bidi-font-weight:normal;
+        font-style:italic;
+        mso-bidi-font-style:normal;}
+    span.subtext0
+        {mso-style-name:"subtext 字符";
+        mso-style-unhide:no;
+        mso-style-locked:yes;
+        mso-style-link:subtext;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+        font-style:italic;
+        mso-bidi-font-style:normal;}
+    .MsoChpDefault
+        {mso-style-type:export-only;
+        mso-default-props:yes;
+        font-size:11.0pt;
+        mso-ansi-font-size:11.0pt;
+        mso-bidi-font-size:11.0pt;
+        mso-ascii-font-family:"Times New Roman";
+        mso-fareast-font-family:宋体;
+        mso-hansi-font-family:"Times New Roman";
+        mso-bidi-font-family:微软雅黑;
+        mso-font-kerning:0pt;}
+     /* Page Definitions */
+     @page
+        {mso-page-border-surround-header:no;
+        mso-page-border-surround-footer:no;}
+    @page WordSection1
+        {size:595.0pt 842.0pt;
+        margin:72.0pt 44.3pt 72.0pt 61.65pt;
+        mso-header-margin:42.55pt;
+        mso-footer-margin:49.6pt;
+        mso-paper-source:0;
+        layout-grid:15.6pt;}
+    div.WordSection1
+        {page:WordSection1;}
+    @page WordSection2
+        {size:595.0pt 842.0pt;
+        margin:72.0pt 44.3pt 72.0pt 61.65pt;
+        mso-header-margin:42.55pt;
+        mso-footer-margin:49.6pt;
+        mso-columns:2 even 36.0pt;
+        mso-paper-source:0;
+        layout-grid:15.6pt;}
+    div.WordSection2
+        {page:WordSection2;}
+    @page WordSection3
+        {size:595.0pt 842.0pt;
+        margin:72.0pt 44.3pt 72.0pt 61.65pt;
+        mso-header-margin:42.55pt;
+        mso-footer-margin:49.6pt;
+        mso-paper-source:0;
+        layout-grid:15.6pt;}
+    div.WordSection3
+        {page:WordSection3;}
+    @page WordSection4
+        {size:595.0pt 842.0pt;
+        margin:72.0pt 44.3pt 72.0pt 61.65pt;
+        mso-header-margin:42.55pt;
+        mso-footer-margin:49.6pt;
+        mso-columns:2 even 36.0pt;
+        mso-paper-source:0;
+        layout-grid:15.6pt;}
+    div.WordSection4
+        {page:WordSection4;}
+    @page WordSection5
+        {size:595.0pt 842.0pt;
+        margin:72.0pt 44.3pt 72.0pt 61.65pt;
+        mso-header-margin:42.55pt;
+        mso-footer-margin:49.6pt;
+        mso-paper-source:0;
+        layout-grid:15.6pt;}
+    div.WordSection5
+        {page:WordSection5;}
+    @page WordSection6
+        {size:595.0pt 842.0pt;
+        margin:72.0pt 44.3pt 72.0pt 61.65pt;
+        mso-header-margin:42.55pt;
+        mso-footer-margin:49.6pt;
+        mso-columns:2 even 36.0pt;
+        mso-paper-source:0;
+        layout-grid:15.6pt;}
+    div.WordSection6
+        {page:WordSection6;}
+    @page WordSection7
+        {size:595.0pt 842.0pt;
+        margin:72.0pt 44.3pt 72.0pt 61.65pt;
+        mso-header-margin:42.55pt;
+        mso-footer-margin:49.6pt;
+        mso-paper-source:0;
+        layout-grid:15.6pt;}
+    div.WordSection7
+        {page:WordSection7;}
+     /* List Definitions */
+     @list l0
+        {mso-list-id:106122830;
+        mso-list-type:hybrid;
+        mso-list-template-ids:-1232436414 -588073520 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+    @list l0:level1
+        {mso-level-number-format:bullet;
+        mso-level-text:-;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:84.0pt;
+        text-indent:-21.0pt;
+        font-family:"Times New Roman",serif;}
+    @list l0:level2
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:105.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l0:level3
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:126.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l0:level4
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:147.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l0:level5
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:168.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l0:level6
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:189.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l0:level7
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:210.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l0:level8
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:231.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l0:level9
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:252.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1
+        {mso-list-id:366955092;
+        mso-list-type:hybrid;
+        mso-list-template-ids:1884989988 -588073520 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+    @list l1:level1
+        {mso-level-number-format:bullet;
+        mso-level-text:-;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:84.0pt;
+        text-indent:-21.0pt;
+        font-family:"Times New Roman",serif;}
+    @list l1:level2
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:105.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1:level3
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:126.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1:level4
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:147.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1:level5
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:168.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1:level6
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:189.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1:level7
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:210.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1:level8
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:231.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l1:level9
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:252.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2
+        {mso-list-id:509832456;
+        mso-list-type:hybrid;
+        mso-list-template-ids:1522140148 -588073520 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+    @list l2:level1
+        {mso-level-number-format:bullet;
+        mso-level-text:-;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:84.8pt;
+        text-indent:-21.0pt;
+        font-family:"Times New Roman",serif;}
+    @list l2:level2
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:105.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2:level3
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:126.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2:level4
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:147.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2:level5
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:168.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2:level6
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:189.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2:level7
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:210.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2:level8
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:231.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l2:level9
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:252.8pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3
+        {mso-list-id:759764271;
+        mso-list-type:hybrid;
+        mso-list-template-ids:-462408310 -588073520 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+    @list l3:level1
+        {mso-level-number-format:bullet;
+        mso-level-text:-;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:84.0pt;
+        text-indent:-21.0pt;
+        font-family:"Times New Roman",serif;}
+    @list l3:level2
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:105.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3:level3
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:126.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3:level4
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:147.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3:level5
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:168.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3:level6
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:189.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3:level7
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:210.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3:level8
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:231.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l3:level9
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:252.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4
+        {mso-list-id:787504835;
+        mso-list-type:hybrid;
+        mso-list-template-ids:1449677118 -588073520 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+    @list l4:level1
+        {mso-level-number-format:bullet;
+        mso-level-text:-;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:84.0pt;
+        text-indent:-21.0pt;
+        font-family:"Times New Roman",serif;}
+    @list l4:level2
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:105.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4:level3
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:126.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4:level4
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:147.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4:level5
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:168.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4:level6
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:189.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4:level7
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:210.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4:level8
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:231.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    @list l4:level9
+        {mso-level-number-format:bullet;
+        mso-level-text:;
+        mso-level-tab-stop:none;
+        mso-level-number-position:left;
+        margin-left:252.0pt;
+        text-indent:-21.0pt;
+        font-family:Wingdings;}
+    
+    -->
+    </style><div class="WordSection1"><p class="MsoNormal" style="margin-bottom: 7.8pt;"><b><span lang="EN-US" style="font-size: 14pt;">Changsheng SUN</span></b><span lang="EN-US" style="font-size: 14pt;">&nbsp;(</span><span style="font-size: 14pt; font-family: 宋体;">孙常晟</span><span lang="EN-US" style="font-size: 14pt;">)</span><span lang="EN-US"><o:p></o:p></span></p></div><span lang="EN-US" style="font-size: 11pt; font-family: &quot;Times New Roman&quot;, serif;"><br clear="all" style="break-before: auto;"></span><span style="font-family: -webkit-standard;"></span><div class="WordSection2"><p class="MsoNormal"><span lang="EN-US">School of Computing<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">National University of Singapore<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">15 Computing Drive,&nbsp;<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">Singapore,<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">117418<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">Tel: +86-17691180539/+65-84571276<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">E-mail:&nbsp;<a href="mailto:changsheng_sun@outlook.com">changsheng_sun@outlook.com</a><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">LinkedIn:&nbsp;<a href="https://www.linkedin.com/in/changshengsun/">changshengsun</a><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">Skype: changsheng_sun@outlook.com<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">HomePage:&nbsp;<a href="http://sunchangsheng.com/">sunchangsheng.com</a><o:p></o:p></span></p></div><span lang="EN-US" style="font-size: 11pt; font-family: &quot;Times New Roman&quot;, serif;"><br clear="all" style="break-before: auto;"></span><span style="font-family: -webkit-standard;"></span><div class="WordSection3"><div style="border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: windowtext; padding: 0cm 0cm 1pt;"><p class="MsoNormal" style="border: none; padding: 0cm;"><span lang="EN-US">&nbsp;</span></p></div><p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p><p class="1"><strong><span lang="EN-US" style="font-weight: normal;">Education</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p><p class="subtext"><strong><span lang="EN-US">2020 - now&nbsp;&nbsp;&nbsp;&nbsp;Master of Computing (Artificial Intelligence Specialisation)</span></strong><span class="Highlight0"><span lang="EN-US" style="font-style: normal;"><o:p></o:p></span></span></p><p class="MsoNormal"><span class="Highlight0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="Highlight0"><span lang="EN-US">School of Computing,&nbsp;</span></span><span class="Highlight0"><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></span></p><p class="MsoNormal"><span class="Highlight0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;National University of Singapore, Singapore</span></span><span class="Highlight0"><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></span></p><p class="subtext"><strong><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></strong></p><p class="subtext"><strong><span lang="EN-US">2015-2019&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.Eng. Computer Science (Computer Vison &amp; Graphics)</span></strong><span class="Highlight0"><span lang="EN-US" style="font-style: normal;"><o:p></o:p></span></span></p><p class="MsoNormal"><span class="Highlight0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="Highlight0"><span lang="EN-US">School of Computer Science and Technology,&nbsp;</span></span><span class="Highlight0"><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></span></p><p class="MsoNormal"><span class="Highlight0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xidian University, Xi’an, Shaanxi, China</span></span><span class="Highlight0"><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></span></p><p class="MsoNormal"><span class="Highlight0"><span lang="EN-US" style="font-weight: normal; font-style: normal;">&nbsp;</span></span></p><p class="1"><strong><span lang="EN-US" style="font-weight: normal;">Research Experience</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p><p class="1"><strong><i><span lang="EN-US" style="font-size: 11pt; font-weight: normal;">Jan. – Jul.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Research Intern<o:p></o:p></span></i></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2020</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUS School of Computing / NUS-Singtel Cyber Security R&amp;D Lab</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="1" style="margin-left: 42pt; text-indent: 21pt;"><strong><i><span lang="EN-US" style="font-size: 11pt; font-weight: normal;">“</span></i></strong><span lang="EN-US"><a href="https://trustdnn.comp.nus.edu.sg/team.html"><i><span style="font-size: 11pt;">Trustworthiness evaluation for deep learning systems</span></i></a></span><strong><i><span lang="EN-US" style="font-size: 11pt; font-weight: normal;">”<o:p></o:p></span></i></strong></p><p class="MsoListParagraph" style="margin-left:84.8pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold;mso-bidi-font-style:italic">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Advised by&nbsp;</span></strong><span lang="EN-US"><a href="https://www.comp.nus.edu.sg/~david/">Prof.&nbsp;David S. Rosenblum</a></span><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.8pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold;mso-bidi-font-style:italic">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">This project is to design a white-box testing and uses the outputs of the intermediate layers in the deep neural networks to fit density distributions.</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.8pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span lang="EN-SG" style="mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:
+    EN-SG;font-weight:normal;mso-bidi-font-weight:bold;mso-bidi-font-style:italic">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Our work to be appear in&nbsp;</span></strong><span lang="EN-US"><a href="https://conf.researchr.org/home/icse-2021"><span lang="EN-SG">ICSE 2021</span></a></span><span lang="EN-US">:&nbsp;</span><i><span lang="EN-SG">Self-Checking Deep Neural Networks in Deployment</span></i><span lang="EN-SG"><br>Yan Xiao, Ivan Beschastnikh, David S. Rosenblum,&nbsp;</span><b><span lang="EN-SG">Changsheng Sun</span></b><span lang="EN-SG">, Sebastian Elbaum, Yun Lin, Jin Song Dong.[</span><span lang="EN-US"><a href="https://cs.gmu.edu/~dsr/Publications/icse2021-preprint.pdf"><span lang="EN-SG">Paper</span></a></span><span lang="EN-SG">]<strong><span style="font-weight: normal;"><o:p></o:p></span></strong></span></p><p class="MsoListParagraph" style="margin-left: 84.8pt; text-indent: 0cm;"><strong><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></strong></p><p class="subtext"><strong><span lang="EN-US">2019&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Undergraduate Research Assistant,&nbsp;</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="subtext" style="margin-left: 42pt; text-indent: 21pt;"><strong><span lang="EN-US" style="font-style: normal;">Data Engineering and Security Lab, Xidian Univ., Xi’an, China</span></strong><strong><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal" style="margin-left: 63.8pt;"><strong><i><span lang="EN-US">“Influence Maximization Problem Meets Submodular Function Optimization”</span></i></strong><strong><i><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></i></strong></p><p class="MsoListParagraph" style="margin-left:84.8pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold;mso-bidi-font-style:italic">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Undergraduate thesis Advised by&nbsp;</span></strong><span lang="EN-US"><a href="https://lihuixidian.github.io/"><span style="color: rgb(68, 114, 196);">Prof. Hui Li</span></a></span><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.8pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-style:italic">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">“Outstanding Undergraduate Thesis” in the School of Computer Science and Technology (Overall Score Ranked 1<sup>st</sup>/550)</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></strong></p><p class="subtext"><strong><span lang="EN-US">2018-2019&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Undergraduate Research Assistant,&nbsp;</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="subtext" style="margin-left: 42pt; text-indent: 21pt;"><strong><span lang="EN-US" style="font-style: normal;">Data Engineering and Security Lab, Xidian Univ., Xi’an, China</span></strong><strong><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></strong></p><p class="subtext"><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong><strong><span lang="EN-US">“DISCO: Influence Maximization Problem Using Deep Q-Learning and Graph Embedding”</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l3 level1 lfo2"><!--[if !supportLists]--><span lang="EN-US">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><!--[endif]--><strong><span lang="EN-US">Advised by&nbsp;</span></strong><span lang="EN-US"><a href="https://lihuixidian.github.io/"><span style="color: rgb(68, 114, 196);">Prof. Hui Li</span></a></span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l3 level1 lfo2"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><span lang="EN-US">A novel framework for IM problem that incorporates graph embedding and deep reinforcement learning techniques</span><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l3 level1 lfo2"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Submitted to VLDB JOURNAL;&nbsp;</span></strong><span lang="EN-US"><a href="https://arxiv.org/abs/1906.07378">arXiv:1906.07378</a></span><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></i></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">Mar.-June.</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;<i>Research Intern &amp; Algorithm Engineer</i></span></strong><strong><i><span lang="EN-US"><o:p></o:p></span></i></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2018&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></i></strong><strong><span lang="EN-US">JD Intelligent Cities Business Unit &amp; JD Intelligent Cities Research, Beijing, China</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>“Distributed Reinforcement Learning System Research”</i></span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l4 level1 lfo3"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Advised by&nbsp;</span></strong><span lang="EN-US"><a href="http://urban-computing.com/yuzheng">Prof. Yu Zheng</a></span><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l4 level1 lfo3"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">A study on distributed DQN implementation on spatiotemporal data, based on Ray execution framework.</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l4 level1 lfo3"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">[</span></strong><span lang="EN-US"><a href="https://icity.jd.com/english">Link to icity.jd.com</a></span><strong><span lang="EN-US">]</span></strong><span lang="EN-US"></span><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></strong></p><p class="subtext"><strong><span lang="EN-US">2016-2019&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Undergraduate Student Member</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p><p class="subtext"><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong><strong><span lang="EN-US" style="font-style: normal;">Laboratory for Innovation, School of Computer Science and Technology, Xidian Univ.</span></strong><strong><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></strong></p><p class="subtext" style="margin-left:84.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo3"><!--[if !supportLists]--><strong><span lang="EN-US" style="font-weight:normal;mso-bidi-font-weight:bold;font-style:normal;
+    mso-bidi-font-style:italic">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US" style="font-style: normal;">Advised by&nbsp;</span></strong><span lang="EN-US"><a href="http://ygpeng.cn/"><span style="font-style: normal;">Dr. Yanguo Peng</span></a></span><strong><span lang="EN-US" style="font-style: normal;"></span></strong><strong><span lang="EN-US" style="font-weight: normal; font-style: normal;"><o:p></o:p></span></strong></p><p class="subtext" style="margin-left: 63pt;"><strong><span lang="EN-US" style="font-weight: normal; font-style: normal;">&nbsp;</span></strong></p><p class="1"><strong><span lang="EN-US" style="font-weight: normal;">Publication</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p><p class="MsoNormal" style="margin-bottom: 1pt; margin-left: 63pt; text-align: justify; text-indent: -63pt;"><span class="subtext0"><span lang="EN-US">2021</span></span><span lang="EN-US" style="letter-spacing: -0.05pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1]&nbsp;<i>Self-Checking Deep Neural Networks in Deployment.&nbsp;<o:p></o:p></i></span></p><p class="MsoNormal" style="margin-bottom: 1pt; margin-left: 63pt; text-align: justify;"><span lang="EN-US" style="letter-spacing: -0.05pt;">Yan Xiao, Ivan Beschastnikh, David S. Rosenblum,&nbsp;<b>Changsheng Sun</b>, Sebastian Elbaum, Yun Lin, Jin Song Dong. (To appear in the&nbsp;<i>ICSE 2021</i>)</span><span lang="EN-US">&nbsp;</span><span lang="EN-SG">[</span><span lang="EN-US"><a href="https://cs.gmu.edu/~dsr/Publications/icse2021-preprint.pdf"><span lang="EN-SG">Paper</span></a></span><span lang="EN-SG">]</span><strong><i><span lang="EN-US" style="letter-spacing: -0.05pt; font-weight: normal;"><o:p></o:p></span></i></strong></p><p class="MsoNormal" style="margin-bottom: 1pt; margin-left: 63pt; text-align: justify; text-indent: -63pt;"><span class="subtext0"><span lang="EN-US">2020</span></span><span lang="EN-US" style="letter-spacing: -0.05pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2]&nbsp;<i>Digraph Inception Convolutional Networks.</i><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 1pt; margin-left: 63pt; text-align: justify;"><span lang="EN-US" style="letter-spacing: -0.05pt;">Zekun Tong, Yuxuan Liang,&nbsp;<b>Changsheng Sun</b>, David Rosenblum and Andrew Lim.&nbsp;<br>(In&nbsp;</span><span lang="EN-SG" style="letter-spacing: -0.05pt;">proceedings&nbsp;</span><span lang="EN-US" style="letter-spacing: -0.05pt;">of&nbsp;<i>NeurIPS 2020</i>) [</span><span lang="EN-US"><a href="https://papers.nips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf">Paper</a></span><span lang="EN-US" style="letter-spacing: -0.05pt;">,&nbsp;</span><span lang="EN-US"><a href="https://github.com/flyingtango/DiGCN/blob/main/docs/digcn_poster.pdf"><span style="letter-spacing: -0.05pt;">Poster</span></a></span><span lang="EN-US" style="letter-spacing: -0.05pt;">]</span><span lang="EN-SG" style="letter-spacing: -0.05pt;">&nbsp;</span><span lang="EN-US" style="letter-spacing: -0.05pt;"><o:p></o:p></span></p><p class="MsoNormal" style="margin-left: 63pt; text-align: justify; text-indent: -63pt;"><span class="subtext0"><span lang="EN-US">2019</span></span><span lang="EN-US" style="letter-spacing: -0.05pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3]&nbsp;<i>DISCO: Influence Maximization Meets Network Embedding and Deep Learning</i>.&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-left: 63pt; text-align: justify;"><span lang="EN-US" style="letter-spacing: -0.05pt;">Hui Li, Mengting Xu,&nbsp;</span><span lang="EN-SG" style="letter-spacing: -0.05pt;">Sourav S Bhowmick</span><span lang="EN-US" style="letter-spacing: -0.05pt;">,&nbsp;<b>Changsheng&nbsp;</b><b>Sun</b>, Zhongyuan Jiang, Jiangtao Cui.<o:p></o:p></span></p><p class="MsoNormal" style="margin-left: 63pt; text-align: justify;"><span lang="EN-US" style="letter-spacing: -0.05pt;">(Submitted to&nbsp;<i>VLDB JOURNAL</i>)</span><span lang="EN-US" style="letter-spacing: -0.05pt;">&nbsp;</span><span lang="EN-US" style="letter-spacing: -0.05pt;">[</span><span lang="EN-US"><a href="https://arxiv.org/abs/1906.07378"><span style="letter-spacing: -0.05pt;">arXiv:1906.07378</span></a></span><span lang="EN-US" style="letter-spacing: -0.05pt;">]&nbsp;</span><span lang="EN-SG" style="letter-spacing: -0.05pt;"><o:p></o:p></span></p><p class="1"><strong><span lang="EN-US">&nbsp;</span></strong></p><p class="1"><strong><span lang="EN-US" style="font-weight: normal;">Skills</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Professional Skills</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p></div><strong><span lang="EN-US" style="font-size: 11pt; font-weight: normal;"><br clear="all" style="break-before: auto;"></span></strong><span style="font-family: -webkit-standard;"></span><div class="WordSection4"><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l1 level1 lfo4"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Python (NumPy, TensorFlow, PyTorch, Matplotlib, etc.)</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l1 level1 lfo4"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Basic Linux</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l1 level1 lfo4"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">LaTeX</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l1 level1 lfo4"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Spark</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p></div><strong><span lang="EN-US" style="font-size: 11pt; font-weight: normal;"><br clear="all" style="break-before: auto;"></span></strong><span style="font-family: -webkit-standard;"></span><div class="WordSection5"><p class="MsoNormal" style="margin-left: 63pt;"><strong><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></strong></p><p class="MsoNormal" style="margin-left: 63pt;"><strong><span lang="EN-US">Language Skills</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p></div><strong><span lang="EN-US" style="font-size: 11pt; font-weight: normal;"><br clear="all" style="break-before: auto;"></span></strong><span style="font-family: -webkit-standard;"></span><div class="WordSection6"><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l0 level1 lfo5"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">Mandarin</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoListParagraph" style="margin-left:84.0pt;text-indent:-21.0pt;
+    mso-char-indent-count:0;mso-list:l0 level1 lfo5"><!--[if !supportLists]--><strong><span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;font-weight:normal;
+    mso-bidi-font-weight:bold">-<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><!--[endif]--><strong><span lang="EN-US">English</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p></div><strong><span lang="EN-US" style="font-size: 11pt; font-weight: normal;"><br clear="all" style="break-before: auto;"></span></strong><span style="font-family: -webkit-standard;"></span><p class="MsoNormal" style="margin-left: 63pt;"><strong><span lang="EN-US" style="font-weight: normal;">&nbsp;</span></strong></p><p class="1"><strong><span lang="EN-US" style="font-weight: normal;">Honors &amp; Awards</span></strong><strong><span lang="EN-US"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2017-2018</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The First Prize Scholarship (10%; Xidian University)</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2015-2016</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special Scholarship, Symphony Orchestra and Chorus of Xidian University</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2015-2016</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Third Prize Scholarship (30%; Xidian University)</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><span lang="EN-US">--</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2018</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Honorable Mention MCM/ICM-The Mathematical Contest in Modeling (Top 20% Globally)</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2017</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Third Prize “Challenge Cup” the Science and Innovation Competition, Shaanxi, China</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2017</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finalist&nbsp;</span></strong><strong><span style="font-family: DengXian;">“</span></strong><strong><span lang="EN-US">Beauty of Programming” Competition, Microsoft Research Asia</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2016</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Prize and Second Prize “Spark Cup” , Xi’an, China</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><span lang="EN-US">--</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></i></strong><strong><span style="font-family: DengXian;">“</span></strong><strong><span lang="EN-US">Elegant Art into the Campus” Symphonic Chorus Concert Outstanding Individuals</span></strong><strong><i><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></i></strong></p><p class="MsoNormal"><strong><i><span lang="EN-US">2016</span></i></strong><strong><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong><strong><span style="font-family: DengXian;">“</span></strong><strong><span lang="EN-US">Yellow River” Symphonic Chorus Concert Outstanding Contribution Award</span></strong><strong><span lang="EN-US" style="font-weight: normal;"><o:p></o:p></span></strong></p>
