@@ -1,342 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>SUN Changsheng 「孙常晟」</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Lato:300,400,700|Roboto:300,400,700" rel="stylesheet" type="text/css">
-  
-  <!-- CSS Style Sheet -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  
-  <!-- link rel="icon" type="image/png" href="images/favicon.png" -->
-  <script src="utl.js"></script>
+---
+layout: default
+---
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69465334-1"></script> -->
-  <!-- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-69465334-1');
-  </script> -->
-
-</head>
-
-<body>
-  <div class="container">
-    <div class="header" id="header">
-    <div class="row">
-      <div class="title-container">
-        <h5 class="title" id="title">
-          <u>Sun</u> Changsheng 「<u>孙</u>常晟」
-        </h5>
-      </div>
-      <!-- Navigation Bar Sub-pages -->
-      <div class="navbar-container">
-        <nav class="navbar" style="line-height: 3; float: right;">
-       
-        <b>home</b> |
-        <a href="src/CV202105-ChangshengSun.pdf">Curriculum Vitae</a>
-        <!-- <a href="papers.html">papers</a> | -->
-        <!-- <a href="talks.html">talks</a> | -->
-        <!-- <a href="misc.html">gallery</a> -->
-
-
-      </nav>
-      </div>
-    </div>
+<div class='other-pages'>
+  <style type="text/css">
+    @media screen and (max-width: 686px) {
+       div#profile_photo { display: none }
+    }
+  </style>
+  <div id="profile_photo">
+    <img src="{{ '/assets/images/scs1.jpeg' | relative_url }}" width="220" height="220" style="float: left; padding: 5px 30px 40px 0px;"/>
   </div>
 
-  <div class="top placeholder"></div>
+	
+  
+  <!-- <br/> -->
+	<p>Hi, Changsheng here! I am currently a 1st-Year Ph.D. student in <a href="https://www.comp.nus.edu.sg/"> School of Computing</a>, <a href="https://www.nus.edu.sg"> National University of Singapore</a>.</p>
+     
+  <p>My research interests lie in exploring the trustworthiness of deep learning systems, graph neural networks and data mining on social networks and spatial-temporal data.</p>
 
-   <div class="row">
-      <!--div class="eleven columns"-->
-      <div id="photo" style="	
-        width: 250px;
-      	height: 250px;
-      	background-size: 250px;
-      	float: right;
-      	background-image: url(src/scs1.jpeg);
-        margin: 5px 5px 20px 40px;"> 
-      </div>
-      
-      <p class="shortspan">
-      I'm now a Master Student and Research Assistant in <a href="https://www.comp.nus.edu.sg/"> School of Computing</a>, <a href="https://www.nus.edu.sg"> National University of Singapore</a>.
+  <p>I obtained my Master's degree in <a href="https://www.comp.nus.edu.sg/"> School of Computing</a>, <a href="https://www.nus.edu.sg"> National University of Singapore</a> in 2021. Before that, I got my B.Eng. degree in the <a href="https://cs.xidian.edu.cn">School of Computer Science and Technology</a>, <a herf="https://en.xidian.edu.cn">Xidian University</a> in 2019. </p>
+      <!-- <p class="shortspan">
+        Now I am working in the <a href="https://trustdnn.comp.nus.edu.sg/">TrustDNN</a> project as a research assistant. And prior to my Master's studies, I worked as a research intern in <a href="https://www.comp.nus.edu.sg/~david/">Prof. David S. Rosenblum's</a> group. Even before that, I was a research intern and a algorithm engineer in <a href="https://icity.jd.com/english">JD Intelligent Cities Research</a>, Beijing, China, supervised by <a href="http://urban-computing.com/yuzheng">Prof. Yu Zheng</a>. 
+        </p> -->
+ 
 
-      <!-- While completing several innovative projects, I have also published several papers in related conferences, such as ICSE and NeurIPS. -->
-
-      My research interests lie in exploring the trustworthiness of deep learning systems, graph neural networks and data mining on social networks and spatial-temporal data.
-      
-      <!-- The main task of my research is to find ....  -->
-      </p>
-      
-      <p class="shortspan">
-      Now I am working in the <a href="https://trustdnn.comp.nus.edu.sg/">TrustDNN</a> project as a research assistant. And prior to my Master's studies, I worked as a research intern in <a href="https://www.comp.nus.edu.sg/~david/">Prof. David S. Rosenblum's</a> group. Even before that, I was a research intern and a algorithm engineer in <a href="https://icity.jd.com/english">JD Intelligent Cities Research</a>, Beijing, China, supervised by <a href="http://urban-computing.com/yuzheng">Prof. Yu Zheng</a>. I obtained my B.Eng. degree from the School of Computer Science and Technology, Xidian University in 2019. 
-      </p>
-
-       <b>> My <a href='src/CV202105-ChangshengSun.pdf'>Curriculum Vitae</a> < </b>
-      
-      <!--/div-->
-      <!-- <h6>Recent News 🧅</h6>
-      <div class="newslist">
-    		<ul>   		
-    		<li><span class="date">11/2020.</span> Thesis defended successfully! 🎓</li>
-    		<li><span class="date">10/2020.</span> I moved to Max Planck Institute for Software Systems to work as a postdoctoral researcher.</li>
-    		<li><span class="date">10/2020.</span> I will serve as a senior PC member for <a href="https://ijcai-21.org/"><b>IJCAI '21</b></a>.</li>
-    		<li><span class="date">10/2020.</span> Our paper <span class="papername">Protecting election by recounting ballots</span> <a class="paper-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0004370220301508">[link]</a> has been accepted to <b>Artificial Intelligence (AIJ)</b>  (joint work with Edith Elkind, Svetlana Obraztsova, Zinovi Rabinovich, and Alexandros A. Voudouris).</li>
-    		<li><span class="date">09/2020.</span> Our paper <span class="papername">Optimally deceiving a learning leader in Stackelberg games</span> <a class="paper-link" href="https://arxiv.org/abs/2006.06566">[link]</a> has been accepted to <b>NeurIPS '20</b> (joint work with Georgios Birmpas, Alexandros Hollender, Francisco J. Marmolejo-Cossío, Ninad Rajgopal, and Alexandros A. Voudouris).</li>
-        <li><span class="date">03/2020.</span> \begin{lockdown}</li>
-        </ul>
-      </div> -->
-
-      
-    </div>
-
-    <!--abstract button template-->
-    <span id="abs-btn-template" style="display:none;">
-    <span class="abs-btn" onclick="absButtonClick(this)">
-      <span class="abs-btn-border">[</span><span class="abs-btn-inner"><span class="abs-btn-text">abstract</span>
-    </span><span class="abs-btn-border"><span class="abs-btn-cross"> +</span>]</span>
-    </span>
-    </span>
-
-
-    <div class="row section" id="papers">
-    <div class="paperlist">
-      <h5>PUBLICATIONS
-        <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ" class="paper-link" style="font-size:1.4rem; font-weight: 500;"> [Google Scholar]</a>
-        <a href="https://dblp.org/pid/134/1902.html" class="paper-link" style="font-size:1.4rem; font-weight: 500;"> [dblp: Changsheng Sun]</a>
-        
-      </h5>
-    </div>
-
-  	<!-- <div class="paperyear"> 2020 </div> -->
-    
-    <p class="footnote">
-      * Click the [+] button to show abstracts.
+  <div class="site-links">
+    <p>
+        <a href="{{ site.baseurl }}/assets/CV202111-ChangshengSun.pdf" target="_blank">
+            <img src="{{ '/assets/images/logo_CV.png' | relative_url }}" />
+        </a>
+        <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ" target="_blank">
+            <img src="{{ '/assets/images/logo_scholar.png' | relative_url }}" />
+        </a>
+        <a href="https://www.linkedin.com/in/changshengsun/" target="_blank">
+          <img src="{{ '/assets/images/logo_linkedin.png' | relative_url }}" />
+        </a>
+        <a href="https://github.com/cs-sun" target="_blank">
+            <img src="{{ '/assets/images/logo_github.png' | relative_url }}" />
+        </a>
+        <a href="https://www.instagram.com/changsheng_sun/" target="_blank">
+            <img src="{{ '/assets/images/logo_instagram.png' | relative_url }}" />
+        </a>
+        <a href="https://twitter.com/changsheng_sun/" target="_blank">
+            <img src="{{ '/assets/images/logo_twitter.png' | relative_url }}" />
+        </a>
     </p>
-    <div class="paperlist">
-  		<ul>
-      
-        <!-- New Paper 
-        -------------------------------------------->
-
-        <li>
-          <span class="newicon">[new] </span>
-          
-
-    			Yan Xiao, Ivan Beschastnikh, David S. Rosenblum,<span class="myself">Changsheng Sun</span>, Sebastian Elbaum, Yun Lin, Jin Song Dong. <!--PN--><br/><!--PN-->
-    			<span class="papername">Self-Checking Deep Neural Networks in Deployment.</span> <span class="confname">ICSE 2021</span>.
-          <span class="paper-links-block">
-            <a class="paper-link" href="https://arxiv.org/pdf/2103.02371.pdf">[paper]</a>
-            <span class="abs-btn-container"></span>
-          </span>
-          <p class="abs-text">
-            The widespread adoption of Deep Neural Networks
-            (DNNs) in important domains raises questions about the trustworthiness of DNN outputs. Even a highly accurate DNN will
-            make mistakes some of the time, and in settings like self-driving
-            vehicles these mistakes must be quickly detected and properly
-            dealt with in deployment.
-            Just as our community has developed effective techniques and
-            mechanisms to monitor and check programmed components, we
-            believe it is now necessary to do the same for DNNs. In this paper
-            we present DNN self-checking as a process by which internal
-            DNN layer features are used to check DNN predictions. We
-            detail SelfChecker, a self-checking system that monitors DNN
-            outputs and triggers an alarm if the internal layer features of
-            the model are inconsistent with the final prediction. SelfChecker
-            also provides advice in the form of an alternative prediction.
-            We evaluated SelfChecker on four popular image datasets
-            and three DNN models and found that SelfChecker triggers
-            correct alarms on 60.56% of wrong DNN predictions, and false
-            alarms on 2.04% of correct DNN predictions. This is a substantial improvement over prior work (SELFORACLE, DISSECTOR,
-            and ConfidNet). In experiments with self-driving car scenarios,
-            SelfChecker triggers more correct alarms than SELFORACLE for
-            two DNN models (DAVE-2 and Chauffeur) with comparable false
-            alarms. Our implementation is available as open source.
-            Index Terms—deep learning, trustworthiness, deployment 
-          </p>
-
-
-
-          <div id="photo" style="	
-          height: 200px;
-          width: 500px;
-          border: 1px solid white;
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center;
-          float: center;
-          background-image: url(src/selfcheck.png);"> 
-        </div>
-    		</li>
-        
-        <!-- Paper Item 
-        --------------------------------------------->
-
-        <li>
-    		  Zekun Tong, Yuxuan Liang,<span class="myself">Changsheng Sun</span>, David Rosenblum, Andrew Lim. <!--PN--><br/><!--PN-->
-    			<!--span class="newicon">[new] </span-->
-    			<span class="papername">Digraph Inception Convolutional Networks.</span> <span class="confname">NeurIPS 2020</span>.
-          <span class="paper-links-block">
-            <a class="paper-link" href="https://papers.nips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf" target="_blank">[paper]</a>
-            <a class="paper-link" href="https://github.com/flyingtango/DiGCN/blob/main/docs/digcn_poster.pdf" target="_blank">[poster]</a>
-            <a class="paper-link" href="https://github.com/flyingtango/DiGCN" target="_blank">[code]</a>
-            <span class="abs-btn-container"></span>
-          </span>
-          <p class="abs-text">
-            Graph Convolutional Networks (GCNs) have shown promising results in modeling
-            graph-structured data. However, they have difficulty with processing digraphs
-            because of two reasons: 1) transforming directed to undirected graph to guarantee
-            the symmetry of graph Laplacian is not reasonable since it not only misleads
-            message passing scheme to aggregate incorrect weights but also deprives the unique
-            characteristics of digraph structure; 2) due to the fixed receptive field in each layer,
-            GCNs fail to obtain multi-scale features that can boost their performance. In this
-            paper, we theoretically extend spectral-based graph convolution to digraphs and
-            derive a simplified form using personalized PageRank. Specifically, we present
-            the Digraph Inception Convolutional Networks (DiGCN) which utilizes digraph
-            convolution and k
-            th-order proximity to achieve larger receptive fields and learn
-            multi-scale features in digraphs. We empirically show that DiGCN can encode
-            more structural information from digraphs than GCNs and help achieve better
-            performance when generalized to other models. Moreover, experiments on various
-            benchmarks demonstrate its superiority against the state-of-the-art methods.
-          </p>
-
-          <div id="photo" style="	
-          height: 150px;
-          width: 500px;
-          border: 1px solid white;
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center;
-          float: center;
-          background-image: url(src/ib.png);"> 
-          </div>
-        </li>
-        
-
-        <li>
-    		  Hui Li, Mengting Xu, Sourav S Bhowmick, <span class="myself">Changsheng Sun</span>, Zhongyuan Jiang, Jiangtao Cui. <!--PN--><br/><!--PN-->
-    			<!--span class="newicon">[new] </span-->
-    			<span class="papername">DISCO: Influence Maximization Meets Network Embedding and Deep Learning.</span> <span class="confname">Submitted to KDD 2021</span>.
-          <span class="paper-links-block">
-            <a class="paper-link" href="https://arxiv.org/abs/1906.07378" target="_blank">[arXiv:1906.07378]</a>
-            <span class="abs-btn-container"></span>
-          </span>
-          <p class="abs-text">
-            Since its introduction in 2003, the influence maximization (IM) problem has drawn significant research attention in the literature. The aim of IM is to select a set of k users who can influence the most individuals in the social network. The problem is proven to be NP-hard. A large number of approximate algorithms have been proposed to address this problem. The state-of-the-art algorithms estimate the expected influence of nodes based on sampled diffusion paths. As the number of required samples have been recently proven to be lower bounded by a particular threshold that presets tradeoff between the accuracy and efficiency, the result quality of these traditional solutions is hard to be further improved without sacrificing efficiency. In this paper, we present an orthogonal and novel paradigm to address the IM problem by leveraging deep learning models to estimate the expected influence. Specifically, we present a novel framework called DISCO that incorporates network embedding and deep reinforcement learning techniques to address this problem. Experimental study on real-world networks demonstrates that DISCO achieves the best performance w.r.t efficiency and influence spread quality compared to state-of-the-art classical solutions. Besides, we also show that the learning model exhibits good generality.
-          </p>
-          <div id="photo" style="	
-          height: 150px;
-          width: 500px;
-          border: 1px solid white;
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center;
-          float: center;
-          background-image: url(src/disco.png);"> 
-          </div>
-    		</li>
-        
-  		</ul>
-  	</div>
-    
-    
-
   </div>
+
+  <br/>
+
+  <div><h2>PUBLICATIONS</h2></div>
+  <!-- See More <a href="{{ site.baseurl }}/publications.html">Publications</a> -->
+  <b>See More at -> </b>
+  <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ">[Google Scholar]</a>
+  <a href="https://dblp.org/pid/134/1902.html"> [dblp: Changsheng Sun]</a>
+  <br/>
+	<p>
+		<ol>
+    <li>
+      (ICSE'21)
+      <a href="https://arxiv.org/pdf/2103.02371.pdf"> Self-Checking Deep Neural Networks in Deployment.</a>
+      Yan Xiao, Ivan Beschastnikh, David S. Rosenblum,<u>Changsheng Sun</u>, Sebastian Elbaum, Yun Lin, Jin Song Dong. 
+      [<a href="https://www.youtube.com/watch?v=0k7H3ZNgARE">Video</a>]
+      [<a href="https://github.com/self-checker/SelfChecker">Code</a>] 
+    </li> 
+
+    <li>
+      (NeurIPS'20)
+      <a href="https://proceedings.neurips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf"> Digraph Inception Convolutional Networks.</a>
+      Zekun Tong, Yuxuan Liang, <u>Changsheng Sun</u>, Xinke Li, David S. Rosenblum, Andrew Lim.
+      [<a href="https://zekuntong.com/files/digcn_poster.pdf">Poster</a>]
+      [<a href="https://github.com/flyingtango/DiGCN">Code</a>] 
+    </li> 
+    		
+		</ol>
+	</p>
+
+
 
   <div class="row section">
-    <div><h5>RESEARCH EXPERIENCES</h5></div>
+    <div><h2>EDUCATION</h2></div>
     <ul>
       <li>
-        (June 2021 - ) <b>Research Assistant</b> @ NUS School of Computing<br/>
-        <a href="https://trustdnn.comp.nus.edu.sg/"><b>Evaluating the Trustworthiness of Deep Learning Systems</b></a> <br/>
-        Led by <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. DONG Jin Song</a> and funded by the Singapore National Research Foundation (NRF) under the National Satellite of Excellence on Trustworthy Software Systems (NSoE-TSS). <br/>
-        <i>This project will develop new techniques for determining the trustworthiness of DL systems, with an emphasis on uncovering and accounting for the underlying uncertainties. The new techniques will address two important problems—detect untrustworthy decisions made by deep learning models, and repair and fix the untrustworthy decisions on runtime to improve the trustworthiness of deep learning models.</i>
-      </li>
-      
-      <li>
-        (Jan 2020 - Jul 2020) <b>Research Intern</b> @ NUS School of Computing / NUS-Singtel Cyber Security R&D Lab <br/>
-        <a href="https://trustdnn.comp.nus.edu.sg/team.html"><b>Trustworthiness evaluation for deep learning systems</b></a> <br/>
-        Advised by <a href="https://www.comp.nus.edu.sg/~david/">Prof. David S. Rosenblum</a> <br/> 
-        <i>This project is to design a white-box testing and uses the outputs of the intermediate layers in the deep neural networks to fit density distributions. This work led to a conference publication at <b>ICSE 2021</b> .</i>
+        (2022 - ) <b>Doctor of Philosophy</b> (Computer Science)<br/> School of Computing, National University of Singapore, Singapore. 
+        <br/>
       </li>
 
       <li>
-        (2019) <b>Undergraduate Research Assistant</b> @ Data Engineering and Security Lab, Xidian Univ., Xi’an, China <br/>
-        <b>Influence Maximization Problem Meets Submodular Function Optimization</b> <br/>
-        Undergraduate thesis Advised by <a href="https://lihuixidian.github.io/">Prof. Hui Li</a>    <br/>
-        <b>“Outstanding Undergraduate Thesis”</b> in the School of Computer Science and Technology <b>(Overall Score Ranked 1st/550)</b>
+        (2020 - 2021) <b>Master of Computing</b> (Artificial Intelligence)<br/> School of Computing, National University of Singapore, Singapore. 
+        <br/>
       </li>
 
       <li>
-        (2018 - 2019) <b>Undergraduate Research Assistant</b> @ Data Engineering and Security Lab, Xidian Univ., Xi’an, China <br/>
-        <b>DISCO: Influence Maximization Problem Using Deep Q-Learning and Graph Embedding</b> <br/>
-        Advised by <a href="https://lihuixidian.github.io/">Prof. Hui Li</a> <br/> 
-        <i>A novel framework for IM problem that incorporates graph embedding and deep reinforcement learning techniques. The work 
-          led to a conference publication submitted to KDD. </i>
+        (2015 - 2019) <b>Bachelor of Engineering </b> (Computer Science)<br/> School of Computer Science and Technology, Xidian University, Xi’an, Shaanxi, China.  <br/>
+      </li>
+  </ul>
+  </div>
 
+
+
+  <div><h2>RESEARCH EXPERIENCES</h2></div>
+    <ul>
+      <li>
+        (2021) <b>Research Assistant</b> @ <a href="https://trustdnn.comp.nus.edu.sg/">TrustDNN</a>, NUS School of Computing, NUS, Singapore.<br/>
       </li>
 
       <li>
-        (Mar 2018 - June 2018) <b>Research Intern & Algorithm Engineer</b> @ <a href="https://icity.jd.com/english">JD Intelligent Cities Research</a>, Beijing, China <br/>
-        <a href="https://trustdnn.comp.nus.edu.sg/team.html"><b>Trustworthiness evaluation for deep learning systems</b></a> <br/>
-        Advised by <a href="http://urban-computing.com/yuzheng">Prof. Yu Zheng</a> <br/>
-        <i>A study on distributed DQN implementation on spatiotemporal data, based on Ray execution framework.</i>
+        (2020) <b>Research Intern</b> @ <a href="https://www.comp.nus.edu.sg/~david/">NUS-Singtel Cyber Security R&D Lab</a>, Singapore.<br/>
       </li>
-
 
       <li>
-        (2016 - 2019)  <b>Undergraduate Student Member</b> @ Laboratory for Innovation, School of Computer Science and Technology, Xidian Univ. <br/>
-        Advised by <a href="http://ygpeng.cn/">Prof. Yanguo Peng</a> <br/>
+        (2018 - 2019) <b>Undergrad Research Assistant</b> @ <a href="https://lihuixidian.github.io/">Data Engineering and Security Lab</a>, Xidian Univ., China. <br/>
       </li>
-      
+
+      <li>
+        (2018) <b>Research Intern & Algorithm Engineer</b> @ <a href="https://icity.jd.com/english">JD Intelligent Cities Research</a>, China. <br/>
+      </li>
+
     </ul>
-  </div> 
 
-  <div class="row section">
-      <div><h5>LINKS</h5></div>
-      <p>
-  		<a href="https://www.linkedin.com/in/changshengsun/">LinkedIn</a> |
-      <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ">Google scholar</a> |
-      <a href="https://www.instagram.com/changsheng_sun/">Instagram</a> |
+
+
+
+
+  <div><h2>LINKS</h2></div>
+    <p>
+      <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ">Google Scholar</a> |
+      <a href="https://dblp.org/pid/134/1902.html">dblp</a> |
+      <a href="https://www.linkedin.com/in/changshengsun/">LinkedIn</a> |
       <a href="https://github.com/cs-sun">GitHub</a> |
-      <a href="https://www.zhihu.com/people/cssun">Zhihu</a> |
-      <a href="https://twitter.com/changsheng_sun"> Twitter</a>
+      <a href="https://www.instagram.com/changsheng_sun/">Instagram</a> |
+      <a href="https://twitter.com/changsheng_sun"> Twitter</a> |
+      <a href="https://www.zhihu.com/people/cssun">Zhihu</a> 
+    </p>
 
-      </p>
+
+
+  <div><h2>CONTACT</h2></div>
+    <p>
+      Computing 2, <br/>  
+      15 Computing Drive, 
+      National University of Singapore, <br/>
+      Singapore, 117418 <br/><br/>
+    
+    Email: <a>changsheng_sun[at]outlook[dot]com</a> (Preferred) | <a>cssun[at]u[dot]nus[dot]edu</a> 
+    <br/>
+    Mobile: See my <a href="{{ site.baseurl }}/assets/CV202111-ChangshengSun.pdf">Curriculum Vitae</a>.<br/>
+    Skype: Same as the Outlook Email address.
+    </p>
+
   </div>
 
-  <div class="row section">
-      <div><h5>CONTACT</h5></div>
-      <p>
-        Computing 2, <br/>  
-        15 Computing Drive, 
-        National University of Singapore, <br/>
-        Singapore, 117418 <br/><br/>
-      Email: <a href="mailto:changsheng_sun@outlook.com">changsheng_sun[at]outlook[dot]com</a>(Preferred) | <a href="mailto:cssun@u.nus.edu">cssun[at]u[dot]nus[dot]edu</a> 
-      <br/>
-      Mobile: See my cv.<br/>
-      Skype: Same as Outlook E-mail
+	<!-- <p>Fun fact: my name in Chinese character is "荔", which means <a href="https://en.wikipedia.org/wiki/Lychee" target="_blank">lychee</a>, a type of fruit popular in southeastern China.</p> -->
 
-      </p>
-
-  </div>
-  
-
-  <p class="footnote">© 2021 SUN Changsheng | Powered by <a href="http://getskeleton.com/">Skeleton</a> and <a href="https://jgan.neocities.org/index.html">Jiarui Gan's template</a>  | Updated 2021-05-22 </p>
-
-</div> <!-- End Container -->
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
-</html>
+	<!-- <p style="color: #aaaaaa; font-size: 85%;">I snack a lot while writing my blogs. Well, it is actually more like, no snack no will power. If you enjoy my posts, I wouldn't mind for 1-3 dollars donation to my <a href="https://venmo.com/lilianweng" target="_blank">venmo</a> or <a href="https://paypal.me/LilianWeng" target="_blank">paypal</a>, so I can buy more <a href="https://www.instagram.com/p/CAd9qnMD4Ps/" target="_blank">chips</a> :P</p> -->
+</div>

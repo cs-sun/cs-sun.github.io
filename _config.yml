@@ -1,0 +1,23 @@
+title: SUN Changsheng 「孙常晟」
+name: "Sun Changsheng"
+author: SUN Changsheng
+twitter_username: changsheng_sun
+baseurl: ""
+description: Document my learning notes.
+profile_url: "http://cs-sun.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+exclude:
+  - Gemfile
+  - Gemfile.lock
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  toc_levels: 1..3
