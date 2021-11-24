@@ -7,12 +7,12 @@ tags: architecture transformer
 ---
 
 
-> How to train large and deep neural networks is challenging, as it demands a large amount of GPU memory and a long horizon of training time. This post reviews several popular training parallelism paradigms, as well as a variety of model architecture and memory saving designs to make it possible to train very large neural networks across a large number of GPUs.
+> [PLACE-HOLDER POST, COPYRIGHT LILIAN WENG] How to train large and deep neural networks is challenging, as it demands a large amount of GPU memory and a long horizon of training time. This post reviews several popular training parallelism paradigms, as well as a variety of model architecture and memory saving designs to make it possible to train very large neural networks across a large number of GPUs.
 
 
 <!--more-->
 
-In recent years, we are seeing better results on many NLP benchmark tasks with larger pre-trained [language models]({{ site.baseurl }}{% post_url 2021-09-25-train-large-neural-networks %}). How to train large and deep neural networks is challenging, as it demands a large amount of GPU memory and a long horizon of training time. 
+[PLACE-HOLDER POST, COPYRIGHT LILIAN WENG] In recent years, we are seeing better results on many NLP benchmark tasks with larger pre-trained [language models]({{ site.baseurl }}{% post_url 2021-09-25-train-large-neural-networks %}). How to train large and deep neural networks is challenging, as it demands a large amount of GPU memory and a long horizon of training time. 
 
 However an individual GPU worker has limited memory and the sizes of many large models have grown beyond a single GPU. There are several parallelism paradigms to enable model training across multiple GPUs, as well as a variety of model architecture and memory saving designs to help make it possible to train *very large* neural networks.
 
