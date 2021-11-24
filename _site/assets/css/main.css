@@ -220,7 +220,7 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, figure { margi
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #7ea7e5; margin: 2em 0; padding: 0; }
 
 /** Basic styling */
-body { font: 400 16.5px/1.65 "Lora", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #111; background-color: #fdfdfd; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; }
+body { font: 400 16.5px/1.65 "Lora", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #111; background-color: #ffffff; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; }
 
 .share-buttons { display: inline; float: right; }
 
@@ -307,10 +307,10 @@ pre .lineno { font-size: 14.85px; }
 .site-nav .page-link:not(:last-child) { margin-right: 10px; }
 .site-nav .page-link:hover { color: #2a6dd3; text-decoration: none; cursor: pointer; }
 
-.site-links { right: 0; bottom: 0; left: 0; padding: 2rem; text-align: center; font-size: 14.4375px; color: #777777; clear: both; margin-bottom: 10px; }
+.site-links { right: 0; bottom: 0; left: 0; padding: 0rem; text-align: center; font-size: 14.4375px; color: #777777; clear: both; margin-bottom: 30px; }
 .site-links a { color: #777777; }
-.site-links p { margin: 0px auto; width: 400px; }
-.site-links img { width: 32px; height: 32px; margin: 0px 10px 0px 10px; display: block; float: left; }
+.site-links p { margin: 0px auto; width: 300px; }
+.site-links img { width: 28px; height: 28px; margin: 0px 10px 0px 10px; display: block; float: left; }
 
 /** Site footer */
 .site-footer { right: 0; bottom: 0; left: 0; padding: 1rem; text-align: center; font-size: 14.4375px; color: #777777; clear: both; margin-bottom: 5px; }

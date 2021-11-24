@@ -70,19 +70,19 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
   font-size: $small-font-size;
   color: $grey-color;
   clear: both;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
   a {
     color: $grey-color;
   }
   p {
     margin: 0px auto;
-    width: 400px;
+    width: 300px;
   }
   // img {
   //   width: 26px;
@@ -92,8 +92,8 @@
   //   float: left;
   // }
   img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     margin: 0px 10px 0px 10px;
     display: block;
     float: left;

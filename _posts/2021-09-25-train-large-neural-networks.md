@@ -41,7 +41,7 @@ At the end of each minibatch, workers need to synchronize gradients or weights t
 
 Somewhere in the middle is to synchronize gradients globally once every $$x$$ iterations ($$x > 1$$). This feature is called “gradient accumulation” in Distribution Data Parallel ([DDP](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html)) since Pytorch v1.5 ([Li et al. 2021](https://arxiv.org/abs/2006.15704)). Bucketing gradients avoid immediate `AllReduce` operations but instead buckets multiple gradients into one `AllReduce` to improve throughput. Computation and communication scheduling optimization can be made based on the computation graph.
 
-![Pytorch DDP]({{ '/assets/images/pytorch-ddp.png' | relative_url }})
+![Pytorch DDP]({{ '/assets/images/post/pytorch-ddp.png' | relative_url }})
 {: style="width: 68%;" class="center"}
 *Fig. 1. Pseudo code for Pytorch DDP. (Image source: [Li et al. 2021](https://arxiv.org/abs/2006.15704))*
 {:.image-caption}
@@ -54,7 +54,7 @@ Somewhere in the middle is to synchronize gradients globally once every $$x$$ it
 Since deep neural networks usually contain a stack of vertical layers, it feels straightforward to split a large model by layer, where a small consecutive set of layers are grouped into one partition on one worker. However, a naive implementation for running every data batch through multiple such workers with sequential dependency leads to big bubbles of waiting time and severe under-utilization of computation resources.
 
 
-![Naive DP]({{ '/assets/images/naive-data-parallelism.png' | relative_url }})
+![Naive DP]({{ '/assets/images/post/naive-data-parallelism.png' | relative_url }})
 {: style="width: 90%;" class="center"}
 *Fig. 2. A naive model parallelism setup where the model is vertically split into 4 partitions. Data is processed by one worker at a time due to sequential dependency, leading to large “bubbles” of idle time. (Image source: [Huang et al. 2019](https://arxiv.org/abs/1811.06965))*
 {:.image-caption}
@@ -73,7 +73,7 @@ $$
 The GPipe paper observed that the bubble overhead is almost negligible if the number of microbatches is more than 4x the number of partitions $$m > 4d$$ (when [activation recomputation](#activation-recomputation) is applied). 
 
 
-![GPipe]({{ '/assets/images/gpipe.png' | relative_url }})
+![GPipe]({{ '/assets/images/post/gpipe.png' | relative_url }})
 {: style="width: 80%;" class="center"}
 *Fig. 3. Illustration of pipeline parallelism in GPipe with 4 microbatches and 4 partitions. GPipe aggregates and updates gradients across devices synchronously at the end of every batch. (Image source: [Huang et al. 2019](https://arxiv.org/abs/1811.06965))*
 {:.image-caption}
@@ -84,7 +84,7 @@ GPipe achieves almost linear speedup in throughput with the number of devices, a
 *PipeDream* ([Narayanan et al. 2019](https://cs.stanford.edu/~matei/papers/2019/sosp_pipedream.pdf)) schedules each worker to alternatively process the forward and backward passes (`1F1B`). 
 PipeDream names each model partition “stage” and each stage worker can have multiple replicas to run data parallelism. In this process, PipeDream uses a deterministic round-robin load balancing strategy to assign work among multiple replicas of stages to ensure that the forward and backward passes for the same minibatch happen on the same replica.
 
-![PipeDream]({{ '/assets/images/pipedream.png' | relative_url }})
+![PipeDream]({{ '/assets/images/post/pipedream.png' | relative_url }})
 {: style="width: 75%;" class="center"}
 *Fig. 4. Illustration of `1F1B` microbatch scheduling in PipeDream. (Image source: [Harlap et al. 2018](https://arxiv.org/abs/1806.03377))*
 {:.image-caption}
@@ -97,7 +97,7 @@ Since PipeDream does not have an end-of-batch global gradient sync across all th
 At the beginning of a training run, PipeDream first profiles the computation memory cost and time of each layer in the model and then optimizes a solution for partitioning layers into stages, which is a dynamic programming problem.
 
 
-![PipeDream experiments]({{ '/assets/images/pipedream-results.png' | relative_url }})
+![PipeDream experiments]({{ '/assets/images/post/pipedream-results.png' | relative_url }})
 {: style="width: 70%;" class="center"}
 *Fig. 5. Results for VGG16 on ILSVRC12. (Top) Accuracy vs time. The integer marks the number of stage workers. ASP =  Asynchronous  parallel & BSP = Bulk synchronous parallels. (Bottom) Training time speedup for different parallelism configurations. Straight pipeline refers to pipeline parallelism without data parallelism. (Image source: [Harlap et al. 2018](https://arxiv.org/abs/1806.03377))*
 {:.image-caption}
@@ -107,7 +107,7 @@ Two variations of PipeDream were later proposed to reduce the memory footprint b
 *PipeDream-flush* adds a globally synchronized pipeline flush periodically, just like GPipe. In this way, it greatly reduces the memory footprint (i.e. only maintain a single version of model weights) by sacrificing a little throughput.
 
 
-![PipeDream-flush]({{ '/assets/images/pipedream-flush.png' | relative_url }})
+![PipeDream-flush]({{ '/assets/images/post/pipedream-flush.png' | relative_url }})
 {: style="width: 70%;" class="center"}
 *Fig. 6. Illustration of pipeline scheduling in PipeDream-flush. (Image source: ([Narayanan et al. 2021](https://arxiv.org/abs/2006.09503))*
 {:.image-caption}
@@ -115,7 +115,7 @@ Two variations of PipeDream were later proposed to reduce the memory footprint b
 
 *PipeDream-2BW* maintains only two versions of model weights, where “2BW” is short for “double-buffered weights”. It generates a new model version every $$k$$ microbatches and $$k$$ should be larger than the pipeline depth $$d$$, $$k > d$$. A newly updated model version cannot fully replace the old version immediately since some leftover backward passes still depend on the old version. In total only two versions need to be saved so the memory cost is much reduced.
 
-![PipeDream-2BW]({{ '/assets/images/pipedream-2bw.png' | relative_url }})
+![PipeDream-2BW]({{ '/assets/images/post/pipedream-2bw.png' | relative_url }})
 {: style="width: 95%;" class="center"}
 *Fig. 7. Illustration of pipeline scheduling in PipeDream-2BW. (Image source: ([Narayanan et al. 2021](https://arxiv.org/abs/2006.09503))*
 {:.image-caption}
@@ -144,7 +144,7 @@ $$
 $$
 
 
-![Megatron LM]({{ '/assets/images/Megatron-LM.png' | relative_url }})
+![Megatron LM]({{ '/assets/images/post/Megatron-LM.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 8. Illustration of tensor parallelism for key transformer components proposed in Megatron-LM. (Image source: [Shoeybi et al. 2020](https://arxiv.org/abs/1909.08053))*
 {:.image-caption}
@@ -152,7 +152,7 @@ $$
 [Narayanan et al. (2021)](https://arxiv.org/abs/2104.04473) combined pipeline, tensor and data parallelism with a new pipeline scheduling strategy and named their approach *PTD-P*. Instead of only positioning a continuous set of layers (“model chunk”) on a device, each worker can be assigned with multiple chunks of smaller continuous subsets of layers (e.g. device 1 has layers 1, 2, 9, 10; device 2 has layers 3, 4, 11, 12; each has two model chunks). The number of microbatches in one batch should be exactly divided by the number of workers ($$m % d = 0$$). If there are $$v$$ model chunks per worker, the pipeline bubble time can be reduced by a multiplier of $$v$$ compared to a GPipe scheduling.
 
 
-![PTD-P]({{ '/assets/images/PTD-P-interleaved.png' | relative_url }})
+![PTD-P]({{ '/assets/images/post/PTD-P-interleaved.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 9. (Top) Default `1F1B` pipeline schedule as in PipeDream-flush. (Bottom) Interleaved 1F1B pipeline schedule. First model chunks are in dark colors and second chunks are in light colors. (Image source: [Narayanan et al. 202)](https://arxiv.org/abs/2104.04473))*
 {:.image-caption}
@@ -171,7 +171,7 @@ Precisely one MoE layer contains
 
 Depending on the gating outputs, not every expert has to be evaluated. When the number of experts is too large, we can consider using a two-level hierarchical MoE.
 
-![MoE]({{ '/assets/images/moe.png' | relative_url }})
+![MoE]({{ '/assets/images/post/moe.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 10. Illustration of a mixture-of-experts (MoE) layer. Only 2 out of $$n$$ experts are selected and activated by the gating network. (Image source: [Shazeer et al., 2017](https://arxiv.org/abs/1701.06538))*
 {:.image-caption}
@@ -202,7 +202,7 @@ where $$ \text{CV}$$ is the coefficient of variation and the loss weight $$w_\te
 Because every expert network only gets a fraction of training samples ("The shrinking batch problem"), we should try to use a batch size as large as possible in MoE. However, it is restricted by GPU memory. Data parallelism and model parallelism can be applied to improve the throughput.
 
 
-![MoE experiments]({{ '/assets/images/moe-experiments.png' | relative_url }})
+![MoE experiments]({{ '/assets/images/post/moe-experiments.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 11. Test perplexity on 1-Billion-Word language modeling benchmark. (Left) The model capacity increases from left to right, containing 4, 32, 256, 256, 1024 and 4096 experts. (Right) Performance of the 4 billion parameters MoE model, the largest one in the left figure, under different computation budgets. (Image source: [Shazeer et al., 2017](https://arxiv.org/abs/1701.06538))*
 {:.image-caption}
@@ -217,7 +217,7 @@ There are several improved designs for the gating function $$G$$ in GShard:
 - *Random routing*: The 2nd-best expert is selected with a probability proportional to its weight; otherwise, GShard follows a random routing, so as to add some randomness.
 
 
-![GShard algorithm]({{ '/assets/images/gshard-algo.png' | relative_url }})
+![GShard algorithm]({{ '/assets/images/post/gshard-algo.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 12. Pseudo code of the group-level top-2 gating mechanism with auxiliary loss in GShard. (Image source: [Lepikhin et al., 2020](https://arxiv.org/abs/2006.16668))*
 {:.image-caption}
@@ -225,7 +225,7 @@ There are several improved designs for the gating function $$G$$ in GShard:
 
 **Switch Transformer** ([Fedus et al. 2021](https://arxiv.org/abs/2101.03961)) scales the model size up to trillions of parameters (!!) by replacing the dense feed forward layer with a *sparse switch FFN layer* in which each input is only routed to *one* expert network. The auxiliary loss for load balancing is $$\text{loss}_\text{aux} = w_\text{aux} \sum_{i=1}^n f_i p_i$$ given $$n$$ experts, where $$f_i$$ is the fraction of tokens routed to the $$i$$-th expert and $$p_i$$ is the routing probability for expert $$i$$ predicted by the gating network.
 
-![Switch transformer]({{ '/assets/images/switch-transformer.png' | relative_url }})
+![Switch transformer]({{ '/assets/images/post/switch-transformer.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 13. Switch transformer. The sparse switch FFN layer is in the blue boxes. (Image source: [Fedus et al. 2021](https://arxiv.org/abs/2101.03961))*
 {:.image-caption}
@@ -238,7 +238,7 @@ To improve training stability, switch transformer incorporates the following des
 
 The switch transformer paper summarized different data and model parallelism strategies for training large models with a nice illustration:
 
-![Parallelism strategies]({{ '/assets/images/switch-transformer-parallelism.png' | relative_url }})
+![Parallelism strategies]({{ '/assets/images/post/switch-transformer-parallelism.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 14. An illustration of various parallelism strategies on how (Top) model weights and (Bottom) data are split over multiple GPU cores. In the top row, each color denotes a unique weight matrix. In the bottom row, different colors indicate different sets of tokens.  (Image source: [Fedus et al. 2021](https://arxiv.org/abs/2101.03961))*
 {:.image-caption}
@@ -268,7 +268,7 @@ The minimum cost is $$O(\sqrt{\ell})$$ at $$d=\sqrt{\ell}$$.
 
 Activation recompuation trick can give sublinear memory cost with respect to the model size.
 
-![Activation checkpointing experiments]({{ '/assets/images/activation-checkpointing.png' | relative_url }})
+![Activation checkpointing experiments]({{ '/assets/images/post/activation-checkpointing.png' | relative_url }})
 {: style="width: 100%;" class="center"}
 *Fig. 15. The memory cost of different memory saving algorithms. <u>Sharing</u>: Memory used by intermediate results is recycled when no longer needed. <u>Inplace</u>: Save the output directly into memory of an input value. (Image source: [Chen et al. 2016](https://arvix.org/abs/1604.06174))*
 {:.image-caption}
@@ -279,7 +279,7 @@ Activation recompuation trick can give sublinear memory cost with respect to the
 [Narang & Micikevicius et al. (2018)](https://arxiv.org/abs/1710.03740) introduced a method to train models using half-precision floating point (FP16) numbers without losing model accuracy.
 
 
-![Mixed-precision training]({{ '/assets/images/mixed-precision-training.png' | relative_url }})
+![Mixed-precision training]({{ '/assets/images/post/mixed-precision-training.png' | relative_url }})
 {: style="width: 80%;" class="center"}
 *Fig. 16. The procedure of mixed precision training at one layer. (Image source: [Narang & Micikevicius, et al. 2018](https://arxiv.org/abs/1710.03740))*
 {:.image-caption}
@@ -291,7 +291,7 @@ Three techniques to avoid losing critical information at half-precision:
 - *Arithmetic precision*. For common network arithmetic (e.g. vector dot-product, reduction by summing up vector elements), we can accumulate the partial results in FP32 and then save the final output as FP16 before saving into memory. Point-wise operations can be executed in either FP16 or FP32.
 
 
-![Gradient histogram]({{ '/assets/images/gradient-histogram.png' | relative_url }})
+![Gradient histogram]({{ '/assets/images/post/gradient-histogram.png' | relative_url }})
 {: style="width: 60%;" class="center"}
 *Fig. 17. The histogram of gradients in full precision. The left part up to $$2^{-24}$$ will be zero-ed off once the model switches to FP16. (Image source: [Narang & Micikevicius, et al. 2018](https://arxiv.org/abs/1710.03740))*
 {:.image-caption}

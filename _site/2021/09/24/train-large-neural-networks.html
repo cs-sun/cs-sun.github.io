@@ -217,7 +217,7 @@
 
 <p>Somewhere in the middle is to synchronize gradients globally once every \(x\) iterations (\(x &gt; 1\)). This feature is called “gradient accumulation” in Distribution Data Parallel (<a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html">DDP</a>) since Pytorch v1.5 (<a href="https://arxiv.org/abs/2006.15704">Li et al. 2021</a>). Bucketing gradients avoid immediate <code class="language-plaintext highlighter-rouge">AllReduce</code> operations but instead buckets multiple gradients into one <code class="language-plaintext highlighter-rouge">AllReduce</code> to improve throughput. Computation and communication scheduling optimization can be made based on the computation graph.</p>
 
-<p style="width: 68%;" class="center"><img src="/assets/images/pytorch-ddp.png" alt="Pytorch DDP" /></p>
+<p style="width: 68%;" class="center"><img src="/assets/images/post/pytorch-ddp.png" alt="Pytorch DDP" /></p>
 <p class="image-caption"><em>Fig. 1. Pseudo code for Pytorch DDP. (Image source: <a href="https://arxiv.org/abs/2006.15704">Li et al. 2021</a>)</em></p>
 
 <h3 id="model-parallelism">Model Parallelism</h3>
@@ -226,7 +226,7 @@
 
 <p>Since deep neural networks usually contain a stack of vertical layers, it feels straightforward to split a large model by layer, where a small consecutive set of layers are grouped into one partition on one worker. However, a naive implementation for running every data batch through multiple such workers with sequential dependency leads to big bubbles of waiting time and severe under-utilization of computation resources.</p>
 
-<p style="width: 90%;" class="center"><img src="/assets/images/naive-data-parallelism.png" alt="Naive DP" /></p>
+<p style="width: 90%;" class="center"><img src="/assets/images/post/naive-data-parallelism.png" alt="Naive DP" /></p>
 <p class="image-caption"><em>Fig. 2. A naive model parallelism setup where the model is vertically split into 4 partitions. Data is processed by one worker at a time due to sequential dependency, leading to large “bubbles” of idle time. (Image source: <a href="https://arxiv.org/abs/1811.06965">Huang et al. 2019</a>)</em></p>
 
 <h3 id="pipeline-parallelism">Pipeline Parallelism</h3>
@@ -239,7 +239,7 @@
 
 <p>The GPipe paper observed that the bubble overhead is almost negligible if the number of microbatches is more than 4x the number of partitions \(m &gt; 4d\) (when <a href="#activation-recomputation">activation recomputation</a> is applied).</p>
 
-<p style="width: 80%;" class="center"><img src="/assets/images/gpipe.png" alt="GPipe" /></p>
+<p style="width: 80%;" class="center"><img src="/assets/images/post/gpipe.png" alt="GPipe" /></p>
 <p class="image-caption"><em>Fig. 3. Illustration of pipeline parallelism in GPipe with 4 microbatches and 4 partitions. GPipe aggregates and updates gradients across devices synchronously at the end of every batch. (Image source: <a href="https://arxiv.org/abs/1811.06965">Huang et al. 2019</a>)</em></p>
 
 <p>GPipe achieves almost linear speedup in throughput with the number of devices, although it is not always guaranteed if the model parameters are not evenly distributed across workers.</p>
@@ -247,7 +247,7 @@
 <p><em>PipeDream</em> (<a href="https://cs.stanford.edu/~matei/papers/2019/sosp_pipedream.pdf">Narayanan et al. 2019</a>) schedules each worker to alternatively process the forward and backward passes (<code class="language-plaintext highlighter-rouge">1F1B</code>). 
 PipeDream names each model partition “stage” and each stage worker can have multiple replicas to run data parallelism. In this process, PipeDream uses a deterministic round-robin load balancing strategy to assign work among multiple replicas of stages to ensure that the forward and backward passes for the same minibatch happen on the same replica.</p>
 
-<p style="width: 75%;" class="center"><img src="/assets/images/pipedream.png" alt="PipeDream" /></p>
+<p style="width: 75%;" class="center"><img src="/assets/images/post/pipedream.png" alt="PipeDream" /></p>
 <p class="image-caption"><em>Fig. 4. Illustration of <code class="language-plaintext highlighter-rouge">1F1B</code> microbatch scheduling in PipeDream. (Image source: <a href="https://arxiv.org/abs/1806.03377">Harlap et al. 2018</a>)</em></p>
 
 <p>Since PipeDream does not have an end-of-batch global gradient sync across all the workers, an native implementation of 1F1B can easily lead to the forward and backward passes of one microbatch using different versions of model weights, thus lowering the learning efficiency. PipeDream proposed a few designs to tackle this issue:</p>
@@ -258,19 +258,19 @@ PipeDream names each model partition “stage” and each stage worker can have 
 
 <p>At the beginning of a training run, PipeDream first profiles the computation memory cost and time of each layer in the model and then optimizes a solution for partitioning layers into stages, which is a dynamic programming problem.</p>
 
-<p style="width: 70%;" class="center"><img src="/assets/images/pipedream-results.png" alt="PipeDream experiments" /></p>
+<p style="width: 70%;" class="center"><img src="/assets/images/post/pipedream-results.png" alt="PipeDream experiments" /></p>
 <p class="image-caption"><em>Fig. 5. Results for VGG16 on ILSVRC12. (Top) Accuracy vs time. The integer marks the number of stage workers. ASP =  Asynchronous  parallel &amp; BSP = Bulk synchronous parallels. (Bottom) Training time speedup for different parallelism configurations. Straight pipeline refers to pipeline parallelism without data parallelism. (Image source: <a href="https://arxiv.org/abs/1806.03377">Harlap et al. 2018</a>)</em></p>
 
 <p>Two variations of PipeDream were later proposed to reduce the memory footprint by stashed model versions (<a href="https://arxiv.org/abs/2006.09503">Narayanan et al. 2021</a>).</p>
 
 <p><em>PipeDream-flush</em> adds a globally synchronized pipeline flush periodically, just like GPipe. In this way, it greatly reduces the memory footprint (i.e. only maintain a single version of model weights) by sacrificing a little throughput.</p>
 
-<p style="width: 70%;" class="center"><img src="/assets/images/pipedream-flush.png" alt="PipeDream-flush" /></p>
+<p style="width: 70%;" class="center"><img src="/assets/images/post/pipedream-flush.png" alt="PipeDream-flush" /></p>
 <p class="image-caption"><em>Fig. 6. Illustration of pipeline scheduling in PipeDream-flush. (Image source: (<a href="https://arxiv.org/abs/2006.09503">Narayanan et al. 2021</a>)</em></p>
 
 <p><em>PipeDream-2BW</em> maintains only two versions of model weights, where “2BW” is short for “double-buffered weights”. It generates a new model version every \(k\) microbatches and \(k\) should be larger than the pipeline depth \(d\), \(k &gt; d\). A newly updated model version cannot fully replace the old version immediately since some leftover backward passes still depend on the old version. In total only two versions need to be saved so the memory cost is much reduced.</p>
 
-<p style="width: 95%;" class="center"><img src="/assets/images/pipedream-2bw.png" alt="PipeDream-2BW" /></p>
+<p style="width: 95%;" class="center"><img src="/assets/images/post/pipedream-2bw.png" alt="PipeDream-2BW" /></p>
 <p class="image-caption"><em>Fig. 7. Illustration of pipeline scheduling in PipeDream-2BW. (Image source: (<a href="https://arxiv.org/abs/2006.09503">Narayanan et al. 2021</a>)</em></p>
 
 <h3 id="tensor-parallelism">Tensor Parallelism</h3>
@@ -291,12 +291,12 @@ Y &amp;=\text{GeLU}(XA) \\
 
 \[\text{Attention}(X, Q, K, V) = \text{softmax}(\frac{(XQ) (XK)^\top}{\sqrt{d_k}}) XV\]
 
-<p style="width: 100%;" class="center"><img src="/assets/images/Megatron-LM.png" alt="Megatron LM" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/Megatron-LM.png" alt="Megatron LM" /></p>
 <p class="image-caption"><em>Fig. 8. Illustration of tensor parallelism for key transformer components proposed in Megatron-LM. (Image source: <a href="https://arxiv.org/abs/1909.08053">Shoeybi et al. 2020</a>)</em></p>
 
 <p><a href="https://arxiv.org/abs/2104.04473">Narayanan et al. (2021)</a> combined pipeline, tensor and data parallelism with a new pipeline scheduling strategy and named their approach <em>PTD-P</em>. Instead of only positioning a continuous set of layers (“model chunk”) on a device, each worker can be assigned with multiple chunks of smaller continuous subsets of layers (e.g. device 1 has layers 1, 2, 9, 10; device 2 has layers 3, 4, 11, 12; each has two model chunks). The number of microbatches in one batch should be exactly divided by the number of workers (\(m % d = 0\)). If there are \(v\) model chunks per worker, the pipeline bubble time can be reduced by a multiplier of \(v\) compared to a GPipe scheduling.</p>
 
-<p style="width: 100%;" class="center"><img src="/assets/images/PTD-P-interleaved.png" alt="PTD-P" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/PTD-P-interleaved.png" alt="PTD-P" /></p>
 <p class="image-caption"><em>Fig. 9. (Top) Default <code class="language-plaintext highlighter-rouge">1F1B</code> pipeline schedule as in PipeDream-flush. (Bottom) Interleaved 1F1B pipeline schedule. First model chunks are in dark colors and second chunks are in light colors. (Image source: <a href="https://arxiv.org/abs/2104.04473">Narayanan et al. 202)</a>)</em></p>
 
 <h2 id="mixture-of-experts-moe">Mixture-of-Experts (MoE)</h2>
@@ -313,7 +313,7 @@ Y &amp;=\text{GeLU}(XA) \\
 
 <p>Depending on the gating outputs, not every expert has to be evaluated. When the number of experts is too large, we can consider using a two-level hierarchical MoE.</p>
 
-<p style="width: 100%;" class="center"><img src="/assets/images/moe.png" alt="MoE" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/moe.png" alt="MoE" /></p>
 <p class="image-caption"><em>Fig. 10. Illustration of a mixture-of-experts (MoE) layer. Only 2 out of \(n\) experts are selected and activated by the gating network. (Image source: <a href="https://arxiv.org/abs/1701.06538">Shazeer et al., 2017</a>)</em></p>
 
 <p>A simple choice of \(G\) is to multiply the input with a trainable weight matrix \(G_g\) and then do softmax: \(G_\sigma (x) = \text{softmax}(x W_g)\). However, this produces a dense control vector for gating and does not help save computation resources because we don’t need to evaluate an expert only when \(G^{(i)}(x)=0\). Thus the MoE layer only keeps the top \(k\) values. It also adds tunable Gaussian noise into \(G\) to improve load balancing. This mechanism is called <em>noisy top-k gating</em>.</p>
@@ -335,7 +335,7 @@ H^{(i)}(x) &amp;= (xW_g)^{(i)} + \epsilon \cdot \text{softplus}((xW_\text{noise}
 
 <p>Because every expert network only gets a fraction of training samples (“The shrinking batch problem”), we should try to use a batch size as large as possible in MoE. However, it is restricted by GPU memory. Data parallelism and model parallelism can be applied to improve the throughput.</p>
 
-<p style="width: 100%;" class="center"><img src="/assets/images/moe-experiments.png" alt="MoE experiments" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/moe-experiments.png" alt="MoE experiments" /></p>
 <p class="image-caption"><em>Fig. 11. Test perplexity on 1-Billion-Word language modeling benchmark. (Left) The model capacity increases from left to right, containing 4, 32, 256, 256, 1024 and 4096 experts. (Right) Performance of the 4 billion parameters MoE model, the largest one in the left figure, under different computation budgets. (Image source: <a href="https://arxiv.org/abs/1701.06538">Shazeer et al., 2017</a>)</em></p>
 
 <p><strong>GShard</strong> (<a href="https://arxiv.org/abs/2006.16668">Lepikhin et al., 2020</a>) scales the MoE transformer model up to 600 billion parameters with sharding. The MoE transformer replaces every other feed forward layer with a MoE layer. The <em>sharded MoE transformer</em> only has the MoE layers sharded across multiple machines, while other layers are simply duplicated.</p>
@@ -348,12 +348,12 @@ H^{(i)}(x) &amp;= (xW_g)^{(i)} + \epsilon \cdot \text{softplus}((xW_\text{noise}
   <li><em>Random routing</em>: The 2nd-best expert is selected with a probability proportional to its weight; otherwise, GShard follows a random routing, so as to add some randomness.</li>
 </ul>
 
-<p style="width: 100%;" class="center"><img src="/assets/images/gshard-algo.png" alt="GShard algorithm" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/gshard-algo.png" alt="GShard algorithm" /></p>
 <p class="image-caption"><em>Fig. 12. Pseudo code of the group-level top-2 gating mechanism with auxiliary loss in GShard. (Image source: <a href="https://arxiv.org/abs/2006.16668">Lepikhin et al., 2020</a>)</em></p>
 
 <p><strong>Switch Transformer</strong> (<a href="https://arxiv.org/abs/2101.03961">Fedus et al. 2021</a>) scales the model size up to trillions of parameters (!!) by replacing the dense feed forward layer with a <em>sparse switch FFN layer</em> in which each input is only routed to <em>one</em> expert network. The auxiliary loss for load balancing is \(\text{loss}_\text{aux} = w_\text{aux} \sum_{i=1}^n f_i p_i\) given \(n\) experts, where \(f_i\) is the fraction of tokens routed to the \(i\)-th expert and \(p_i\) is the routing probability for expert \(i\) predicted by the gating network.</p>
 
-<p style="width: 100%;" class="center"><img src="/assets/images/switch-transformer.png" alt="Switch transformer" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/switch-transformer.png" alt="Switch transformer" /></p>
 <p class="image-caption"><em>Fig. 13. Switch transformer. The sparse switch FFN layer is in the blue boxes. (Image source: <a href="https://arxiv.org/abs/2101.03961">Fedus et al. 2021</a>)</em></p>
 
 <p>To improve training stability, switch transformer incorporates the following designs:</p>
@@ -365,7 +365,7 @@ H^{(i)}(x) &amp;= (xW_g)^{(i)} + \epsilon \cdot \text{softplus}((xW_\text{noise}
 
 <p>The switch transformer paper summarized different data and model parallelism strategies for training large models with a nice illustration:</p>
 
-<p style="width: 100%;" class="center"><img src="/assets/images/switch-transformer-parallelism.png" alt="Parallelism strategies" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/switch-transformer-parallelism.png" alt="Parallelism strategies" /></p>
 <p class="image-caption"><em>Fig. 14. An illustration of various parallelism strategies on how (Top) model weights and (Bottom) data are split over multiple GPU cores. In the top row, each color denotes a unique weight matrix. In the bottom row, different colors indicate different sets of tokens.  (Image source: <a href="https://arxiv.org/abs/2101.03961">Fedus et al. 2021</a>)</em></p>
 
 <h2 id="other-memory-saving-designs">Other Memory Saving Designs</h2>
@@ -388,14 +388,14 @@ H^{(i)}(x) &amp;= (xW_g)^{(i)} + \epsilon \cdot \text{softplus}((xW_\text{noise}
 
 <p>Activation recompuation trick can give sublinear memory cost with respect to the model size.</p>
 
-<p style="width: 100%;" class="center"><img src="/assets/images/activation-checkpointing.png" alt="Activation checkpointing experiments" /></p>
+<p style="width: 100%;" class="center"><img src="/assets/images/post/activation-checkpointing.png" alt="Activation checkpointing experiments" /></p>
 <p class="image-caption"><em>Fig. 15. The memory cost of different memory saving algorithms. <u>Sharing</u>: Memory used by intermediate results is recycled when no longer needed. <u>Inplace</u>: Save the output directly into memory of an input value. (Image source: <a href="https://arvix.org/abs/1604.06174">Chen et al. 2016</a>)</em></p>
 
 <h3 id="mixed-precision-training">Mixed Precision Training</h3>
 
 <p><a href="https://arxiv.org/abs/1710.03740">Narang &amp; Micikevicius et al. (2018)</a> introduced a method to train models using half-precision floating point (FP16) numbers without losing model accuracy.</p>
 
-<p style="width: 80%;" class="center"><img src="/assets/images/mixed-precision-training.png" alt="Mixed-precision training" /></p>
+<p style="width: 80%;" class="center"><img src="/assets/images/post/mixed-precision-training.png" alt="Mixed-precision training" /></p>
 <p class="image-caption"><em>Fig. 16. The procedure of mixed precision training at one layer. (Image source: <a href="https://arxiv.org/abs/1710.03740">Narang &amp; Micikevicius, et al. 2018</a>)</em></p>
 
 <p>Three techniques to avoid losing critical information at half-precision:</p>
@@ -405,7 +405,7 @@ H^{(i)}(x) &amp;= (xW_g)^{(i)} + \epsilon \cdot \text{softplus}((xW_\text{noise}
   <li><em>Arithmetic precision</em>. For common network arithmetic (e.g. vector dot-product, reduction by summing up vector elements), we can accumulate the partial results in FP32 and then save the final output as FP16 before saving into memory. Point-wise operations can be executed in either FP16 or FP32.</li>
 </ul>
 
-<p style="width: 60%;" class="center"><img src="/assets/images/gradient-histogram.png" alt="Gradient histogram" /></p>
+<p style="width: 60%;" class="center"><img src="/assets/images/post/gradient-histogram.png" alt="Gradient histogram" /></p>
 <p class="image-caption"><em>Fig. 17. The histogram of gradients in full precision. The left part up to \(2^{-24}\) will be zero-ed off once the model switches to FP16. (Image source: <a href="https://arxiv.org/abs/1710.03740">Narang &amp; Micikevicius, et al. 2018</a>)</em></p>
 
 <p>In their experiments, loss scaling is not needed for some networks (e.g. image classification, Faster R-CNN), but necessary for others (e.g. Multibox SSD, big LSTM language model).</p>
