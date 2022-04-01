@@ -26,7 +26,7 @@
   }
 
   &:hover {
-    color: $blue-color-light;
+    color: hsl(216, 68%, 77%);
     text-decoration: none;
     cursor: pointer;
   }
@@ -58,7 +58,7 @@
     }
 
     &:hover {
-      color: $blue-color-light;
+      color: hsl(216, 68%, 77%);
       text-decoration: none;
       cursor: pointer;
     }
@@ -235,7 +235,7 @@ div.qa {
   margin-bottom: $spacing-unit;
 
   h2 {
-    @include relative-font-size(1.95);
+    @include relative-font-size(1.75);
     margin-top: $spacing-unit * 1.55;
     font-weight: 700;
     @include media-query($on-laptop) {
