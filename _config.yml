@@ -1,10 +1,11 @@
-title: Sun Changsheng 「孙常晟」
+title: Sun Changsheng「孙常晟」
+# title: Sun Changsheng
 name: "Sun Changsheng"
 author: SUN Changsheng
 twitter_username: changsheng_sun
 baseurl: ""
 description: Document my learning notes.
-profile_url: "http://cs-sun.github.io"
+profile_url: "https://sunchangsheng.com"
 
 # Build settings
 markdown: kramdown
