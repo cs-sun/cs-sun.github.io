@@ -319,7 +319,7 @@ pre .lineno { font-size: 14.4px; }
 .site-footer img { width: 26px; height: 26px; margin: 0 4px; display: block; float: left; }
 
 /** Page content */
-.page-content { padding: 30px 0; }
+.page-content { padding: 0 15px 0 15px; }
 
 .page-heading { font-size: 24px; font-weight: 600; }
 
@@ -341,14 +341,14 @@ div.qa { margin: 10px; padding: 10px; }
 div.qa .question { border-radius: 5px; background: #eeeeee; padding: 5px; padding-left: 20px; }
 
 /** Posts */
-.post-header { margin-top: 60px; margin-bottom: 30px; }
+.post-header { margin-top: 45px; margin-bottom: 30px; }
 
-.post-title { font-size: 35.2px; letter-spacing: -1px; line-height: 1.2; font-weight: 600; width: 855px; max-width: 100%; }
-@media screen and (max-width: 900px) { .post-title { font-size: 35.2px; } }
+.post-title { font-size: 28px; letter-spacing: -1px; line-height: 1.2; font-weight: 600; width: 855px; max-width: 100%; }
+@media screen and (max-width: 900px) { .post-title { font-size: 28px; } }
 
 .post-content { margin-bottom: 30px; }
-.post-content h2 { font-size: 28px; margin-top: 46.5px; font-weight: 700; }
-@media screen and (max-width: 900px) { .post-content h2 { font-size: 28px; } }
+.post-content h2 { font-size: 26.4px; margin-top: 45px; font-weight: 700; }
+@media screen and (max-width: 900px) { .post-content h2 { font-size: 26.4px; } }
 .post-content h3 { font-size: 24px; margin-top: 33px; line-height: 1.25; font-weight: 600; }
 @media screen and (max-width: 900px) { .post-content h3 { font-size: 22px; } }
 .post-content h4 { font-size: 17.6px; font-weight: 800; color: #777777; }
