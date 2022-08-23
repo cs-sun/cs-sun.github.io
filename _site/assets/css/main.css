@@ -280,8 +280,8 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 pre .lineno { font-size: 14.4px; }
 
 /** Wrapper */
-.wrapper { max-width: -webkit-calc(850px - (30px * 2)); max-width: calc(850px - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
-@media screen and (max-width: 850px) { .wrapper { max-width: -webkit-calc(850px - (30px)); max-width: calc(850px - (30px)); padding-right: 15px; padding-left: 15px; } }
+.wrapper { max-width: -webkit-calc(920px - (30px * 2)); max-width: calc(920px - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
+@media screen and (max-width: 920px) { .wrapper { max-width: -webkit-calc(920px - (30px)); max-width: calc(920px - (30px)); padding-right: 15px; padding-left: 15px; } }
 
 /** Clearfix */
 .wrapper:after { content: ""; display: table; clear: both; }
@@ -343,16 +343,16 @@ div.qa .question { border-radius: 5px; background: #eeeeee; padding: 5px; paddin
 /** Posts */
 .post-header { margin-top: 45px; margin-bottom: 30px; }
 
-.post-title { font-size: 28px; letter-spacing: -1px; line-height: 1.2; font-weight: 600; width: 807.5px; max-width: 100%; }
-@media screen and (max-width: 850px) { .post-title { font-size: 28px; } }
+.post-title { font-size: 28px; letter-spacing: -1px; line-height: 1.2; font-weight: 600; width: 874px; max-width: 100%; }
+@media screen and (max-width: 920px) { .post-title { font-size: 28px; } }
 
 .post-content { margin-bottom: 30px; }
 .post-content h2 { font-size: 26.4px; margin-top: 45px; font-weight: 700; }
-@media screen and (max-width: 850px) { .post-content h2 { font-size: 26.4px; } }
+@media screen and (max-width: 920px) { .post-content h2 { font-size: 26.4px; } }
 .post-content h3 { font-size: 24px; margin-top: 33px; line-height: 1.25; font-weight: 600; }
-@media screen and (max-width: 850px) { .post-content h3 { font-size: 22px; } }
+@media screen and (max-width: 920px) { .post-content h3 { font-size: 22px; } }
 .post-content h4 { font-size: 17.6px; font-weight: 800; color: #777777; }
-@media screen and (max-width: 850px) { .post-content h4 { font-size: 18px; } }
+@media screen and (max-width: 920px) { .post-content h4 { font-size: 18px; } }
 .post-content a { border-bottom: 1px dotted #bbb; padding-bottom: 1px; }
 .post-content a:hover { color: #2a6dd3; border-bottom: 1px solid #2a6dd3; padding-bottom: 1px; text-decoration: none; }
 
