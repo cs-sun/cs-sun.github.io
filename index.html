@@ -1,270 +1,540 @@
----
-layout: default
----
-
-<div class='other-pages'>
-
-  <style type="text/css">
-    /* Auto-hide profile photo */
-    @media screen and (max-width: 700px) {
-      div#profile_photo { display: none }
-    } 
-  </style>
-
-  <div id="profile_photo">
-    <img src="{{ '/assets/images/scs3.jpg' | relative_url }}" width="200" height="200" style="border-radius: 0%; float: left; padding-right: 20px; padding-left: 10px; padding-top: 0px; padding-bottom: 10px"/>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sun Changsheng | 孙常晟</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="jquery_3.5.1.min.js"></script>
   
-  <!-- <br/> -->
-  <style type="text/css">
-    /* Auto-hide profile photo */
-    @media screen and (min-width: 700px) {
-      div#site-title-na { display: none }
-    } 
-  </style>
-  <div id="site-title-na"><h3>Bio</h3></div>
-	<p>I am currently a Ph.D. student working in <a href="https://www.comp.nus.edu.sg/"> School of Computing</a>, <a href="https://www.nus.edu.sg"> National University of Singapore</a>, supervised by <a href="https://www.comp.nus.edu.sg/~dongjs/"> Prof. Dong Jin Song</a>.</p>
-     
-  <p>My research interests include trustworthy AI, graph neural networks and many other computer science topics.</p>
+  <!-- <link href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Lato:300,400,700|Roboto:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
 
-  <p>I got my Master's and B.Eng. degree in <a href="https://www.nus.edu.sg"> NUS</a> and <a herf="https://en.wikipedia.org/wiki/Xidian_University"> Xidian University</a> respectively.</p>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&family=Mulish:wght@200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!--link rel="stylesheet" href="css/skeleton.css"-->
+  <link rel="stylesheet" type="text/css" href="jgan.css">
+
+  <!--link rel="icon" type="image/png" href="images/favicon.png"-->
+  <script src="utl.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-');
+  </script>
+
+  <!-- FancyBox CSS and JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+</head>
 
 
-  <p>
-    <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ"><img src="https://img.shields.io/badge/Google%20Scholar--green?style=social&logo=GoogleScholar" style="display:inline" alt='Google Scholar'></a> |
+<body>
+  <!-- ================================================================================= -->
+  <!-- NAV BAR -->
+  <!-- ================================================================================= -->
+  <div class="navbar" id="navbar">    
+    <ul>
+        <li>
+          <a href="#about" pagelink=".page-about" class="nav-first-level active">about</a>
+        </li>
+<!-- 
+        <li>
+          <a href="photo.html"  class="nav-first-level active">photo</a>
+        </li> -->
+        <!-- <li>
+          <a href="#research" pagelink=".page-research" class="nav-first-level">research</a>
+        </li> -->
+        
+        <li>
+          <a href="#papers" pagelink=".page-papers" class="nav-first-level">papers</a>
+          <ul class="hide-when-view-less hide-at-first">
+            <!-- <li><a href="#year-tag-2023" class="nav-second-level">2023</a></li> -->
+          </ul>
+        </li>
+
+        <li>
+          <a href="#gallery" pagelink=".page-gallery" class="nav-first-level">gallery</a>
+          <!-- <ul>
+            <li><a href="#services" class="nav-second-level">services</a></li>
+            <li><a href="#teaching" class="nav-second-level">teaching</a></li>
+          </ul> -->
+        </li>
+    </ul>
+</div>
+
+  <div class="container" id="main-container">
+    <div class="header" id="header">
+    <div class="row">
+      <div id="title-container">
+        <div class="title" id="title">
+          SUN CHANGSHENG
+        </div>
+      </div>
+
+      <!-- <div class="navbar-container-h"> -->
+        <nav id="navbar-h" style="line-height: 3; float: right;">
+          <a href="#about" pagelink=".page-about" class="nav-first-level-h active">about</a> |
+          <!-- <a href="#research" pagelink=".page-research" class="nav-first-level-h">research</a> |-->
+          <a href="#papers" pagelink=".page-papers" class="nav-first-level-h">papers</a> | 
+          <a href="#gallery" pagelink=".page-gallery" class="nav-first-level-h">gallery</a>
+      </nav>
+    <!-- </div> -->
+    </div>
+  </div>
+
+  <!-- ================================================================================= -->
+  <!-- ABOUT -->
+  <!-- ================================================================================= -->
+
+  <a class="anchor" id="about"></a>
+  <div class="top placeholder"></div>
+
+  <div class="row section page-about">
+      <!-- <div id="photo" style="
+        width: 130px;
+      	height: 130px;
+      	background-size: 130px;
+      	float: right;
+      	background-image: url(src/scs.jpg);
+      	margin: 0px 5px 10px 30px;"> 
+      </div> -->
+
+      <div id="photo" style="
+        border-radius: 5%;
+        width: 130px;
+      	height: 130px;
+      	background-size: 130px;
+      	float: left;
+      	background-image: url(src/scs.jpg);
+      	margin: 0px 20px 10px 0px;"> 
+      </div>
+
+      <p class="shortspan">
+        I am currently a Ph.D. student working in School of Computing, National University of Singapore, supervised by Prof. Dong Jin Song. 
+      </p> <p class="shortspan">
+        My research interests include trustworthy AI, graph neural networks and many other computer science topics.
+      </p> <p class="shortspan">
+        I got my Master's and B.Eng. degree in NUS and Xidian University respectively.</p>
+    </div>
+
+
+
+  <!--abstract button template-->
+  <span id="abs-btn-template" style="display:none;">
+  <span class="abs-btn" onclick="absButtonClick(this)">
+    <span class="abs-btn-border">[</span><span class="abs-btn-inner"><span class="abs-btn-text">abstract</span>
+  </span><span class="abs-btn-border"><span class="abs-btn-cross">＋</span>]</span>
+  </span>
+  </span>
+
+  <div class="row section page-research">
+      <!-- <div> -->
+        <h2><span class="underline">RESEARCH</span> 🧪
+          <!-- <a id="research" class="anchor"></a> -->
+        </h2>
+      <!-- </div> -->
+      <div class="row">
+        coming soon...
+      </div>
+  </div>
+
+
+
+  <!-- ================================================================================= -->
+  <!-- LINKS -->
+  <!-- ================================================================================= -->
+  <div class="row section page-about">
+      <h2 id="links">
+        <span class="underline">LINKS</span> 📎
+        <!-- <a id="links" class="anchor"></a> -->
+      </h2>
+      <p>
+        <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ"><img src="https://img.shields.io/badge/Google%20Scholar--green?style=social&logo=GoogleScholar" style="display:inline" alt='Google Scholar'></a> |
     <a href="https://dblp.org/pid/134/1902.html"><img src="https://img.shields.io/badge/DBLP--green?style=social&logo=dblp" style="display:inline" alt='dblp'> </a> |
     <a href="https://github.com/cs-sun"><img src="https://img.shields.io/badge/GitHub--green?style=social&logo=github" style="display:inline" alt='GitHub'></a> |
     <a href="https://www.linkedin.com/in/changshengsun/"><img src="https://img.shields.io/badge/LinkedIn--green?style=social&logo=Linkedin" style="display:inline" alt='Linkedin'></a> |
-    <a href="https://twitter.com/changsheng_sun"><img src="https://img.shields.io/badge/Twitter--green?style=social&logo=twitter" style="display:inline" alt='Twitter'></a> |
-    <a href="{{ '/friends.html' | relative_url }}"> <img src="https://img.shields.io/badge/Friends--green?style=social&logo=GitHubSponsors" style="display:inline" alt='Friends'> </a> |
-    <a href="{{ '/cal.html' | relative_url }}"> <img src="https://img.shields.io/badge/Calendar--green?style=social&logo=GoogleCalendar" style="display:inline" alt='Calendar'> </a>
-  </p>
-  <!-- <p>I obtained my Master's degree in <a href="https://www.comp.nus.edu.sg/"> School of Computing</a>, <a href="https://www.nus.edu.sg"> National University of Singapore</a> in 2021. Before that, I got my B.Eng. degree in the <a href="https://cs.xidian.edu.cn">School of Computer Science and Technology</a>, <a herf="https://en.wikipedia.org/wiki/Xidian_University">Xidian University</a> in 2019. </p> -->
+    <a href="https://twitter.com/changsheng_sun"><img src="https://img.shields.io/badge/Twitter--green?style=social&logo=twitter" style="display:inline" alt='Twitter'></a> 
+    <!-- <a href="{{ '/friends.html' | relative_url }}"> <img src="https://img.shields.io/badge/Friends--green?style=social&logo=GitHubSponsors" style="display:inline" alt='Friends'> </a> |
+    <a href="{{ '/cal.html' | relative_url }}"> <img src="https://img.shields.io/badge/Calendar--green?style=social&logo=GoogleCalendar" style="display:inline" alt='Calendar'> </a> -->
   
+      </p>
+  </div>
 
 
-  <!-- <b> -> See my <a href="{{ '/blog.html' | relative_url }}">Blog Posts</a>.</b> <br/><br/> -->
+  <!-- ================================================================================= -->
+  <!-- papers -->
+  <!-- ================================================================================= -->
+  <div class="row section page-papers page-about paperlist">
+    <!-- <div class="paperlist"> -->
+      <h2><span class="underline">PUBLICATIONS</span> 🧻
+        <!-- <a href="#none" id="paper-view-toggle" class="view-all" style="font-size:1.4rem;font-weight:400;">[view full list]</a> -->
+        <a class="view-all page-about" style="font-size:1.4rem; font-weight:400; cursor:pointer;">[view full list]</a>
+        <!-- <a id="papers" class="anchor"></a> -->
+      </h2>
+    <!-- </div> -->
 
 
-  <!-- <a class="page-link" href="{{ '/cal.html' | relative_url }}">&#128197; <b>My free/busy calendar</b></> -->
-
-  </br>
-  <div><h3>PUBLICATIONS</h3></div>
-  <!-- See More <a href="{{ site.baseurl }}/publications.html">Publications</a> -->
-  <!-- <b>See More at -> </b>
-  <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ">[Google Scholar]</a>
-  <a href="https://dblp.org/pid/134/1902.html"> [dblp: Changsheng Sun]</a>
-  <br/> -->
-	<p>
-		<ul>
-    <li>
-      <!-- <a style="color:red;" > [New!] </a> -->
-      <!-- <b><a href="assets/papers/InputReflector-Paper.pdf"> Repairing Failure-inducing Inputs with Input Reflection.</a></b> -->
-      <b>Repairing Failure-inducing Inputs with Input Reflection.</b> <br/>
-      Yan Xiao, Yun Lin, Ivan Beschastnikh, <u>Changsheng Sun</u>, David S. Rosenblum, Jin Song Dong.
-      <br/>
-      The 37th IEEE/ACM International Conference on Automated Software Engineering (<a href="https://conf.researchr.org/home/ase-2022">ASE</a>), 2022.
-      <br/>
-      <a href="assets/papers/InputReflector-ASE22-Paper.pdf"><img src="https://img.shields.io/badge/ASE'22-Paper-green?style=social&logo=acm" style="display:inline" alt="Paper(PDF)"></a> |
-      <!-- (<b><a href="https://conf.researchr.org/home/ase-2022">ASE'22</a></b>) -->
-      <!-- [<a href="assets/papers/InputReflector-Paper.pdf">Paper</a>] -->
-      <a href="https://github.com/cs-sun/InputReflector"><img src="https://img.shields.io/badge/InputReflector-Code-blue?style=social&logo=github" style="display:inline" alt='Code(GitHub)'></a> 
-      
-    </li> 
-    <br/>
-
-    <li>
-      <!-- <b><a href="https://arxiv.org/pdf/2103.02371.pdf"> Self-Checking Deep Neural Networks in Deployment.</a></b> <br/> -->
-      <b>Self-Checking Deep Neural Networks in Deployment.</b> <br/>
-      Yan Xiao, Ivan Beschastnikh, David S. Rosenblum, <u>Changsheng Sun</u>, Sebastian Elbaum, Yun Lin, Jin Song Dong. 
-      <br/>
-      The 43rd IEEE/ACM International Conference on Software Engineering (<a href="https://conf.researchr.org/home/icse-2021">ICSE</a>), 2021.
-      <br/>
-      <a href="assets/papers/SelfChecker-ICSE21-Paper.pdf"><img src="https://img.shields.io/badge/ICSE'21-Paper-green?style=social&logo=acm" style="display:inline" alt="Paper(arXiv)"></a> |
-      <a href="https://github.com/cs-sun/SelfChecker"><img src="https://img.shields.io/badge/SelfChecker-Code-blue?style=social&logo=github" style="display:inline" alt="Code(GitHub)"></a> |
-      <a href="https://www.youtube.com/watch?v=0k7H3ZNgARE"><img src="https://img.shields.io/badge/YouTube-Presentation-red?style=social&logo=youtube" style="display:inline" alt="Video"></a> 
-      
-      <!-- (<b><a href="https://conf.researchr.org/home/icse-2021">ICSE'21</a></b>) -->
-      <!-- [<a href="https://arxiv.org/pdf/2103.02371.pdf">Paper</a>]
-      [<a href="https://www.youtube.com/watch?v=0k7H3ZNgARE">Video</a>]
-      [<a href="https://github.com/self-checker/SelfChecker">Code</a>]  -->
-    </li> 
-    <br/>
-
-    <li>
-      <!-- <b><a href="https://proceedings.neurips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf"> Digraph Inception Convolutional Networks.</a></b> -->
-      <b>Digraph Inception Convolutional Networks.</b> <br/>
-      Zekun Tong, Yuxuan Liang, <u>Changsheng Sun</u>, Xinke Li, David S. Rosenblum, Andrew Lim.
-      <br/>
-      Thirty-fourth Conference on Neural Information Processing Systems (<a href="https://nips.cc/Conferences/2020">NeurIPS</a>), 2020.
-      <br/>
-      <a href="https://proceedings.neurips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf"><img src="https://img.shields.io/badge/NeurIPS'20-Paper-green?style=social&logo=Files" style="display:inline" alt='Paper(PDF)'></a> |
-      <a href="assets/papers/DiGCN-NeurIPS20-Poster.pdf"><img src="https://img.shields.io/badge/NeurIPS'20-Poster-green?style=social&logo=LibreOffice" style="display:inline" alt='Poster(PDF)'></a> |
-      <a href="https://github.com/flyingtango/DiGCN"><img src="https://img.shields.io/badge/DiGCN-Code-blue?style=social&logo=github" style="display:inline" alt='Code(GitHub)'></a>
-      <!-- <a href="https://github.com/cs-sun/SelfChecker"><img src="https://img.shields.io/badge/YouTube--red?style=social&logo=youtube" style="display:inline" alt='Paper PDF'></a> -->
-    
-      <!-- (<b><a href="https://nips.cc/Conferences/2020">NeurIPS'20</a></b>)
-      [<a href="https://proceedings.neurips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf">Paper</a>]
-      [<a href="https://zekuntong.com/files/digcn_poster.pdf">Poster</a>]
-      [<a href="https://github.com/flyingtango/DiGCN">Code</a>]  -->
-    </li>
-     
-    <br/>
-    <li>
-      <!-- <b><a href="https://proceedings.neurips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf"> Digraph Inception Convolutional Networks.</a></b> -->
-      <b>Directed Graph Convolutional Network.</b> <br/>
-      Zekun Tong, Yuxuan Liang, <u>Changsheng Sun</u>, David S. Rosenblum, Andrew Lim.
-      <br/>
-      arXiv preprint arXiv:2004.13970, 2020.
-      <br/>
-      <a href="https://arxiv.org/abs/2004.13970"><img src="https://img.shields.io/badge/arXiv-Paper-green?style=social&logo=arxiv" style="display:inline" alt='Paper(PDF)'></a>
-      <!-- <a href="https://github.com/cs-sun/SelfChecker"><img src="https://img.shields.io/badge/YouTube--red?style=social&logo=youtube" style="display:inline" alt='Paper PDF'></a> -->
-      <!-- (<b><a href="https://nips.cc/Conferences/2020">NeurIPS'20</a></b>)
-      [<a href="https://proceedings.neurips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf">Paper</a>]
-      [<a href="https://zekuntong.com/files/digcn_poster.pdf">Poster</a>]
-      [<a href="https://github.com/flyingtango/DiGCN">Code</a>]  -->
-    </li> 
-
-		</ul>
-	</p>
-
-<!-- 
-  <div><h3>EDUCATION</h3></div>
-    <ul>
-      <li>
-        <b>Doctor of Philosophy</b> (Computer Science) 
-        (2022 - present &nbsp) 
-        <br/> School of Computing, National University of Singapore, Singapore. 
-        <br/>
-      </li>
-
-      <li>
-        <b>Master of Computing</b> (Artificial Intelligence)
-        (2020 - 2021) 
-        <br/> School of Computing, National University of Singapore, Singapore. 
-        <br/>
-      </li>
-
-      <li>
-        <b>Bachelor of Engineering </b> (Computer Science)
-        (2015 - 2019) 
-        <br/> School of Computer Science and Technology, Xidian University, Xi’an, Shaanxi, China.  <br/>
-      </li>
-  </ul>
- -->
-
-
-
-  <div><h3>WORK EXPERIENCES</h3></div>
-    <ul>
-      <li>
-        <b>Research Assistant</b> @ <a href="https://trustdnn.comp.nus.edu.sg/">TrustDNN</a>, NUS School of Computing, NUS, Singapore.
-        (2021) 
-        <br/>
-      </li>
-
-      <li>
-        <b>Research Intern</b> @ <a href="https://www.comp.nus.edu.sg/~david/">NUS-Singtel Cyber Security R&D Lab</a>, Singapore.
-        (2020) 
-        <br/>
-      </li>
-
-      <!-- <li>
-        <b>Undergrad Research Assistant</b> @ <a href="https://lihuixidian.github.io/">Data Engineering and Security Lab</a>, Xidian Univ., China. 
-        (2018 - 2019) 
-        <br/>
-      </li> -->
-
-      <li>
-        <b>Research Intern & Algorithm Engineer</b> @ <a href="https://icity.jd.com/english">JD Intelligent Cities Research</a>, China. 
-        (2018) 
-        <br/>
-      </li>
-    </ul>
-
-    <!-- <style>
-      * {
-        box-sizing: border-box;
-      }
-      
-      .row {
-        display: flex;
-      }
-      
-      /* Create three equal columns that sits next to each other */
-      .column {
-        flex: 33.33%;
-        padding: 5px;
-      }
-      </style>
-    <div class="row">
-      <div class="column">
-        <img src="/assets/images/Xidian_logo.png" alt="Xidian University" height="60px" style="float: left">
-      </div>
-
-      <div class="column">
-        <img src="/assets/images/SoC_logo.png" alt="NUS"  height="60px" style="float: left">
-      </div>
-
-      <div class="column">
-        <img src="/assets/images/jd_logo.png" alt="JD.com" height="40px" style="float: left">
-      </div>
-    </div> 
-     -->
-
-    <!-- <img src="/assets/images/ms_logo.png" height="65" alt=" /"> -->
-
-
-    <!-- <div><h3>LINKS</h3></div> -->
-    <!-- <b><a href="{{ site.baseurl }}/assets/CV202204-ChangshengSun.pdf">Curriculum Vitae</a>.</b> (PDF, Updated 2022-04-01)<br/><br/> -->
-
-
-
-  <div><h3>CONTACT</h3></div>
-    <p>
-    
-    <b>Sun Changsheng</b> (孙常晟)<br/><br/>
-
-    <a href="https://nus-plse.github.io/"><b>Programming Languages & Software Engineering Lab (PLSE@NUS)</b></a>, <br/> 
-    Computing 3 #02-20,<br/>
-    11 Research Link, Singapore 119391.<br/>
-    <br/>
-
-    <b>Email:</b> <code style="font-family:'Lucida Console', monospace">cssun [at] u [dot] nus [dot] edu</code>
-    <br/>
+    <p id="paper-external-links" class="page-papers hide-when-view-less">
+        [ <a href="https://dblp.org/pid/134/1902.html">dblp</a> |
+        <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ">Google scholar</a> ]
     </p>
-    
-    <!-- <p>Fun fact: my name in Chinese character is "荔", which means <a href="https://en.wikipedia.org/wiki/Lychee" target="_blank">lychee</a>, a type of fruit popular in southeastern China.</p> -->
-    
-	<!-- <p style="color: #aaaaaa; font-size: 85%;">I snack a lot while writing my blogs. Well, it is actually more like, no snack no will power. If you enjoy my posts, I wouldn't mind for 1-3 dollars donation to my <a href="https://venmo.com/lilianweng" target="_blank">venmo</a> or <a href="https://paypal.me/LilianWeng" target="_blank">paypal</a>, so I can buy more <a href="https://www.instagram.com/p/CAd9qnMD4Ps/" target="_blank">chips</a> :P</p> -->
 
 
-  <div class="site-links">
-    <p>
-        <!-- <a href="{{ site.baseurl }}/assets/CV202204-ChangshengSun.pdf" target="_blank">
-            <img src="{{ '/assets/images/logo_CV.png' | relative_url }}" alt="CV" />
-        </a> -->
-        <!-- <a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ" target="_blank">
-            <img src="{{ '/assets/images/logo_scholar.png' | relative_url }}" alt="Google Scholar"/>
-        </a>
-        <a href="https://www.linkedin.com/in/changshengsun/" target="_blank">
-          <img src="{{ '/assets/images/logo_linkedin.png' | relative_url }}" alt="LinkedIn"/>
-        </a>
-        <a href="https://github.com/cs-sun" target="_blank">
-            <img src="{{ '/assets/images/logo_github.png' | relative_url }}" alt="GitHub"/>
-        </a>
-        <a href="https://www.instagram.com/changsheng_sun/" target="_blank">
-            <img src="{{ '/assets/images/logo_instagram.png' | relative_url }}" alt="Instagram"/>
-        </a>
-        <a href="https://twitter.com/changsheng_sun/" target="_blank">
-            <img src="{{ '/assets/images/logo_twitter.png' | relative_url }}" alt="Twitter"/>
-        </a> -->
+    <p class="footnote">
+      <!-- <span style="background-color: #383838;
+      color: white;
+      border-radius: 3px;
+      padding: 2px;
+      margin-right: 2px;
+      font-size: 1rem;">αβ</span>  -->
+      <!-- ※ denotes alphabetical ordering of authors. -->
+      <!-- <a href="http://www.ams.org/profession/leaders/CultureStatement04.pdf?fbclid=IwAR3L5L-09zvS-7C7s1_tcVVvsRuVM6Y5chdTLXsGHMW9iH7faknK7YXUEyQ">(Why?)</a> -->
+    </p>
+
+<!-- ====================-->
+    <!-- Templates -->
+    <!-- 
+    <li class="hide-when-view-less"></li>
+    <li class="alphabetical"></li>
+    
+    <li>
+        <span class="author_me">Changsheng Sun</span>, AUTHOR. <br/>
+        <span class="newicon"></span>
+        <span class="papername">PAPERTITLE</span> <span class="confname">CONFERENCENAME</span>.
+        <span class="paper-links-block">
+          <a class="paper-link" href="PAPERLINK">[pdf </a>|
+          <a class="paper-link" href="CODELINK"> code]</a>
+          <span class="abs-btn-container"></span>
+        </span>
+        <p class="abs-text">
+          ABSTRACT<a href="assets/papers/InputReflector-ASE22-Paper.pdf"><img src="https://img.shields.io/badge/ASE'22-Paper-green?style=social&amp;logo=acm" style="display:inline" alt="Paper(PDF)"></a>
+        </p>
+    </li> 
+  -->
+  
+<!-- ========================= -->
+
+  	<div class="paperlist"> <ul>
+
+
+<!-- ====================
+==        2024       ==
+========================= -->
+<hr class="year-sep hide-when-view-less">
+<li class="year-tag hide-when-view-less">2024<a class="anchor" id="year-tag-2024"></a></li>
+
+<li>
+  Xinke Li, Junchi Lu, Henghui Ding
+  <span class="author_me">Changsheng Sun</span>, Joey Tianyi Zhou, Chee Yeow Meng. <br/>
+  <span class="newicon"></span>
+  <span class="papername">PointCVaR: Risk-optimized Outlier Removal for Robust 3D Point Cloud Classification.</span> <span class="confname">Thirty-Eighth AAAI Conference on Artificial Intelligence (AAAI), 2024</span>.
+  <span class="paper-links-block">
+    <a class="paper-link" href="">[pdf </a>|
+    <a class="paper-link" href=""> website </a>|
+    <a class="paper-link" href=""> code]</a>
+    <!-- <span class="abs-btn-container"></span> -->
+  </span>
+  <p class="abs-text">
+  </p>
+</li> 
+       
+<!-- ====================
+==        2022 ==
+========================= -->
+<hr class="year-sep hide-when-view-less">
+<li class="year-tag hide-when-view-less">2022<a class="anchor" id="year-tag-2022"></a></li>
+    
+        <li>
+        Yan Xiao, Yun Lin, Ivan Beschastnikh, <span class="author_me">Changsheng Sun</span>, David S. Rosenblum, Jin Song Dong. <br/>
+        <!-- <span class="newicon"></span> -->
+        <span class="papername">Repairing Failure-inducing Inputs with Input Reflection.</span> <span class="confname">The 37th IEEE/ACM International Conference on Automated Software Engineering (<a href="https://conf.researchr.org/home/ase-2022">ASE</a>) 2022</span>.
+        <span class="paper-links-block">
+          <a class="paper-link" href="https://sunchangsheng.com/assets/papers/InputReflector-ASE22-Paper.pdf">[pdf </a>|
+          <a class="paper-link" href="https://github.com/cs-sun/InputReflector"> code]</a>
+          <!-- <span class="abs-btn-container"></span> -->
+        </span>
+        <p class="abs-text">
+        </p>
+    </li> 		
+
+    <li>
+      Hui Li, Mengting Xu, Sourav S Bhowmick, Joty Shafiq Rayhan, <span class="author_me">Changsheng Sun</span>, Jiangtao Cui. <br/>
+     <!-- <span class="newicon"></span> -->
+     <span class="papername">PIANO: Influence Maximization Meets Deep Reinforcement Learning.</span> <span class="confname">IEEE Transactions on Computational Social Systems</span>.
+     <span class="paper-links-block">
+       <a class="paper-link" href="https://raihanjoty.github.io/papers/li-et-al-piano-ieee-2022.pdf">[pdf </a>|
+       <a class="paper-link" href="https://ieeexplore.ieee.org/abstract/document/9769766/"> ieee]</a>
+       <span class="abs-btn-container"></span>
+     </span>
+     <p class="abs-text">
+       Since its introduction in 2003, the influence maximization (IM) problem has drawn significant research attention in the literature. The aim of IM, which is NP-hard, is to select a set of k users known as seed users who can influence the most individuals in the social network. The state-of-the-art algorithms estimate the expected influence of nodes based on sampled diffusion paths. As the number of required samples has been recently proven to be lower bounded by a particular threshold that presets tradeoff between the accuracy and the efficiency, the result quality of these traditional solutions is hard to be further improved without sacrificing efficiency. In this article, we present an orthogonal and novel paradigm to address the IM problem by leveraging deep reinforcement learning (RL) to estimate the expected influence. In particular, we present a novel framework called deeP reInforcement leArning-based iNfluence …
+     </p>
+ </li> 
+
+ <!-- ====================
+==        2021 ==
+========================= -->
+<hr class="year-sep hide-when-view-less">
+<li class="year-tag hide-when-view-less">2021<a class="anchor" id="year-tag-2021"></a></li>
+
+    <li>
+      Yan Xiao, Ivan Beschastnikh, David S. Rosenblum, <span class="author_me">Changsheng Sun</span>, Sebastian Elbaum, Y. Lin, Jin Song Dong.<br/>
+      <!-- <span class="newicon"></span> -->
+      <span class="papername">Self-Checking Deep Neural Networks in Deployment.</span> <span class="confname">The 43rd IEEE/ACM International Conference on Software Engineering (ICSE), 2021.</span>.
+      <span class="paper-links-block">
+        <a class="paper-link" href="https://sunchangsheng.com/assets/papers/SelfChecker-ICSE21-Paper.pdf">[pdf </a>|
+        <a class="paper-link" href="https://github.com/cs-sun/SelfChecker"> code]</a>
+        <!-- <span class="abs-btn-container"></span> -->
+      </span>
+      <p class="abs-text">
+        ABSTRACT<a href="assets/papers/InputReflector-ASE22-Paper.pdf"><img src="https://img.shields.io/badge/ASE'22-Paper-green?style=social&amp;logo=acm" style="display:inline" alt="Paper(PDF)"></a>
+      </p>
+  </li> 
+    
+<!-- ====================
+==        2020 ==
+========================= -->
+<hr class="year-sep hide-when-view-less">
+<li class="year-tag hide-when-view-less">2020<a class="anchor" id="year-tag-2020"></a></li>
+  <li>
+    Zekun Tong, Yuxuan Liang, <span class="author_me">Changsheng Sun</span>, Xinke Li, David S. Rosenblum, Andrew Lim. <br/>
+    <!-- <span class="newicon"></span> -->
+    <span class="papername">Digraph Inception Convolutional Networks.</span> 
+    <span class="confname">Thirty-fourth Conference on Neural Information Processing Systems (NeurIPS), 2020.</span>.
+    <span class="paper-links-block">
+      <a class="paper-link" href="https://proceedings.neurips.cc/paper/2020/file/cffb6e2288a630c2a787a64ccc67097c-Paper.pdf">[pdf </a>|
+      <a class="paper-link" href="https://sunchangsheng.com/assets/papers/DiGCN-NeurIPS20-Poster.pdf"> poster </a>|
+      <a class="paper-link" href="https://github.com/flyingtango/DiGCN"> code]</a>
+      <!-- <span class="abs-btn-container"></span> -->
+    </span>
+    <p class="abs-text">
+    </p>
+  </li> 
+
+<!-- ====================
+==     Preprints       ==
+========================= -->
+<hr class="year-sep hide-when-view-less">
+<li class="year-tag hide-when-view-less">preprints<a class="anchor" id="year-tag-prep"></a></li>
+
+<li class="hide-when-view-less">
+  Yan Xiao, Yun Lin, Ivan Beschastnikh, <span class="author_me">Changsheng Sun</span>, David S Rosenblum, Jin Song Dong <br/>
+ <!-- <span class="newicon"></span> -->
+ <span class="papername">Generalizing Neural Networks by Reflecting Deviating Data in Production</span> <span class="confname">arXiv:2110.02718</span>.
+ <span class="paper-links-block">
+  <a class="paper-link" href="https://arxiv.org/abs/2110.02718">[arXiv </a>|
+  <a class="paper-link" href="https://arxiv.org/pdf/2110.02718"> pdf]</a>
+   <span class="abs-btn-container"></span>
+ </span>
+ <p class="abs-text">
+   ABSTRACT<a href="assets/papers/InputReflector-ASE22-Paper.pdf"><img src="https://img.shields.io/badge/ASE'22-Paper-green?style=social&amp;logo=acm" style="display:inline" alt="Paper(PDF)"></a>
+ </p>
+</li> 
+
+<li class="hide-when-view-less">
+  Zekun Tong, Yuxuan Liang, <span class="author_me">Changsheng Sun</span>, David S. Rosenblum, Andrew Lim. <br/>
+ <!-- <span class="newicon"></span> -->
+ <span class="papername">Directed graph convolutional network.</span> <span class="confname">arXiv:2004.13970</span>.
+ <span class="paper-links-block">
+  <a class="paper-link" href="https://arxiv.org/abs/2004.13970">[arXiv </a>|
+  <a class="paper-link" href="https://arxiv.org/pdf/2004.13970"> pdf]</a>
+   <span class="abs-btn-container"></span>
+ </span>
+ <p class="abs-text">
+   ABSTRACT<a href="assets/papers/InputReflector-ASE22-Paper.pdf"><img src="https://img.shields.io/badge/ASE'22-Paper-green?style=social&amp;logo=acm" style="display:inline" alt="Paper(PDF)"></a>
+ </p>
+</li> 
+
+<li class="hide-when-view-less">
+Hui Li, Mengting Xu, Sourav S Bhowmick, <span class="author_me">Changsheng Sun</span>, Zhongyuan Jiang, Jiangtao Cui <br/>
+<!-- <span class="newicon"></span> -->
+<span class="papername">Disco: Influence maximization meets network embedding and deep learning.</span> 
+<span class="confname">arXiv:1906.07378.</span>.
+<span class="paper-links-block">
+<a class="paper-link" href="https://arxiv.org/abs/1906.07378">[arXiv </a>|
+<a class="paper-link" href="https://arxiv.org/pdf/1906.07378"> pdf]</a>
+<span class="abs-btn-container"></span>
+</span>
+<p class="abs-text">
+Since its introduction in 2003, the influence maximization (IM) problem has drawn significant research attention in the literature. The aim of IM is to select a set of k users who can influence the most individuals in the social network. The problem is proven to be NP-hard. A large number of approximate algorithms have been proposed to address this problem. The state-of-the-art algorithms estimate the expected influence of nodes based on sampled diffusion paths. As the number of required samples have been recently proven to be lower bounded by a particular threshold that presets tradeoff between the accuracy and efficiency, the result quality of these traditional solutions is hard to be further improved without sacrificing efficiency. In this paper, we present an orthogonal and novel paradigm to address the IM problem by leveraging deep learning models to estimate the expected influence. Specifically, we present a novel framework called DISCO that incorporates network embedding and deep reinforcement learning techniques to address this problem. Experimental study on real-world networks demonstrates that DISCO achieves the best performance w.r.t efficiency and influence spread quality compared to state-of-the-art classical solutions. Besides, we also show that the learning model exhibits good generality.
+</p>
+</li> 
+
+    <a class="anchor end-second-level"></a>
+    
+    </ul></div>
+  </div>
+
+<!-- ================================================================================= -->
+<!-- TEACHING -->
+<!-- ================================================================================= -->
+<div class="row section page-about">
+    <h2>
+      <span class="underline">TEACHING</span> 🎓
+      <!-- <a id="teaching" class="anchor"></a> -->
+    </h2>
+
+    <!--2020-->
+    <div class="row papercontainer">
+      <div class="paperlist">
+      <ul>
+        
+        <li>
+          <a href="https://www.comp.nus.edu.sg/cugresource/soc-sched/" class="papername">CS5232 Formal Specification and Design Techniques</a> (2024), Teaching Assistant, NUS
+        </li>
+        
+        <li>
+          <a href="https://www.comp.nus.edu.sg/cugresource/soc-sched/" class="papername">CS4218 Software Testing</a> (2023), Teaching Assistant, NUS
+        </li>
+
+        <li>
+          <a href="https://www.comp.nus.edu.sg/cugresource/soc-sched/" class="papername">CS4211 Formal Methods for Software Engineering</a> (2022), Teaching Assistant, NUS
+        </li>
+        
+      </ul>
+    </div>
+    </div>
+</div>
+
+  <!-- ================================================================================= -->
+  <!-- MISC -->
+  <!-- ================================================================================= -->
+  <div class="row section page-null" id="bio">
+    <h2><span class="underline">BIO</span> 🛸</h2>
+    <p class="shortspan">
+    PhD Candidate @<a href="https://www.nus.edu.sg/">NUS</a> (supervisor: <a href="https://www.comp.nus.edu.sg/~dongjs/" target="_blank">Dong Jin Song</a>)&#9668;
+    MComp @<a href="https://www.nus.edu.sg/">NUS</a>&#9668;
+    Research Intern & Algorithm Engineer @ <a href="https://icity.jd.com/english">JD Intelligent Cities Research</a> , China. (2018) &#9668;
+    BEng @<a href="https://en.xidian.edu.cn">Xidian University</a>.
     </p>
   </div>
 
-    <p style="color: #aaaaaa; font-size: 85%;"> Last Updated on 2023-04-06</p>
-    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=8a8a8a&w=300&t=tt&d=h-U9FZqTwQPIel_60q9-Po0q9dYG9EvBqNQK0x5Gi7A&co=ffffff&ct=7d7d7d&cmo=697387&cmn=40609e'></script>
-  
+<!-- ================================================================================= -->
+<!-- CONTACT -->
+<!-- ================================================================================= -->
+<div class="row section page-about">
+    <h2>
+      <span class="underline">CONTACT</span> 📍
+    </h2>
+    
+    <b><u>Sun</u> Changsheng</b> (<u>孙</u>常晟)<br/>
+    <a href="https://nus-plse.github.io/">Programming Languages & Software Engineering Lab (PLSE@NUS)</a>, <br/> 
+    Computing 3 #02-20,<br/>
+    11 Research Link, Singapore 119391.<br/><br/>
+    Email: <a style="font-family:'monospace', monospace">cssun[at]u[dot]nus[dot]edu</a><br/>
+    <!-- </p> -->
 </div>
 
 
+<div class="row section page-gallery">
+  <h2><span class="underline">PHOTO GALLERY</span> 📸</h2>
+  Here are some selected photos, see more at my Instagram: <a href="https://www.instagram.com/changsheng_sun/">changsheng_sun</a>.</br>
+  <!-- <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CvZ0hKVP5CZ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CvZ0hKVP5CZ/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">在 Instagram 查看这篇帖子</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CvZ0hKVP5CZ/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">孙常晟 (@changsheng_sun) 分享的帖子</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script> -->
+  <p class="footnote">
+    <!-- <span style="background-color: #383838;
+    color: white;
+    border-radius: 3px;
+    padding: 2px;
+    margin-right: 2px;
+    font-size: 1rem;">αβ</span>  -->
+    
+    ※ click to show large image.
+    <!-- <a href="http://www.ams.org/profession/leaders/CultureStatement04.pdf?fbclid=IwAR3L5L-09zvS-7C7s1_tcVVvsRuVM6Y5chdTLXsGHMW9iH7faknK7YXUEyQ">(Why?)</a> -->
+  </p>
+  <div class="row papercontainer">
+    <div class="paperlist">
+      <ul>
+        <!-- Gallery Item -->
+        <li>
+          <a href="src/Bromo2.jpeg" data-fancybox="photo" data-caption="Mount Bromo, is an active somma volcano and part of the Tengger mountains, in East Java, Indonesia.">
+            <img src="src/Bromo2.jpeg" alt="Image Description" style="width:100%; height:auto;">
+          </a>
+          <a href="src/Bromo1.jpeg" data-fancybox="photo" data-caption="Mount Bromo, a close look.">
+            <img src="src/Bromo1.jpeg" alt="Image Description" style="width:100%; height:auto;">
+          </a>
+          &#9668 Mount Bromo, is an active somma volcano and part of the Tengger mountains, in East Java, Indonesia.
+        </li>
+
+        <li>
+          <a href="src/NY.jpg" data-fancybox="photo" data-caption="New York City Midtown with One World Trade Center, shot fomr Empire State Building at Sunset.">
+            <img src="src/NY.jpg" alt="Image Description" style="width:100%; height:auto;">
+          </a>
+          &#9668 New York City Midtown with One World Trade Center, shot from Empire State Building at Sunset.
+        </li>
+
+        <!-- 
+        <li>
+          <a href="IMGPATH" data-fancybox="photo" data-caption="CAPTION">
+            <img src="IMGPATH" alt="Image Description" style="width:100%; height:auto;">
+          </a>
+          CAPTION
+        </li> 
+      -->
+
+      <li>
+        <a href="src/Ali.jpg" data-fancybox="photo" data-caption="Alishan Range">
+          <img src="src/Ali.jpg" alt="Image Description" style="width:100%; height:auto;">
+        </a>
+        &#9668 Alishan Range.
+      </li> 
+
+      <li>
+        <a href="src/Portland2.JPG" data-fancybox="photo" data-caption="Portland Head Light coastline">
+          <img src="src/Portland2.JPG" alt="Image Description" style="width:100%; height:auto;">
+        </a>
+        &#9668 Portland Head Light coastline.
+      </li> 
+
+      <li>
+        <a href="src/Qingshui1.jpg" data-fancybox="photo" data-caption="Qingshui Cliff, Hualien County, Taiwan.">
+          <img src="src/Qingshui1.jpg" alt="Image Description" style="width:100%; height:auto;">
+        </a>
+
+        <a href="src/Qingshui2.jpg" data-fancybox="photo" data-caption="Qingshui Cliff, Hualien County, Taiwan.">
+          <img src="src/Qingshui2.jpg" alt="Image Description" style="width:100%; height:auto;">
+        </a>
+        &#9668 Qingshui Cliff, Hualien County, Taiwan.
+      </li> 
+
+      <li>
+        <a href="src/TempleStreet.jpg" data-fancybox="photo" data-caption="Temple Street is a street located in the areas of Jordan and Yau Ma Tei in Kowloon, Hong Kong. It is known for its night market and as one of the busiest flea markets at night in the territory.">
+          <img src="src/TempleStreet.jpg" alt="Image Description" style="width:100%; height:auto;">
+        </a>
+        &#9668 Temple Street, Kowloon, Hong Kong.
+      </li> 
+        
+        <!-- Repeat for more images -->
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+  <div class="row section page-all-pages">
+    <p class="footnote">© Sun Changsheng | Updated 2023-12-16</a></p>
+  </div>
+</div> <!-- End Container -->
+
+<!-- Initialize FancyBox -->
+<script>
+  $(document).ready(function() {
+    $("[data-fancybox]").fancybox({
+      // Options can be added here
+    });
+  });
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
