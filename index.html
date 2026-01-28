@@ -6,6 +6,11 @@
     <title>Sun Changsheng - National University of Singapore</title>
     
     <style>
+        :root {
+            --NUSBLUE: #003D7C; 
+            /* --NUSBLUE: #003366; */  /* Old Blue */
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -27,12 +32,12 @@
         .header {
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #003366;
+            border-bottom: 2px solid var(--NUSBLUE);
         }
 
         h1 {
             font-size: 24px;
-            color: #003366;
+            color: var(--NUSBLUE);
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -60,8 +65,8 @@
         }
 
         .photo {
-            width: 180px;
-            height: 240px;
+            width: 200px;
+            height: 200px;
             background: #f5f5f5;
             border: 1px solid #ddd;
             margin-bottom: 20px;
@@ -78,7 +83,7 @@
 
         .contact-section h3 {
             font-size: 14px;
-            color: #003366;
+            color: var(--NUSBLUE);
             font-weight: bold;
             margin-bottom: 10px;
             border-bottom: 1px solid #ccc;
@@ -97,7 +102,7 @@
 
         h2 {
             font-size: 18px;
-            color: #003366;
+            color: var(--NUSBLUE);
             font-weight: bold;
             margin-top: 25px;
             margin-bottom: 15px;
@@ -116,8 +121,8 @@
 
         /* Links */
         a {
-            color: #0066cc;
-            text-decoration: none;
+            color: var(--NUSBLUE);
+            text-decoration: underline;
         }
 
         a:hover {
@@ -191,7 +196,7 @@
         /* Year headings */
         .year-heading {
             font-weight: bold;
-            color: #003366;
+            color: var(--NUSBLUE);
             margin-top: 20px;
             margin-bottom: 15px;
             font-size: 16px;
@@ -217,14 +222,14 @@
 <body>
     <div class="header">
         <h1>Sun Changsheng (孙常晟)</h1>
-        <div class="title">PhD Candidate</div>
+        <div class="title">Ph.D. candidate</div>
         <div class="affiliation">School of Computing, National University of Singapore</div>
     </div>
 
     <div class="content">
         <div class="sidebar">
             <div class="photo">
-                <img src="avatar0.jpg" alt="Sun Changsheng" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="avat.jpg" alt="Sun Changsheng" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             
             <div class="contact-section">
@@ -253,30 +258,29 @@
         <div class="main">
             <!-- <h2>Biography</h2> -->
             <p>
-            I am a Ph.D. candidate at the <a href="https://nus-plse.github.io/">PLSE Lab</a>, NUS School of Computing, working at the intersection of <strong>Trustworthy AI, LLMs, and Graph Learning</strong>. My research aims to make learning systems reliable and auditable by developing principled methods for robustness against adversarial threats and distribution shifts. Currently, I focus on <strong>LLM safety</strong> and <strong>explainable graph modeling</strong>, with specific interests in directionality- and risk-aware explanations. My work spans NLP, geometric learning, and large-scale time-series data analysis.
+            I am a final-year Ph.D. candidate at the <a href="https://nus-plse.github.io/">PLSE Lab</a>, School of Computing, National University of Singapore, advised by <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Dong Jin Song</a>. My research focuses on building trustworthy and reliable AI systems&mdash;making modern ML models robust, interpretable, and auditable. 
             </p>
 
-            <p style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin-top: 15px; margin-bottom: 20px;">
+            <p style="background-color: #fffaf5; border-left: 4px solid #EF7C00; padding: 12px; margin-top: 15px; margin-bottom: 20px;">
             <strong>🎓 I am expected to graduate in early 2026 and am actively looking for job opportunities in (but not limited to) Singapore.</strong>
             </p>
 
             <h2>Research Interests</h2>
             <ul>
-                <li>Trustworthy AI</li>
-                <li>Graph Representation Learning</li>
-                <li>LLM Safety</li>
-                <li>Explainability (XAI)</li>
+                <li><strong>AI Safety &amp; Robustness:</strong> Adversarial attacks and defenses, risk-aware optimization, with applications to GNNs, point clouds, and LLMs.</li>
+                <li><strong>Interpretability &amp; Explainability:</strong> Explanation methods for model decisions, directionality-aware and risk-aware explanations, model debugging and auditing.</li>
+                <li><strong>Geometric Deep Learning:</strong> Graph neural networks, point clouds, structure-aware representation learning.</li>
             </ul>
 
             <h2>Education</h2>
             <ul>
-                <li><strong>Ph.D. in Computer Science</strong> (Jan 2022 - Present, Expected Early 2026)<br>
+                <li><strong>Doctor of Philosophy in Computer Science</strong> (2022 - Mar 2026)<br>
                     National University of Singapore<br>
                     Thesis: Trustworthy Geometric Learning: From Structural Biases to Risk-Aware Robustness<br>
                     Advisor: <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Dong Jin Song</a></li>
-                <li><strong>Master of Computing in Artificial Intelligence</strong> (Aug 2020 - Dec 2021)<br>
+                <li><strong>Master of Computing in Artificial Intelligence</strong> (2020 - 2021)<br>
                     National University of Singapore</li>
-                <li><strong>Bachelor of Engineering in Computer Science </strong> (Sep 2015 - Aug 2019)<br>
+                <li><strong>Bachelor of Engineering in Computer Science </strong> (2015 - 2019)<br>
                     Xidian University, Xi'an, China</li>
             </ul>
 
@@ -295,7 +299,7 @@
                     Developed a white-box testing approach for deep neural networks by leveraging intermediate-layer signals and density estimation for reliability assessment. Contributed to work published at ICSE 2021 (Self-Checking Deep Neural Networks).<br>
                     Host: <a href="https://people.cs.gmu.edu/~dsr/">Prof. David S. Rosenblum</a></li>
                 <li><strong>Research Intern & Algorithm Engineer</strong> (Jan 2018 - June 2018)<br>
-                    JD Intelligent Cities Research, JD.com<br>
+                    JD Intelligent Cities Research, JD.com (<a href="https://www.microsoft.com/en-us/research/project/urban-computing/">MSRA Urban Computing Group</a>)<br>
                     Prototyped a distributed DQN research system on spatiotemporal data using the Ray execution framework; focused on training scalability and system performance profiling.<br>
                     Host: <a href="http://urban-computing.com/yuzheng">Prof. Yu Zheng</a> and <a href="https://www.zhangjunbo.org/">Dr. Junbo Zhang</a></li>
             </ul>
