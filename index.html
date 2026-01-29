@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Changsheng - National University of Singapore</title>
+    <title>Sun Changsheng - Homepage</title>
     
     <style>
         :root {
-            --NUSBLUE: #003D7C; 
-            /* --NUSBLUE: #003366; */  /* Old Blue */
+            /* --NUSBLUE: #003D7C;  */
+            --NUSBLUE: #003366;  /* Old Blue */
+            /* --NUSBLUE: #000000;  */
         }
 
         * {
@@ -18,7 +19,8 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: -apple-system, Helvetica, arial, sans-serif;
             font-size: 14px;
             line-height: 1.6;
             color: #333;
@@ -28,28 +30,37 @@
             margin: 0 auto;
         }
 
-        /* Header */
-        .header {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--NUSBLUE);
+        /* Sidebar name section */
+        .sidebar-name {
+            margin-bottom: 10px;
+            padding-bottom: 0px;
+            /* border-bottom: 2px solid var(--NUSBLUE); */
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 18px;
             color: var(--NUSBLUE);
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
         }
 
-        .title {
-            color: #666;
-            font-size: 16px;
+        .chinese-name {
+            font-size: 18px;
+            color: var(--NUSBLUE);
+            font-weight: bold;
+            font-family: 'KaiTi', 'STKaiti', 'AR PL UKai CN', 'Kaiti SC', serif;
             margin-bottom: 5px;
         }
 
+        .title {
+            color: #000000;
+            font-size: 14px;
+            font-weight: bold;
+            /* margin-bottom: 5px; */
+        }
+
         .affiliation {
-            color: #666;
+            color: #000000;
             font-size: 14px;
         }
 
@@ -62,13 +73,17 @@
         /* Sidebar */
         .sidebar {
             flex: 0 0 200px;
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
         }
 
         .photo {
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             background: #f5f5f5;
-            border: 1px solid #ddd;
+            /* border: 1px solid #ddd; */
+            /* margin-top: 10px; */
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -78,7 +93,8 @@
         }
 
         .contact-section {
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
+            margin-top: 20px;
         }
 
         .contact-section h3 {
@@ -104,7 +120,7 @@
             font-size: 18px;
             color: var(--NUSBLUE);
             font-weight: bold;
-            margin-top: 25px;
+            /* margin-top: 25px; */
             margin-bottom: 15px;
             border-bottom: 1px solid #ccc;
             padding-bottom: 5px;
@@ -127,6 +143,7 @@
 
         a:hover {
             text-decoration: underline;
+            color: #000000;
         }
 
         /* Lists */
@@ -185,10 +202,10 @@
 
         /* Footer */
         .footer {
-            margin-top: 50px;
+            /* margin-top: 20px; */
             padding-top: 20px;
-            border-top: 1px solid #ccc;
-            text-align: center;
+            /* border-top: 1px solid #ccc; */
+            text-align: right;
             font-size: 12px;
             color: #666;
         }
@@ -211,58 +228,106 @@
             .sidebar {
                 flex: none;
                 width: 100%;
+                position: static;
+            }
+
+            /* Header row: photo left, name right on mobile */
+            .sidebar-header {
+                display: flex;
+                align-items: top;
+                gap: 15px;
+                /* margin-bottom: 5px; */
             }
             
             .photo {
-                margin: 0 auto 20px;
+                width: 110px;
+                height: 110px;
+                flex-shrink: 0;
+                margin: 0;
+            }
+            
+            .sidebar-name {
+                text-align: left;
+            }
+
+            /* Office address: hide line breaks on mobile */
+            .office-address br,
+            .contact-inline br {
+                display: none;
+            }
+            .office-address span::after {
+                content: ', ';
+            }
+            .office-address span:last-of-type::after {
+                content: '';
+            }
+
+            /* Links: inline on mobile */
+            .links-inline p {
+                display: inline;
+            }
+            .links-inline p::after {
+                content: ' · ';
+            }
+            .links-inline p:last-child::after {
+                content: '';
             }
         }
     </style>
+
 </head>
 <body>
-    <div class="header">
-        <h1>Sun Changsheng (孙常晟)</h1>
-        <div class="title">Ph.D. candidate</div>
-        <div class="affiliation">School of Computing, National University of Singapore</div>
-    </div>
-
     <div class="content">
         <div class="sidebar">
-            <div class="photo">
-                <img src="avat.jpg" alt="Sun Changsheng" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="sidebar-header">
+                <div class="photo">
+                    <img src="ava.jpg" alt="Sun Changsheng" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                
+                <div class="sidebar-name">
+                    <h1>Sun Changsheng</h1>
+                    <div class="chinese-name">孙常晟</div>
+                    <div class="title">Ph.D. Candidate</div>
+                    <div class="affiliation">School of Computing, NUS</div>
+                </div>
             </div>
-            
             <div class="contact-section">
                 <h3>Contact Information</h3>
-                <p><strong>Email:</strong><br>
+                <p class="contact-inline"><strong>Email:</strong><br>
                 cssun@u.nus.edu</p>
                 
-                <p><strong>Office:</strong><br>
-                Computing 3 #02-20<br>
-                11 Research Link<br>
-                Singapore 119391</p>
+                <p class="office-address"><strong>Office:</strong><br>
+                <span>Computing 3 #02-20</span><br>
+                <span>11 Research Link</span><br>
+                <span>Singapore 119391</span></p>
                 
-                <p><strong>Lab:</strong><br>
+                <p class="contact-inline"><strong>Lab:</strong><br>
                 <a href="https://nus-plse.github.io/">PLSE@NUS</a></p>
             </div>
 
-            <div class="contact-section">
+            <div class="contact-section links-inline">
                 <h3>Links</h3>
-                <p><a href="cv_changshengsun_Jan2026.pdf">Curriculum Vitae</a></p>
-                <p><a href="http://linkedin.com/in/changshengsun/">LinkedIn</a></p>
-                <p><a href="https://github.com/cs-sun">GitHub</a></p>
+                <p><a href="cv-changsheng-jan2026.pdf">Curriculum Vitae (PDF)</a></p>
                 <p><a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ">Google Scholar</a></p>
+                <p><a href="http://linkedin.com/in/changshengsun/">LinkedIn</a></p>
+                <!-- <p><a href="https://github.com/cs-sun">GitHub</a></p> -->
+                <!-- <p><a href="blog/index.html">Blog Posts &rarr;</a></p> -->
+            </div>
+
+            <div class="contact-section links-inline">
+                <h3>Blog</h3>
+                <p><a href="blog/index.html">all posts &rarr;</a></p>
             </div>
         </div>
 
         <div class="main">
-            <!-- <h2>Biography</h2> -->
+            <h2>About</h2>
             <p>
             I am a final-year Ph.D. candidate at the <a href="https://nus-plse.github.io/">PLSE Lab</a>, School of Computing, National University of Singapore, advised by <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Dong Jin Song</a>. My research focuses on building trustworthy and reliable AI systems&mdash;making modern ML models robust, interpretable, and auditable. 
             </p>
 
             <p style="background-color: #fffaf5; border-left: 4px solid #EF7C00; padding: 12px; margin-top: 15px; margin-bottom: 20px;">
-            <strong>🎓 I am expected to graduate in early 2026 and am actively looking for job opportunities in (but not limited to) Singapore.</strong>
+            <strong>🎓 I am expected to graduate in early 2026 and am actively looking for job opportunities.</strong>
             </p>
 
             <h2>Research Interests</h2>
@@ -306,8 +371,10 @@
 
             <h2>Skills</h2>
             <p>
-                <strong>Programming Languages:</strong> Python<br>
-                <strong>Frameworks:</strong> PyTorch, TensorFlow, JAX, Ray, TorchGeometric
+                <strong>Programming &amp; Scripting:</strong> Python, Bash/Shell Scripting, SQL<br>
+                <strong>AI &amp; ML:</strong> PyTorch, TensorFlow, Hugging Face Transformers, Geometric Deep Learning (PyG, DGL), LLM Safety &amp; Alignment, Scikit-learn, vLLM<br>
+                <strong>Systems:</strong> Linux/Unix, Multi-GPU setups, Ray, Docker, Git, ClickHouse, Spark<br>
+                <strong>Miscellaneous:</strong> Trustworthy AI (Robustness, Explainability), Graph Learning, LLM Safety, Agentic AI
             </p>
 
             <h2>Services & Awards</h2>
@@ -444,8 +511,8 @@
     </div>
 
     <div class="footer">
-        Last update: January 14, 2026<br>
-        Sun Changsheng
+        Last update: 30 January, 2026<br>
+        <!-- Sun Changsheng -->
     </div>
 </body>
 </html>

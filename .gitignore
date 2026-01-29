@@ -1,0 +1,15 @@
+# Jekyll
+.jekyll-cache/
+_site/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+.claude/
+
+.DS_Store

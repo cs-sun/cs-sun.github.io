@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Sun Changsheng</title>
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <nav class="blog-nav">
+        <a href="../index.html">&larr; about me</a>
+        <!-- <a href="index.html">blog</a> -->
+    </nav>
+
+    <main class="blog-index">
+        {% if posts %}
+        <ul class="post-list">
+        {% for post in posts %}
+            <li class="post-item">
+                <a href="{{ post.filename }}">{{ post.title }}</a>
+                <time datetime="{{ post.date }}">{{ post.date_formatted }}</time>
+                {% if post.description %}
+                <p class="post-description">{{ post.description }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No posts yet.</p>
+        {% endif %}
+    </main>
+
+    <footer class="site-footer">
+        © Sun Changsheng
+    </footer>
+</body>
+</html>

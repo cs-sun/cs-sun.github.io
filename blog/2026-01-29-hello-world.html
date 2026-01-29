@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World: My First Blog Post - Sun Changsheng</title>
+    <meta name="description" content="A brief introduction to my new blog, featuring some math and code examples.">
+
+    <!-- Blog styles -->
+    <link rel="stylesheet" href="../css/blog.css">
+
+    
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    
+</head>
+<body>
+    <nav class="blog-nav">
+        <a href="../index.html">&larr; about me</a>
+        <a href="index.html">&larr; all posts</a>
+    </nav>
+
+    <article class="blog-post">
+        <header class="post-header">
+            <h1>Hello World: My First Blog Post</h1>
+            <time datetime="2026-01-29">January 29, 2026</time>
+        </header>
+
+        <div class="post-content">
+            <p>Welcome to my blog! This is a simple static blog built with a custom Python script that converts Markdown to HTML.</p>
+<h2 id="why-start-a-blog">Why Start a Blog?</h2>
+<p>I've decided to start writing about my research interests, technical notes, and thoughts on various topics in machine learning and software engineering.</p>
+<h2 id="math-support">Math Support</h2>
+<p>This blog supports KaTeX for rendering mathematical equations. Here's the famous Euler's identity:</p>
+<p>$$e^{i\pi} + 1 = 0$$</p>
+<p>And here's an inline example: the quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.</p>
+<p>For my research in graph neural networks, we often deal with message passing:</p>
+<p>$$h_v^{(k)} = \sigma\left( W^{(k)} \cdot \text{AGG}\left( {h_u^{(k-1)} : u \in \mathcal{N}(v)} \right) \right)$$</p>
+<h2 id="code-examples">Code Examples</h2>
+<p>Here's a simple Python function:</p>
+<pre><code class="language-python">def is_prime(n):
+    &quot;&quot;&quot;Check if a number is prime.&quot;&quot;&quot;
+    if n &lt; 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+</code></pre>
+<p>And some JavaScript:</p>
+<pre><code class="language-javascript">const greet = (name) =&gt; {
+    console.log(`Hello, ${name}!`);
+};
+</code></pre>
+<h2 id="whats-next">What's Next?</h2>
+<p>I plan to write about:</p>
+<ul>
+<li>Graph neural network explanations</li>
+<li>Adversarial robustness in deep learning</li>
+<li>Research notes and paper summaries</li>
+</ul>
+<p>Stay tuned!</p>
+        </div>
+
+        <footer class="post-footer">
+            <a href="index.html">&larr; all posts</a>
+        </footer>
+    </article>
+
+    <footer class="site-footer">
+        © Sun Changsheng
+    </footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing the Blog System - Sun Changsheng</title>
+    <meta name="description" content="A second post to test the blog list page and styling features">
+
+    <!-- Blog styles -->
+    <link rel="stylesheet" href="../css/blog.css">
+
+    
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    
+</head>
+<body>
+    <nav class="blog-nav">
+        <a href="../index.html">&larr; about me</a>
+        <a href="index.html">&larr; all posts</a>
+    </nav>
+
+    <article class="blog-post">
+        <header class="post-header">
+            <h1>Testing the Blog System</h1>
+            <time datetime="2026-01-30">January 30, 2026</time>
+        </header>
+
+        <div class="post-content">
+            <p>This is a test post to verify the blog system works correctly with multiple posts.</p>
+<h2 id="testing-different-features">Testing Different Features</h2>
+<p>Let me test various markdown features to ensure everything renders properly.</p>
+<h3 id="mathematics">Mathematics</h3>
+<p>Here's a quadratic equation:</p>
+<p>$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</p>
+<p>And some inline math: The sum $\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$ is well-known.</p>
+<h3 id="code-examples">Code Examples</h3>
+<p>Python code with syntax:</p>
+<pre><code class="language-python">class BlogPost:
+    def __init__(self, title, date):
+        self.title = title
+        self.date = date
+
+    def render(self):
+        return f&quot;&lt;h1&gt;{self.title}&lt;/h1&gt;&quot;
+</code></pre>
+<p>JavaScript example:</p>
+<pre><code class="language-javascript">const fetchPosts = async () =&gt; {
+    const response = await fetch('/api/posts');
+    return response.json();
+};
+</code></pre>
+<h3 id="tables">Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Math rendering</td>
+<td>✓</td>
+<td>KaTeX works</td>
+</tr>
+<tr>
+<td>Code blocks</td>
+<td>✓</td>
+<td>Simple CSS styling</td>
+</tr>
+<tr>
+<td>Tables</td>
+<td>✓</td>
+<td>Native markdown</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lists-and-formatting">Lists and Formatting</h3>
+<p><strong>Bold text</strong> and <em>italic text</em> work as expected.</p>
+<p>Unordered list:
+- First item
+- Second item
+  - Nested item
+  - Another nested item
+- Third item</p>
+<p>Ordered list:
+1. Step one
+2. Step two
+3. Step three</p>
+<h3 id="block-quote">Block Quote</h3>
+<blockquote>
+<p>This is a quote block. It should have a left border and different background color to distinguish it from regular text.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>This test post demonstrates that all major markdown features are working correctly in the blog system.</p>
+        </div>
+
+        <footer class="post-footer">
+            <a href="index.html">&larr; all posts</a>
+        </footer>
+    </article>
+
+    <footer class="site-footer">
+        © Sun Changsheng
+    </footer>
+</body>
+</html>
