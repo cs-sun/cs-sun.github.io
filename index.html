@@ -48,8 +48,56 @@
             font-size: 18px;
             color: var(--NUSBLUE);
             font-weight: bold;
-            font-family: 'STKaiti', 'Kaiti SC', 'KaiTi', '楷体', 'DFKai-SB', 'AR PL UKai CN', serif;
             margin-bottom: 5px;
+            
+            font-family: 
+                /* ========== 楷体优先 ========== */
+                /* macOS */
+                'STKaiti',
+                'Kaiti SC',
+                'Kaiti TC',
+                /* Windows */
+                'KaiTi',
+                '楷体',
+                'DFKai-SB',
+                /* Linux */
+                'AR PL UKai CN',
+                'AR PL ZenKai Uni',
+                
+                /* ========== 宋体次选 ========== */
+                /* macOS / iOS */
+                'STSongti-SC-Regular',
+                'Songti SC',
+                'STSong',
+                'Songti TC',
+                /* Windows */
+                'SimSun',
+                'NSimSun',
+                '宋体',
+                'PMingLiU',
+                'MingLiU',
+                /* Linux */
+                'AR PL UMing CN',
+                'AR PL SungtiL GB',
+                
+                /* ========== 思源宋体 (跨平台) ========== */
+                /* Google Noto (Android / Web) */
+                'Noto Serif CJK SC',
+                'Noto Serif SC',
+                'Noto Serif CJK TC',
+                /* Adobe Source Han */
+                'Source Han Serif SC',
+                'Source Han Serif CN',
+                'Source Han Serif TC',
+                
+                /* ========== 系统衬线兜底 ========== */
+                /* iOS / macOS 系统衬线 */
+                'Times New Roman',
+                'Georgia',
+                /* Android / 通用 */
+                'Droid Serif',
+                /* 最终 fallback */
+                serif;
         }
 
         .title {
