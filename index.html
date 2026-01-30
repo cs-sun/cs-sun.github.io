@@ -44,60 +44,34 @@
             margin-bottom: 0px;
         }
 
-        .chinese-name {
-            font-size: 18px;
-            color: var(--NUSBLUE);
-            font-weight: bold;
-            margin-bottom: 5px;
-            
-            font-family: 
-                /* ========== 楷体优先 ========== */
+        .chinese-name:lang(zh), .chinese-name:lang(zh-Hans) {
+            font-family:
+                /* ===== 楷体优先 ===== */
                 /* macOS */
-                'STKaiti',
-                'Kaiti SC',
-                'Kaiti TC',
+                "STKaiti",
+                "Kaiti SC",
+                "Kaiti TC",
                 /* Windows */
-                'KaiTi',
-                '楷体',
-                'DFKai-SB',
+                "KaiTi",
+                "楷体",
+                "DFKai-SB",
                 /* Linux */
-                'AR PL UKai CN',
-                'AR PL ZenKai Uni',
-                
-                /* ========== 宋体次选 ========== */
-                /* macOS / iOS */
-                'STSongti-SC-Regular',
-                'Songti SC',
-                'STSong',
-                'Songti TC',
-                /* Windows */
-                'SimSun',
-                'NSimSun',
-                '宋体',
-                'PMingLiU',
-                'MingLiU',
-                /* Linux */
-                'AR PL UMing CN',
-                'AR PL SungtiL GB',
-                
-                /* ========== 思源宋体 (跨平台) ========== */
-                /* Google Noto (Android / Web) */
-                'Noto Serif CJK SC',
-                'Noto Serif SC',
-                'Noto Serif CJK TC',
-                /* Adobe Source Han */
-                'Source Han Serif SC',
-                'Source Han Serif CN',
-                'Source Han Serif TC',
-                
-                /* ========== 系统衬线兜底 ========== */
-                /* iOS / macOS 系统衬线 */
-                'Times New Roman',
-                'Georgia',
-                /* Android / 通用 */
-                'Droid Serif',
-                /* 最终 fallback */
+                "AR PL UKai CN",
+                "AR PL ZenKai Uni",
+
+                /* ===== 宋体次选（iOS/macOS 更可能命中）===== */
+                "Songti SC",
+                "Songti TC",
+                "STSong",
+
+                /* ===== 系统衬线兜底 ===== */
+                ui-serif,
                 serif;
+            color: var(--NUSBLUE);
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 600;          /* 比 bold 更少触发“换字体” */
+            font-synthesis: weight;    /* 字重不全时允许合成 */
         }
 
         .title {
@@ -336,7 +310,7 @@
                 
                 <div class="sidebar-name">
                     <h1>Sun Changsheng</h1>
-                    <div class="chinese-name">孙常晟</div>
+                    <div class="chinese-name" lang="zh-Hans">孙常晟</div>
                     <div class="title">Ph.D. Candidate</div>
                     <div class="affiliation">School of Computing, NUS</div>
                 </div>
