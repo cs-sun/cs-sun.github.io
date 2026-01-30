@@ -6,6 +6,68 @@
     <title>Sun Changsheng - Homepage</title>
     
     <style>
+        @font-face {
+            font-family: 'STKaitiSubset';
+            src: url('fonts/STKaiti-subset.woff2') format('woff2');
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'LXGW WenKai';
+            src: url('fonts/LXGWWenKai-subset.woff2') format('woff2');
+            font-display: swap;
+        }
+
+        /* TeX Gyre Heros - Helvetica alternative for non-Apple systems */
+        @font-face {
+            font-family: 'TeX Gyre Heros';
+            src: url('fonts/texgyreheros-regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TeX Gyre Heros';
+            src: url('fonts/texgyreheros-bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TeX Gyre Heros';
+            src: url('fonts/texgyreheros-italic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TeX Gyre Heros';
+            src: url('fonts/texgyreheros-bolditalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        /* Libre Baskerville - Variable Font */
+        @font-face {
+            font-family: 'Libre Baskerville';
+            src: url('fonts/LibreBaskerville-Variable.ttf') format('truetype');
+            font-weight: 400 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Libre Baskerville';
+            src: url('fonts/LibreBaskerville-Italic-Variable.ttf') format('truetype');
+            font-weight: 400 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
         :root {
             /* --NUSBLUE: #003D7C;  */
             --NUSBLUE: #003366;  /* Old Blue */
@@ -20,7 +82,12 @@
 
         body {
             /* font-family: Arial, Helvetica, sans-serif; */
-            font-family: -apple-system, Helvetica, arial, sans-serif;
+            font-family: 
+                -apple-system, 
+                Helvetica, 
+                'TeX Gyre Heros',
+                Arial, 
+                sans-serif;
             font-size: 14px;
             line-height: 1.6;
             color: #333;
@@ -45,33 +112,15 @@
         }
 
         .chinese-name:lang(zh), .chinese-name:lang(zh-Hans) {
-            font-family:
-                /* ===== 楷体优先 ===== */
-                /* macOS */
-                "STKaiti",
-                "Kaiti SC",
-                "Kaiti TC",
-                /* Windows */
-                "KaiTi",
-                "楷体",
-                "DFKai-SB",
-                /* Linux */
-                "AR PL UKai CN",
-                "AR PL ZenKai Uni",
-
-                /* ===== 宋体次选（iOS/macOS 更可能命中）===== */
-                "Songti SC",
-                "Songti TC",
-                "STSong",
-
-                /* ===== 系统衬线兜底 ===== */
-                ui-serif,
+            font-family: 
+                'STKaitiSubset', 
+                'LXGW WenKai', 
+                ui-serif, 
                 serif;
             color: var(--NUSBLUE);
             margin-bottom: 5px;
-            font-size: 18px;
-            font-weight: 600;          /* 比 bold 更少触发“换字体” */
-            font-synthesis: weight;    /* 字重不全时允许合成 */
+            font-size: 19px;
+            font-weight: 600;
         }
 
         .title {
@@ -167,7 +216,8 @@
 
         a:hover {
             text-decoration: underline;
-            color: #000000;
+            /* font-weight: bold; */
+            color: #0026ff;
         }
 
         /* Lists */
