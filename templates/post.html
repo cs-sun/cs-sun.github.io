@@ -34,7 +34,11 @@
     <article class="blog-post">
         <header class="post-header">
             <h1>{{ post.title }}</h1>
-            <time datetime="{{ post.date }}">{{ post.date_formatted }}</time>
+            <div class="post-meta">
+                <time datetime="{{ post.date }}">{{ post.date_formatted }}</time>
+                <span class="meta-separator">•</span>
+                <span class="post-author">{{ post.author }}</span>
+            </div>
         </header>
 
         <div class="post-content">

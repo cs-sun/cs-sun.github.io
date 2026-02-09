@@ -13,8 +13,9 @@
 
 body {
     /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: -apple-system, Helvetica, 'TeX Gyre Heros', Arial, sans-serif;
-    font-size: 14px;
+    /* font-family: -apple-system, Helvetica, 'TeX Gyre Heros', Arial, sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+    font-size: 16px;
     line-height: 1.6;
     color: #333;
     background: #fff;
@@ -47,16 +48,100 @@ body {
 }
 
 .post-header h1 {
-    font-size: 24px;
+    font-size: 28px;
+    /* font-size: 36px; */
     color: var(--NUSBLUE);
     font-weight: bold;
     margin-bottom: 10px;
     line-height: 1.3;
 }
 
+.post-header .post-meta {
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .post-header time {
     color: #666;
-    font-size: 13px;
+}
+
+.post-header .meta-separator {
+    color: #999;
+}
+
+.post-header .post-author {
+    color: #666;
+}
+
+/* Table of Contents */
+.toc {
+    margin: 0 0 10px 0;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 4px;
+    padding: 0;
+    font-size: 12px;
+}
+
+.toc details {
+    padding: 10px 15px;
+}
+
+.toc details summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    user-select: none;
+    list-style: none;
+}
+
+.toc details summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc details summary::before {
+    content: '▶ ';
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.toc details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.toc .toctitle {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--NUSBLUE);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* padding-bottom: 8px; */
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.toc ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.toc li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.toc a {
+    color: #333;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: var(--NUSBLUE);
+    text-decoration: underline;
 }
 
 /* Post content */
@@ -64,25 +149,56 @@ body {
     line-height: 1.7;
 }
 
+.post-content h1 {
+    font-size: 24px;
+    color: var(--NUSBLUE);
+    margin-top: 28px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
 .post-content h2 {
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 20px;
     color: var(--NUSBLUE);
     margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
     padding-bottom: 5px;
 }
 
 .post-content h3 {
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 18px;
     color: var(--NUSBLUE);
     margin-top: 25px;
     margin-bottom: 10px;
 }
 
+.post-content h4 {
+    font-size: 16px;
+    color: var(--NUSBLUE);
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.post-content h5 {
+    font-size: 14px;
+    color: var(--NUSBLUE);
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.post-content h6 {
+    font-size: 12px;
+    color: var(--NUSBLUE);
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
 .post-content p {
     margin-bottom: 15px;
-    text-align: justify;
+    /* text-align: justify; */
+    text-align: left;
 }
 
 .post-content a {
@@ -221,7 +337,7 @@ body {
 .post-item a {
     color: var(--NUSBLUE);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -242,6 +358,7 @@ body {
     }
 
     .post-header h1 {
-        font-size: 20px;
+        /* font-size: 20px; */
+        font-size: 28px;
     }
 }

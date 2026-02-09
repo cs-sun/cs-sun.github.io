@@ -9,5 +9,6 @@ dependencies = [
     "pyyaml>=6.0",
 ]
 
-[project.scripts]
-build-blog = "build_blog:build_blog"
+[tool.uv]
+dev-dependencies = []
+package = false

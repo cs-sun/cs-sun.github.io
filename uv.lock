@@ -26,6 +26,9 @@ requires-dist = [
     { name = "pyyaml", specifier = ">=6.0" },
 ]
 
+[package.metadata.requires-dev]
+dev = []
+
 [[package]]
 name = "importlib-metadata"
 version = "8.5.0"

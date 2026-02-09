@@ -28,8 +28,16 @@ MD_EXTENSIONS = [
     'tables',        # Markdown tables
     'footnotes',     # Academic footnotes [^1]
     'attr_list',     # Custom attributes
-    'toc',           # Table of contents
 ]
+
+# TOC extension with configuration
+MD_EXTENSION_CONFIGS = {
+    'toc': {
+        'title': '',  # Will be replaced with post title
+        'toc_depth': '1-3',  # Include h1-h3 in TOC
+        'permalink': False,  # No permalink symbols
+    }
+}
 
 
 def parse_frontmatter(content: str) -> tuple[dict, str]:
@@ -51,7 +59,7 @@ def parse_frontmatter(content: str) -> tuple[dict, str]:
 
 
 def format_date(date_str: str) -> str:
-    """Format date as 'January 29, 2026'.
+    """Format date as '29 January 2026' (DMY format).
 
     Args:
         date_str: Date string in YYYY-MM-DD format
@@ -65,7 +73,7 @@ def format_date(date_str: str) -> str:
         dt = date_str
     else:
         dt = datetime.strptime(str(date_str), '%Y-%m-%d')
-    return dt.strftime('%B %d, %Y')
+    return dt.strftime('%d %B %Y')
 
 
 def convert_post(md_path: Path) -> dict:
@@ -79,10 +87,29 @@ def convert_post(md_path: Path) -> dict:
     """
     content = md_path.read_text(encoding='utf-8')
     metadata, body = parse_frontmatter(content)
+    
+    # Get post title for TOC
+    post_title = metadata.get('title', 'Untitled')
 
-    # Initialize markdown converter
-    md = markdown.Markdown(extensions=MD_EXTENSIONS)
+    # Initialize markdown converter with dynamic title
+    md_config = MD_EXTENSION_CONFIGS.copy()
+    md_config['toc'] = md_config['toc'].copy()
+    md_config['toc']['title'] = post_title
+    
+    md = markdown.Markdown(extensions=MD_EXTENSIONS + ['toc'], extension_configs=md_config)
     html_body = md.convert(body)
+    
+    # Wrap TOC in collapsible details/summary
+    if '<div class="toc">' in html_body:
+        html_body = html_body.replace(
+            '<div class="toc">',
+            '<div class="toc"><details><summary>  Table of Contents</summary>'
+        )
+        html_body = html_body.replace(
+            '</div>',
+            '</details></div>',
+            1  # Only replace the first closing div (the TOC's closing div)
+        )
 
     # Extract date from filename (YYYY-MM-DD-title.md)
     date_match = re.match(r'(\d{4}-\d{2}-\d{2})', md_path.stem)
@@ -97,6 +124,7 @@ def convert_post(md_path: Path) -> dict:
         'title': metadata.get('title', 'Untitled'),
         'date': str(metadata.get('date', '')),
         'date_formatted': format_date(metadata.get('date')),
+        'author': metadata.get('author', 'Sun Changsheng'),
         'description': metadata.get('description', ''),
         'tags': metadata.get('tags', []),
         'math': metadata.get('math', False),
