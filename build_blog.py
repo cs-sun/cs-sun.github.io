@@ -76,6 +76,37 @@ def format_date(date_str: str) -> str:
     return dt.strftime('%d %B %Y')
 
 
+def protect_math(text: str) -> tuple[str, list[str]]:
+    """Replace math blocks with placeholders to prevent Markdown mangling.
+
+    Protects both display ($$...$$) and inline ($...$) math from being
+    interpreted as emphasis or having backslashes stripped.
+
+    Args:
+        text: Markdown source text
+
+    Returns:
+        Tuple of (text with placeholders, list of original math blocks)
+    """
+    placeholders = []
+
+    def _replace(m):
+        placeholders.append(m.group(0))
+        return f'\x00MATH{len(placeholders) - 1}\x00'
+
+    # Display math first ($$...$$), then inline ($...$)
+    text = re.sub(r'\$\$.*?\$\$', _replace, text, flags=re.DOTALL)
+    text = re.sub(r'(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)', _replace, text)
+    return text, placeholders
+
+
+def restore_math(html: str, placeholders: list[str]) -> str:
+    """Restore math blocks from placeholders after Markdown conversion."""
+    for i, original in enumerate(placeholders):
+        html = html.replace(f'\x00MATH{i}\x00', original)
+    return html
+
+
 def convert_post(md_path: Path) -> dict:
     """Convert a single markdown file to HTML.
 
@@ -87,7 +118,10 @@ def convert_post(md_path: Path) -> dict:
     """
     content = md_path.read_text(encoding='utf-8')
     metadata, body = parse_frontmatter(content)
-    
+
+    # Protect math blocks from Markdown processing
+    body, math_placeholders = protect_math(body)
+
     # Get post title for TOC
     post_title = metadata.get('title', 'Untitled')
 
@@ -95,9 +129,12 @@ def convert_post(md_path: Path) -> dict:
     md_config = MD_EXTENSION_CONFIGS.copy()
     md_config['toc'] = md_config['toc'].copy()
     md_config['toc']['title'] = post_title
-    
+
     md = markdown.Markdown(extensions=MD_EXTENSIONS + ['toc'], extension_configs=md_config)
     html_body = md.convert(body)
+
+    # Restore math blocks
+    html_body = restore_math(html_body, math_placeholders)
     
     # Wrap TOC in collapsible details/summary
     if '<div class="toc">' in html_body:
