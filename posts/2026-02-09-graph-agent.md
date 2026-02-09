@@ -1,7 +1,7 @@
 ---
 title: "When Graphs Meet Agents: Orchestration, Topology, and the Uncharted Territory of Safety"
 date: 2026-02-09
-author: "Sun Changsheng (With the help of Opus 4.6)"
+author: "Sun Changsheng"
 description: "A deep dive into the emerging intersection of graph structures and LLM agentic systems, exploring orchestration frameworks, topology-aware design, and the largely unexplored frontier of topology-based security."
 categories:
   - LLM Agents
@@ -153,11 +153,10 @@ After reading through this literature, I'm struck by how wide the gaps are. Here
 
 **Formal verification of workflow DAGs.** VeriPlan ([2025](#ref-veriplan)) verifies sequential agent plans, but nobody has applied model checking or formal verification to graph-structured workflows. Properties like deadlock freedom (no circular waits in the task graph), guaranteed task completion (all paths lead to a terminal node), and Byzantine fault tolerance (the workflow produces correct output even if $k$ agents are compromised) are well-defined graph properties amenable to tools like TLA+ or SPIN. The gap between formal methods and agentic AI remains wide.
 
----
 
-The landscape I've described is one of rapid, somewhat fragmented progress. Graph-based orchestration has matured quickly — from concept to ICML/ICLR papers to production deployment in under two years. Agent security has grown explosively but remains fixated on content-level attacks. The critical missing piece is the bridge: applying the mature toolkit of graph adversarial robustness, GNN explainability, and structural risk optimization to the workflow graphs that increasingly define how agentic systems operate. The three papers at this intersection (G-Safeguard, NetSafe, MAMA) have opened the door, but the room beyond is largely empty.
+*Conclusion.* The landscape I've described is one of rapid, somewhat fragmented progress. Graph-based orchestration has matured quickly — from concept to ICML/ICLR papers to production deployment in under two years. Agent security has grown explosively but remains fixated on content-level attacks. The critical missing piece is the bridge: applying the mature toolkit of graph adversarial robustness, GNN explainability, and structural risk optimization to the workflow graphs that increasingly define how agentic systems operate. The three papers at this intersection (G-Safeguard, NetSafe, MAMA) have opened the door, but the room beyond is largely empty.
 
-For researchers with expertise in GNN robustness and graph-based optimization, this is — I think — an unusually attractive moment to enter the field.
+<!-- For researchers with expertise in GNN robustness and graph-based optimization, this is — I think — an unusually attractive moment to enter the field. -->
 
 # References
 
