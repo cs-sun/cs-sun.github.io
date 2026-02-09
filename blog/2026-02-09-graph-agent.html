@@ -9,6 +9,40 @@
     <!-- Blog styles -->
     <link rel="stylesheet" href="../blog.css">
 
+    <!-- Custom table styles -->
+    <style>
+        .post-content table {
+            font-size: 0.85em;
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1.5em 0;
+        }
+
+        .post-content table thead th {
+            padding: 0.75em 0.5em;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+
+        .post-content table tbody td {
+            border-top: 1px solid #e8e8e8;
+            padding: 0.75em 0.5em;
+            vertical-align: top;
+        }
+
+        .post-content table tbody tr:first-child td {
+            border-top: 1px solid #e8e8e8;
+        }
+
+        /* Remove all vertical borders */
+        .post-content table th,
+        .post-content table td {
+            border-left: none;
+            border-right: none;
+        }
+    </style>
+
     
     <!-- KaTeX for math rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">

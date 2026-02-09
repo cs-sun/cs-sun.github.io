@@ -17,9 +17,9 @@ math: true
 
 Large Language Models are fundamentally stateless functions — they map an input $x$ to an output $y$, resetting with every call. To transform these static generators into autonomous agents capable of long-horizon reasoning and lifelong learning, we must equip them with **Memory**.
 
-While early approaches equated memory with simple context window stuffing or Retrieval-Augmented Generation (RAG), the field has moved toward far more sophisticated cognitive architectures. I've been reading a fascinating series of papers (largely from Guibin Zhang and colleagues) that chart a trajectory from optimizing agent communication structures to generating latent cognitive states to meta-evolving the memory system itself. This post documents my learning process on this evolving landscape.
+While early approaches equated memory with simple context window stuffing or Retrieval-Augmented Generation (RAG), the field has moved toward far more sophisticated cognitive architectures. I've been reading a coherent series of papers (largely from Guibin Zhang and colleagues) that chart a trajectory from optimizing agent communication structures to generating latent cognitive states to meta-evolving the memory system itself. This post documents my learning process on this evolving landscape.
 
-The trajectory is remarkably coherent. Each work addresses a limitation exposed by its predecessor, forming a natural chain of problem → solution → new problem:
+What makes this line of work interesting is that each piece addresses a limitation exposed by its predecessor, forming a chain of problem → solution → new problem:
 
 | Stage | Work | The Question It Asks | Key Insight | What It Leaves Unsolved |
 |:---|:---|:---|:---|:---|
@@ -31,35 +31,8 @@ The trajectory is remarkably coherent. Each work addresses a limitation exposed 
 | 6. Meta-Evolution | **MemEvolve** (2025) | Can the agent design its own memory system? | Decompose memory into Encode/Store/Retrieve/Manage modules; bi-level evolution searches over architectures. | Large memory graphs are computationally expensive. |
 | 7. Infrastructure | **MoG** (ICLR 2025) | How to keep massive memory graphs tractable? | MoE-style node-level graph sparsification on the Grassmann manifold — principled forgetting at scale. | — |
 
-This table is the storyline of the post. Each row motivates the next.
-
-
 [TOC]
 
-<!-- ## Table of Contents
-
-1. [A Taxonomy for Agent Memory](#a-taxonomy-for-agent-memory)
-    + [Forms: The Physical Substrate](#forms-the-physical-substrate)
-    + [Functions: What Memory Is For](#functions-what-memory-is-for)
-    + [Dynamics: The Memory Lifecycle](#dynamics-the-memory-lifecycle)
-2. [The Structural Foundation: Topology as Implicit Memory](#the-structural-foundation-topology-as-implicit-memory)
-    + [G-Designer: Variational Graph Auto-Encoders for Communication](#g-designer-variational-graph-auto-encoders-for-communication)
-    + [MaAS: Searching the Agentic Supernet](#maas-searching-the-agentic-supernet)
-3. [Explicit Hierarchical Memory: G-Memory](#explicit-hierarchical-memory-g-memory)
-    + [The Three-Tier Graph](#the-three-tier-graph)
-    + [Bi-Directional Traversal](#bi-directional-traversal)
-    + [Agentic Self-Update](#agentic-self-update)
-4. [The Latent Turn: Generative Memory](#the-latent-turn-generative-memory)
-    + [MemGen: Trigger and Weaver](#memgen-trigger-and-weaver)
-    + [Emergent Cognitive Specialization](#emergent-cognitive-specialization)
-5. [Correction and Diagnostics: AgenTracer](#correction-and-diagnostics-agentracer)
-6. [Meta-Evolution: MemEvolve](#meta-evolution-memevolve)
-    + [The EvolveLab Design Space](#the-evolvelab-design-space)
-    + [Bi-Level Optimization](#bi-level-optimization)
-7. [Efficiency at Scale: Mixture of Graphs](#efficiency-at-scale-mixture-of-graphs)
-8. [What's for Future](#whats-for-future)
-
---- -->
 
 # A Taxonomy for Agent Memory
 
@@ -93,8 +66,6 @@ Dynamics describe how memory flows through time:
 - *Evolution*: How memories are consolidated, updated, or forgotten (the core innovation of MemEvolve).
 - *Retrieval*: How the right information is accessed at the right time — from simple vector similarity to G-Memory's bi-directional graph traversal.
 
-With this framing in place, let's trace the technical evolution.
-
 
 
 # The Structural Foundation: Topology as Implicit Memory
@@ -107,19 +78,17 @@ Standard multi-agent patterns (Chain, Star, Mesh) are static and suboptimal. A s
 
 The setup: view agents as nodes in a graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where node features $\mathbf{X}$ encode agent profiles (roles, tools, state) and the task query. A special *task node* broadcasts global information. The goal is to generate an adjacency matrix $\mathbf{A}$ representing the optimal communication structure.
 
-The encoder $q(\mathbf{Z} \mid \mathbf{X}, \mathbf{A}_{\text{anchor}})$ maps agent features plus an initial anchor topology (like a simple chain) into a latent space $\mathbf{Z}$. The decoder $p(\mathbf{A} \mid \mathbf{Z})$ reconstructs a task-adaptive topology $\mathcal{G}\_{\text{com}}$. The optimization objective combines performance utility with sparsity regularization:
+The encoder $q(\mathbf{Z} \mid \mathbf{X}, \mathbf{A}\_{\text{anchor}})$ maps agent features plus an initial anchor topology (like a simple chain) into a latent space $\mathbf{Z}$. The decoder $p(\mathbf{A} \mid \mathbf{Z})$ reconstructs a task-adaptive topology $\mathcal{G}\_{\text{com}}$. The optimization objective combines performance utility with sparsity regularization:
 
 $$\mathcal{L} = \mathcal{L}\_{\text{utility}} + \beta_1 \|\mathcal{G}\| + \beta_2 \|\hat{\mathcal{G}}(\hat{Q}) - \mathcal{G}(Q)\|$$
 
 Here $\|\mathcal{G}\|$ penalizes dense connections (reducing token cost), and the third term ensures robustness against adversarial perturbations on the query. The sparsity penalty is doing something quite interesting: it is essentially optimizing the system's "collective attention," ensuring that downstream memory modules only process high signal-to-noise information.
 
-Results: G-Designer reduced token consumption by up to 95.33% on HumanEval compared to dense topologies like GPTSwarm, while maintaining 84.50% accuracy on MMLU. The takeaway is clear — dynamic structural pruning at the communication level is a prerequisite for effective memory.
-
-But G-Designer only optimizes *connections*. It doesn't touch the *operators* inside each node — i.e., how each agent thinks. This is the gap MaAS fills.
+Results: G-Designer reduced token consumption by up to 95.33% on HumanEval compared to dense topologies like GPTSwarm, while maintaining 84.50% accuracy on MMLU. Dynamic structural pruning at the communication level turns out to be a prerequisite for effective memory.
 
 ## MaAS: Searching the Agentic Supernet
 
-**MaAS** (Multi-agent Architecture Search; [Zhang et al. 2025](https://arxiv.org/abs/2502.04180)) takes inspiration from Neural Architecture Search (NAS) to address exactly this limitation. Where G-Designer asks "who talks to whom?", MaAS asks "what cognitive strategy should each agent use?"
+G-Designer optimizes connections, but it doesn't touch the operators inside each node — i.e., how each agent thinks. A natural follow-up is to also optimize the *cognitive strategy* at each node: should this agent use Chain-of-Thought? ReAct? Debate? **MaAS** (Multi-agent Architecture Search; [Zhang et al. 2025](https://arxiv.org/abs/2502.04180)) takes inspiration from Neural Architecture Search (NAS) to address exactly this.
 
 The core concept is the **Agentic Supernet** — a continuous probability distribution over possible agentic operators (CoT, ReAct, Debate, Reflexion, etc.) arranged in a layered DAG. Each layer $\ell$ contains a set of candidate operators $\mathbb{O}$, and the probability of selecting operator $O$ is learned by a lightweight controller network parameterized by $\phi$:
 
@@ -129,7 +98,7 @@ A crucial innovation is making non-differentiable LLM calls differentiable. MaAS
 
 From a memory perspective, MaAS is a sophisticated form of *procedural memory*. It remembers "for this class of problem, invoke this reasoning paradigm," avoiding the cost of rebuilding workflows from scratch. Experiments show MaAS achieves higher accuracy on the MATH dataset at only 15% of the training cost and 25% of the inference cost compared to AFlow.
 
-Together, G-Designer and MaAS solve the *structural* problem — agents now communicate efficiently and think with the right strategies. But both systems are still *stateless*. Once a task is done, everything is forgotten. The natural next question: where should we put the experiences?
+Together, G-Designer and MaAS solve the *structural* problem — agents now communicate efficiently and think with the right strategies. But both systems are still *stateless*. Once a task is done, everything is forgotten.
 
 
 
@@ -224,15 +193,13 @@ AgenTracer also works in reverse: injecting noise into *successful* trajectories
 
 The output is a curated dataset of failure-correction pairs (*TracerTraj*). By storing *corrected trajectories* rather than raw error trajectories into memory, AgenTracer implements grounded self-evolution — memory that actively cleans itself. Integrating AgenTracer feedback into off-the-shelf frameworks like MetaGPT yielded 4.8%–14.2% performance improvements. This marks a transition from passive recording to active curation of experience.
 
-With AgenTracer, we now have clean data flowing into our memory systems. But there's one more manual bottleneck: the developer still has to *choose* the memory architecture (graph vs. vector store, semantic retrieval vs. keyword matching, etc.). Different task domains need fundamentally different memory designs. Can we automate this too?
-
 
 
 # Meta-Evolution: MemEvolve
 
-Everything discussed so far — G-Memory's three-tier graph, MemGen's latent injection, AgenTracer's counterfactual cleaning — uses a *fixed* architecture chosen by the developer. But different task domains have radically different memory needs. Creative writing benefits from associative, loosely connected memories; code debugging needs precise, keyword-matched procedure recall. Can the agent design its own memory system?
+Everything discussed so far — G-Memory's three-tier graph, MemGen's latent injection, AgenTracer's counterfactual cleaning — uses a *fixed* architecture chosen by the developer. But different task domains have radically different memory needs. Creative writing benefits from associative, loosely connected memories; code debugging needs precise, keyword-matched procedure recall.
 
-**MemEvolve** ([Hu et al. 2025](https://arxiv.org/abs/2512.18746)) proposes exactly this: **meta-evolution of the memory architecture itself**.
+**MemEvolve** ([Hu et al. 2025](https://arxiv.org/abs/2512.18746)) treats the memory architecture itself as a variable to be optimized — what the authors call **meta-evolution of the memory architecture**.
 
 ## The EvolveLab Design Space
 
