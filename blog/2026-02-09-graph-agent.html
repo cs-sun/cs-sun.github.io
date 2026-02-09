@@ -37,7 +37,7 @@
             <div class="post-meta">
                 <time datetime="2026-02-09">09 February 2026</time>
                 <span class="meta-separator">•</span>
-                <span class="post-author">Sun Changsheng (With the help of Opus 4.6)</span>
+                <span class="post-author">Sun Changsheng</span>
             </div>
         </header>
 
@@ -111,9 +111,9 @@
 <p><strong>CVaR/DRO-optimized workflow graphs.</strong> The risk-sensitive agent compositions paper uses VaR, but CVaR (expected tail loss) is a more appropriate risk measure for safety-critical systems because it accounts for the <em>severity</em> of worst-case outcomes, not just their probability. Combining CVaR optimization with GNN-predicted workflow performance under distributional uncertainty (Wasserstein ambiguity sets, for instance) would yield workflows that are provably robust under worst-case distributional shifts.</p>
 <p><strong>Directed vs. undirected graph impact on safety.</strong> Here's a subtle but important gap: all the topology-safety papers (G-Safeguard, NetSafe, MAMA) study <em>communication graphs</em>, which are typically undirected or bidirectional (agent A can message agent B, and vice versa). But workflow DAGs — the task dependency structures — are <em>directed</em> and <em>acyclic</em>. The directional constraint fundamentally changes the attack surface: in a DAG, adversarial influence can only propagate forward (downstream), not backward. This asymmetry hasn't been studied, and it likely has significant implications for defense design.</p>
 <p><strong>Formal verification of workflow DAGs.</strong> VeriPlan (<a href="#ref-veriplan">2025</a>) verifies sequential agent plans, but nobody has applied model checking or formal verification to graph-structured workflows. Properties like deadlock freedom (no circular waits in the task graph), guaranteed task completion (all paths lead to a terminal node), and Byzantine fault tolerance (the workflow produces correct output even if $k$ agents are compromised) are well-defined graph properties amenable to tools like TLA+ or SPIN. The gap between formal methods and agentic AI remains wide.</p>
-<hr />
-<p>The landscape I've described is one of rapid, somewhat fragmented progress. Graph-based orchestration has matured quickly — from concept to ICML/ICLR papers to production deployment in under two years. Agent security has grown explosively but remains fixated on content-level attacks. The critical missing piece is the bridge: applying the mature toolkit of graph adversarial robustness, GNN explainability, and structural risk optimization to the workflow graphs that increasingly define how agentic systems operate. The three papers at this intersection (G-Safeguard, NetSafe, MAMA) have opened the door, but the room beyond is largely empty.</p>
-<p>For researchers with expertise in GNN robustness and graph-based optimization, this is — I think — an unusually attractive moment to enter the field.</p>
+<p><em>Conclusion.</em> The landscape I've described is one of rapid, somewhat fragmented progress. Graph-based orchestration has matured quickly — from concept to ICML/ICLR papers to production deployment in under two years. Agent security has grown explosively but remains fixated on content-level attacks. The critical missing piece is the bridge: applying the mature toolkit of graph adversarial robustness, GNN explainability, and structural risk optimization to the workflow graphs that increasingly define how agentic systems operate. The three papers at this intersection (G-Safeguard, NetSafe, MAMA) have opened the door, but the room beyond is largely empty.</p>
+<!-- For researchers with expertise in GNN robustness and graph-based optimization, this is — I think — an unusually attractive moment to enter the field. -->
+
 <h1 id="references">References</h1>
 <p><a id="ref-llmcompiler"></a>
 [1] Kim, S., Moon, S., Tabrizi, R., Lee, N., Mahoney, M.W., Keutzer, K., &amp; Gholami, A. (2024). <a href="https://arxiv.org/abs/2312.04511">An LLM Compiler for Parallel Function Calling</a>. <em>ICML 2024</em>.</p>
