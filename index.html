@@ -5,352 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sun Changsheng - Homepage</title>
     
-    <style>
-        @font-face {
-            font-family: 'STKaitiSubset';
-            src: url('fonts/STKaiti-subset.woff2') format('woff2');
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'LXGW WenKai';
-            src: url('fonts/LXGWWenKai-subset.woff2') format('woff2');
-            font-display: swap;
-        }
-
-        /* TeX Gyre Heros - Helvetica alternative for non-Apple systems */
-        @font-face {
-            font-family: 'TeX Gyre Heros';
-            src: url('fonts/texgyreheros-regular.otf') format('opentype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'TeX Gyre Heros';
-            src: url('fonts/texgyreheros-bold.otf') format('opentype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'TeX Gyre Heros';
-            src: url('fonts/texgyreheros-italic.otf') format('opentype');
-            font-weight: 400;
-            font-style: italic;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'TeX Gyre Heros';
-            src: url('fonts/texgyreheros-bolditalic.otf') format('opentype');
-            font-weight: 700;
-            font-style: italic;
-            font-display: swap;
-        }
-
-        /* Libre Baskerville - Variable Font */
-        @font-face {
-            font-family: 'Libre Baskerville';
-            src: url('fonts/LibreBaskerville-Variable.ttf') format('truetype');
-            font-weight: 400 700;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Libre Baskerville';
-            src: url('fonts/LibreBaskerville-Italic-Variable.ttf') format('truetype');
-            font-weight: 400 700;
-            font-style: italic;
-            font-display: swap;
-        }
-
-        :root {
-            /* --NUSBLUE: #003D7C;  */
-            --NUSBLUE: #003366;  /* Old Blue */
-            /* --NUSBLUE: #000000;  */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            /* font-family: Arial, Helvetica, sans-serif; */
-            font-family: 
-                -apple-system, 
-                Helvetica, 
-                'TeX Gyre Heros',
-                Arial, 
-                sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Sidebar name section */
-        .sidebar-name {
-            margin-bottom: 10px;
-            padding-bottom: 0px;
-            /* border-bottom: 2px solid var(--NUSBLUE); */
-        }
-
-        h1 {
-            font-size: 18px;
-            color: var(--NUSBLUE);
-            font-weight: bold;
-            margin-bottom: 0px;
-        }
-
-        .chinese-name:lang(zh), .chinese-name:lang(zh-Hans) {
-            font-family: 
-                'STKaitiSubset', 
-                'LXGW WenKai', 
-                ui-serif, 
-                serif;
-            color: var(--NUSBLUE);
-            margin-bottom: 5px;
-            font-size: 19px;
-            font-weight: 600;
-        }
-
-        .title {
-            color: #000000;
-            font-size: 14px;
-            font-weight: bold;
-            /* margin-bottom: 5px; */
-        }
-
-        .affiliation {
-            color: #000000;
-            font-size: 14px;
-        }
-
-        /* Main content */
-        .content {
-            display: flex;
-            gap: 30px;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            flex: 0 0 200px;
-            /* position: sticky; */
-            top: 20px;
-            align-self: flex-start;
-        }
-
-        .photo {
-            width: 160px;
-            height: 160px;
-            background: #f5f5f5;
-            /* border: 1px solid #ddd; */
-            /* border-radius: 20%; */
-            /* margin-top: 10px; */
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 12px;
-        }
-
-        .contact-section {
-            /* margin-bottom: 20px; */
-            margin-top: 20px;
-        }
-
-        .contact-section h3 {
-            font-size: 15px;
-            color: var(--NUSBLUE);
-            font-weight: bold;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
-
-        .contact-section p {
-            font-size: 13px;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-        }
-
-        /* Main section */
-        .main {
-            flex: 1;
-        }
-
-        h2 {
-            font-size: 18px;
-            color: var(--NUSBLUE);
-            font-weight: bold;
-            /* margin-top: 25px; */
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
-
-        h2:first-child {
-            margin-top: 0;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        /* Links */
-        a {
-            color: var(--NUSBLUE);
-            text-decoration: underline;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            /* font-weight: bold; */
-            color: #0026ff;
-        }
-
-        /* Lists */
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Nested lists */
-        ul ul {
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        ul ul li {
-            margin-bottom: 3px;
-        }
-
-        /* Publications */
-        .publication {
-            margin-bottom: 20px;
-        }
-
-        .pub-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .pub-authors {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 3px;
-        }
-
-        .pub-venue {
-            color: #333;
-            margin-bottom: 3px;
-        }
-
-        .pub-links {
-            font-size: 13px;
-        }
-
-        .pub-links a {
-            margin-right: 10px;
-        }
-
-        /* Teaching */
-        .teaching-item {
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
-        .footer {
-            /* margin-top: 20px; */
-            padding-top: 20px;
-            /* border-top: 1px solid #ccc; */
-            text-align: right;
-            font-size: 12px;
-            color: #666;
-        }
-
-        /* Year headings */
-        .year-heading {
-            font-weight: bold;
-            color: var(--NUSBLUE);
-            margin-top: 20px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                flex: none;
-                width: 100%;
-                position: static;
-            }
-
-            /* Header row: photo left, name right on mobile */
-            .sidebar-header {
-                display: flex;
-                align-items: top;
-                gap: 15px;
-                /* margin-bottom: 5px; */
-            }
-            
-            .photo {
-                width: 110px;
-                height: 110px;
-                flex-shrink: 0;
-                margin: 0;
-            }
-            
-            .sidebar-name {
-                text-align: left;
-            }
-
-            /* Office address: hide line breaks on mobile */
-            .office-address br,
-            .contact-inline br {
-                display: none;
-            }
-            .office-address span::after {
-                content: ', ';
-            }
-            .office-address span:last-of-type::after {
-                content: '';
-            }
-
-            /* Links: inline on mobile */
-            .links-inline p {
-                display: inline;
-            }
-            .links-inline p::after {
-                content: ' · ';
-            }
-            .links-inline p:last-child::after {
-                content: '';
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="site.css">
 
 </head>
-<body>
+<body class="homepage">
+    <nav class="site-nav">
+        <a href="index.html">&#8962; about me</a>
+        <a href="blog/index.html">blog &rarr;</a>
+    </nav>
+
     <div class="content">
         <div class="sidebar">
             <div class="sidebar-header">
@@ -369,12 +32,12 @@
                 <h3>Contact</h3>
                 <p class="contact-inline"><strong>Email:</strong><br>
                 cssun@u.nus.edu</p>
-                
+
                 <p class="office-address"><strong>Office:</strong><br>
                 <span>Computing 3 #02-20</span><br>
                 <span>11 Research Link</span><br>
                 <span>Singapore 119391</span></p>
-                
+
                 <p class="contact-inline"><strong>Lab:</strong><br>
                 <a href="https://nus-plse.github.io/">PLSE@NUS</a></p>
             </div>
@@ -385,11 +48,6 @@
                 <p><a href="https://scholar.google.com/citations?user=1M5_gpIAAAAJ">Google Scholar</a></p>
                 <p><a href="http://linkedin.com/in/changshengsun/">LinkedIn</a></p>
                 <p><a href="https://github.com/cs-sun">GitHub</a></p>
-            </div>
-
-            <div class="contact-section links-inline">
-                <h3>Blog</h3>
-                <p><a href="blog/index.html">all posts &rarr;</a></p>
             </div>
         </div>
 
@@ -414,7 +72,7 @@
             <ul>
                 <li><strong>Doctor of Philosophy in Computer Science</strong> (2022 - Mar 2026)<br>
                     National University of Singapore<br>
-                    Thesis: Trustworthy Geometric Learning: From Structural Biases to Risk-Aware Robustness<br>
+                    <em>Thesis: Trustworthy Geometric Learning: From Structural Biases to Risk-Aware Robustness</em><br>
                     Advisor: <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Dong Jin Song</a></li>
                 <li><strong>Master of Computing in Artificial Intelligence</strong> (2020 - 2021)<br>
                     National University of Singapore</li>
@@ -422,32 +80,32 @@
                     Xidian University, Xi'an, China</li>
             </ul>
 
-            <h2>Work Experience</h2>
+            <h2>Experience</h2>
             <ul>
                 <li><strong>Research Assistant</strong> (Jan 2026 - Present)<br>
-                    NUS School of Computing<br>
-                    Working on AISG project: Trustworthy Geometric Learning<br>
+                    NUS School of Computing, AISG Project<br>
+                    <!-- Working on AISG project: Trustworthy Geometric Learning<br> -->
                     Host: <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Dong Jin Song</a> and <a href="https://zhangyedi.github.io/">Dr. Zhang Yedi</a></li>
                 <li><strong>Research Assistant</strong> (July 2021 - Dec 2021)<br>
-                    NUS School of Computing<br>
-                    Built and maintained a reproducible evaluation pipeline for trustworthiness assessment of deep learning systems, emphasizing uncertainty-aware reliability analysis. Contributed to work published at ASE 2022 (InputReflector).<br>
+                    NUS School of Computing, TrustDNN Project<br>
+                    <!-- Built and maintained a reproducible evaluation pipeline for trustworthiness assessment of deep learning systems, emphasizing uncertainty-aware reliability analysis. Contributed to work published at ASE 2022 (InputReflector).<br> -->
                     Host: <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Dong Jin Song</a> and <a href="https://yanxiao6.github.io/">Prof. Xiao Yan</a></li>
                 <li><strong>Research Intern</strong> (Jan 2020 - June 2020)<br>
                     NUS-Singtel Cyber Security R&D Lab<br>
-                    Developed a white-box testing approach for deep neural networks by leveraging intermediate-layer signals and density estimation for reliability assessment. Contributed to work published at ICSE 2021 (Self-Checking Deep Neural Networks).<br>
+                    <!-- Developed a white-box testing approach for deep neural networks by leveraging intermediate-layer signals and density estimation for reliability assessment. Contributed to work published at ICSE 2021 (Self-Checking Deep Neural Networks).<br> -->
                     Host: <a href="https://people.cs.gmu.edu/~dsr/">Prof. David S. Rosenblum</a></li>
                 <li><strong>Research Intern & Algorithm Engineer</strong> (Jan 2018 - June 2018)<br>
                     JD Intelligent Cities Research, JD.com (<a href="https://www.microsoft.com/en-us/research/project/urban-computing/">MSRA Urban Computing Group</a>)<br>
-                    Prototyped a distributed DQN research system on spatiotemporal data using the Ray execution framework; focused on training scalability and system performance profiling.<br>
+                    <!-- Prototyped a distributed DQN research system on spatiotemporal data using the Ray execution framework; focused on training scalability and system performance profiling.<br> -->
                     Host: <a href="http://urban-computing.com/yuzheng">Prof. Yu Zheng</a> and <a href="https://www.zhangjunbo.org/">Dr. Junbo Zhang</a></li>
             </ul>
 
             <h2>Skills</h2>
             <p>
-                <strong>Programming &amp; Scripting:</strong> Python, Bash/Shell Scripting, SQL<br>
-                <strong>AI &amp; ML:</strong> PyTorch, TensorFlow, Hugging Face Transformers, Geometric Deep Learning (PyG, DGL), LLM Safety &amp; Alignment<br>
+                <strong>Programming:</strong> Python, Bash/Shell Scripting, SQL<br>
+                <strong>AI &amp; ML:</strong> PyTorch, TensorFlow, Geometric Deep Learning (PyG, DGL), LLM Safety &amp; Alignment<br>
                 <strong>Systems:</strong> Linux/Unix, Multi-GPU setups, Ray, Docker, Git, ClickHouse, Spark<br>
-                <strong>Miscellaneous:</strong> Trustworthy AI (Robustness, Explainability), Graph Learning, LLM Safety, Agentic AI
+                <strong>Misc:</strong> Trustworthy AI (Robustness, Explainability), Graph Learning, LLM Safety, Multi Agent Systems
             </p>
 
             <h2>Services & Awards</h2>

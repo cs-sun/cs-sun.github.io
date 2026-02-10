@@ -1,0 +1,730 @@
+/* ============================================================
+   site.css — shared styles for sunchangsheng.com
+   Covers: homepage, blog list, blog posts
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Font faces (used by homepage)
+   ------------------------------------------------------------ */
+@font-face {
+    font-family: 'STKaitiSubset';
+    src: url('fonts/STKaiti-subset.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('fonts/LXGWWenKai-subset.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* TeX Gyre Heros - Helvetica alternative for non-Apple systems */
+@font-face {
+    font-family: 'TeX Gyre Heros';
+    src: url('fonts/texgyreheros-regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TeX Gyre Heros';
+    src: url('fonts/texgyreheros-bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TeX Gyre Heros';
+    src: url('fonts/texgyreheros-italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TeX Gyre Heros';
+    src: url('fonts/texgyreheros-bolditalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Libre Baskerville - Variable Font */
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('fonts/LibreBaskerville-Variable.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('fonts/LibreBaskerville-Italic-Variable.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ------------------------------------------------------------
+   Shared base
+   ------------------------------------------------------------ */
+:root {
+    --NUSBLUE: #003D7C;
+    /* --NUSBLUE: #003366; */
+    /* --NUSBLUE: #000000; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default body — blog pages */
+body {
+    /* font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif; */
+    font-family:
+        -apple-system,
+        Helvetica,
+        'TeX Gyre Heros',
+        Arial,
+        sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   Navigation — shared across all pages
+   ------------------------------------------------------------ */
+.site-nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    /* border-bottom: 2px solid var(--NUSBLUE); */
+}
+
+.site-nav a {
+    color: var(--NUSBLUE);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.site-nav a:hover {
+    text-decoration: underline;
+    color: #0026ff;
+}
+
+/* Push a nav link to the right end */
+.site-nav .nav-right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* ============================================================
+   HOMEPAGE
+   ============================================================ */
+
+/* Homepage body overrides */
+body.homepage {
+    font-family:
+        -apple-system,
+        Helvetica,
+        'TeX Gyre Heros',
+        Arial,
+        sans-serif;
+    font-size: 14px;
+}
+
+/* Sidebar name section */
+.homepage .sidebar-name {
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    /* border-bottom: 2px solid var(--NUSBLUE); */
+}
+
+.homepage h1 {
+    font-size: 18px;
+    color: var(--NUSBLUE);
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.homepage .chinese-name:lang(zh),
+.homepage .chinese-name:lang(zh-Hans) {
+    font-family:
+        'STKaitiSubset',
+        'LXGW WenKai',
+        ui-serif,
+        serif;
+    color: var(--NUSBLUE);
+    margin-bottom: 5px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.homepage .title {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.homepage .affiliation {
+    color: #000000;
+    font-size: 14px;
+}
+
+/* Main content layout */
+.homepage .content {
+    display: flex;
+    gap: 30px;
+}
+
+/* Sidebar */
+.homepage .sidebar {
+    flex: 0 0 180px;
+    top: 20px;
+    align-self: flex-start;
+}
+
+.homepage .photo {
+    width: 160px;
+    height: 160px;
+    background: #f5f5f5;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 12px;
+}
+
+.homepage .contact-section {
+    margin-top: 20px;
+}
+
+.homepage .contact-section h3 {
+    font-size: 15px;
+    color: var(--NUSBLUE);
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.homepage .contact-section p {
+    font-size: 13px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+/* Main section */
+.homepage .main {
+    flex: 1;
+}
+
+.homepage h2 {
+    font-size: 18px;
+    color: var(--NUSBLUE);
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.homepage h2:first-child {
+    margin-top: 0;
+}
+
+.homepage p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Links */
+.homepage a {
+    color: var(--NUSBLUE);
+    /* text-decoration: underline; */
+    text-decoration: none;
+}
+
+.homepage a:hover {
+    text-decoration: underline;
+    color: #0026ff;
+}
+
+/* Nav links should never have underline, even on homepage */
+.homepage .site-nav a {
+    text-decoration: none;
+    color: var(--NUSBLUE);
+}
+
+.homepage .site-nav a:hover {
+    text-decoration: underline;
+    color: #0026ff;
+}
+
+/* Lists */
+.homepage ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.homepage li {
+    margin-bottom: 8px;
+}
+
+.homepage ul ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.homepage ul ul li {
+    margin-bottom: 3px;
+}
+
+/* Publications */
+.homepage .publication {
+    margin-bottom: 20px;
+}
+
+.homepage .pub-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.homepage .pub-authors {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.homepage .pub-venue {
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.homepage .pub-links {
+    font-size: 13px;
+}
+
+.homepage .pub-links a {
+    margin-right: 10px;
+}
+
+/* Footer */
+.homepage .footer {
+    padding-top: 20px;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Year headings */
+.homepage .year-heading {
+    font-weight: bold;
+    color: var(--NUSBLUE);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Homepage responsive */
+@media (max-width: 768px) {
+    .homepage .content {
+        flex-direction: column;
+    }
+
+    .homepage .sidebar {
+        flex: none;
+        width: 100%;
+        position: static;
+    }
+
+    /* Header row: photo left, name right on mobile */
+    .homepage .sidebar-header {
+        display: flex;
+        align-items: top;
+        gap: 15px;
+    }
+
+    .homepage .photo {
+        width: 110px;
+        height: 110px;
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .homepage .sidebar-name {
+        text-align: left;
+    }
+
+    /* Office address: hide line breaks on mobile */
+    .homepage .office-address br,
+    .homepage .contact-inline br {
+        display: none;
+    }
+    .homepage .office-address span::after {
+        content: ', ';
+    }
+    .homepage .office-address span:last-of-type::after {
+        content: '';
+    }
+
+    /* Links: inline on mobile */
+    .homepage .links-inline p {
+        display: inline;
+    }
+    .homepage .links-inline p::after {
+        content: ' · ';
+    }
+    .homepage .links-inline p:last-child::after {
+        content: '';
+    }
+}
+
+/* ============================================================
+   BLOG — post header, content, index
+   ============================================================ */
+
+/* Post header */
+.post-header {
+    margin-bottom: 30px;
+}
+
+.post-header h1 {
+    font-size: 22px;
+    color: var(--NUSBLUE);
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.post-header .post-meta {
+    color: #666;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.post-header time {
+    color: #666;
+}
+
+.post-header .meta-separator {
+    color: #999;
+}
+
+.post-header .post-author {
+    color: #666;
+}
+
+/* Table of Contents */
+.toc {
+    margin: 0 0 10px 0;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 4px;
+    padding: 0;
+    font-size: 12px;
+}
+
+.toc details {
+    padding: 10px 15px;
+}
+
+.toc details summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    user-select: none;
+    list-style: none;
+}
+
+.toc details summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc details summary::before {
+    content: '▶ ';
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.toc details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.toc .toctitle {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--NUSBLUE);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.toc ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.toc li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.toc a {
+    color: #333;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: var(--NUSBLUE);
+    text-decoration: underline;
+}
+
+/* Post content */
+.post-content {
+    line-height: 1.7;
+}
+
+.post-content h1 {
+    font-size: 20px;
+    color: var(--NUSBLUE);
+    font-weight: bold;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.post-content h2 {
+    font-size: 18px;
+    color: var(--NUSBLUE);
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.post-content h3 {
+    font-size: 18px;
+    color: var(--NUSBLUE);
+    font-weight: normal;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.post-content h4 {
+    font-size: 16px;
+    color: var(--NUSBLUE);
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.post-content h5 {
+    font-size: 14px;
+    color: var(--NUSBLUE);
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.post-content h6 {
+    font-size: 12px;
+    color: var(--NUSBLUE);
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.post-content p {
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.post-content a {
+    color: var(--NUSBLUE);
+    text-decoration: underline;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-left: 20px;
+    margin-bottom: 14px;
+}
+
+.post-content li {
+    margin-bottom: 8px;
+}
+
+/* Code blocks */
+.post-content code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    background: #f5f5f5;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.post-content pre {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-left: 3px solid var(--NUSBLUE);
+    padding: 15px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    line-height: 1.5;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    font-size: 13px;
+}
+
+/* Math blocks */
+.katex-display {
+    margin: 20px 0;
+    padding: 10px 20px;
+    overflow-x: auto;
+}
+
+/* Block quotes */
+.post-content blockquote {
+    border-left: 3px solid var(--NUSBLUE);
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: #f9f9f9;
+    color: #555;
+}
+
+/* Images */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Tables */
+.post-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.post-content th,
+.post-content td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.post-content th {
+    background: #f5f5f5;
+    color: var(--NUSBLUE);
+}
+
+/* Post disclaimer */
+.post-disclaimer {
+    margin-top: 40px;
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #f9f9f9;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.post-disclaimer p {
+    margin: 0;
+}
+
+.post-disclaimer strong {
+    color: #333;
+}
+
+/* Post footer */
+.post-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.post-footer a {
+    color: var(--NUSBLUE);
+    text-decoration: none;
+}
+
+.post-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Site footer */
+.site-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Blog index page */
+.blog-index {
+    margin-top: 0;
+}
+
+.post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.post-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.post-item time {
+    display: block;
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.post-item a {
+    color: var(--NUSBLUE);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.post-item a:hover {
+    text-decoration: underline;
+}
+
+.post-description {
+    color: #666666;
+    font-size: 14px;
+}
+
+/* Blog responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .post-header h1 {
+        font-size: 28px;
+    }
+}
