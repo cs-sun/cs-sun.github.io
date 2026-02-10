@@ -157,12 +157,24 @@ def convert_post(md_path: Path) -> dict:
     # Generate output filename
     output_name = md_path.stem + '.html'
 
+    # Render description as inline HTML (for blog list)
+    raw_description = metadata.get('description', '')
+    if raw_description:
+        desc_text, desc_math = protect_math(raw_description)
+        desc_html = markdown.markdown(desc_text)
+        desc_html = restore_math(desc_html, desc_math)
+        # Strip wrapping <p>...</p> since the template provides its own <p>
+        desc_html = re.sub(r'^<p>(.*)</p>$', r'\1', desc_html.strip(), flags=re.DOTALL)
+    else:
+        desc_html = ''
+
     return {
         'title': metadata.get('title', 'Untitled'),
         'date': str(metadata.get('date', '')),
         'date_formatted': format_date(metadata.get('date')),
         'author': metadata.get('author', 'Sun Changsheng'),
-        'description': metadata.get('description', ''),
+        'description': raw_description,
+        'description_html': desc_html,
         'tags': metadata.get('tags', []),
         'math': metadata.get('math', False),
         'content': html_body,

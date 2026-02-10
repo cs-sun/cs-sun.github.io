@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Sun Changsheng</title>
     <link rel="stylesheet" href="../site.css">
+
+    <!-- KaTeX for math rendering in descriptions -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });"></script>
 </head>
 <body>
     <nav class="site-nav">
@@ -17,9 +31,13 @@
         {% for post in posts %}
             <li class="post-item">
                 <a href="{{ post.filename }}">{{ post.title }}</a>
-                <time datetime="{{ post.date }}">{{ post.date_formatted }}</time>
-                {% if post.description %}
-                <p class="post-description">{{ post.description }}</p>
+                <div class="post-meta">
+                    <time datetime="{{ post.date }}">{{ post.date_formatted }}</time>
+                    <span class="meta-separator">&bull;</span>
+                    <span class="post-author">{{ post.author }}</span>
+                </div>
+                {% if post.description_html %}
+                <p class="post-description">{{ post.description_html }}</p>
                 {% endif %}
             </li>
         {% endfor %}

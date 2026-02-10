@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Sun Changsheng</title>
     <link rel="stylesheet" href="../site.css">
+
+    <!-- KaTeX for math rendering in descriptions -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });"></script>
 </head>
 <body>
     <nav class="site-nav">
@@ -17,15 +31,23 @@
         
             <li class="post-item">
                 <a href="2026-02-09-mas-memory.html">Memory in LLM Agents: From Topology to Meta-Evolution</a>
-                <time datetime="2026-02-09">09 February 2026</time>
+                <div class="post-meta">
+                    <time datetime="2026-02-09">09 February 2026</time>
+                    <span class="meta-separator">&bull;</span>
+                    <span class="post-author">Sun Changsheng</span>
+                </div>
                 
-                <p class="post-description">Large Language Models are fundamentally stateless functions — they map an input $x$ to an output $y$, resetting with every call. To transform these static generators into autonomous agents capable of long-horizon reasoning and lifelong learning, we must equip them with **Memory**.</p>
+                <p class="post-description">Large Language Models are fundamentally stateless functions — they map an input $x$ to an output $y$, resetting with every call. To transform these static generators into autonomous agents capable of long-horizon reasoning and lifelong learning, we must equip them with <strong>Memory</strong>.</p>
                 
             </li>
         
             <li class="post-item">
                 <a href="2026-02-09-graph-agent.html">When Graphs Meet Agents: Orchestration, Topology, and the Uncharted Territory of Safety</a>
-                <time datetime="2026-02-09">09 February 2026</time>
+                <div class="post-meta">
+                    <time datetime="2026-02-09">09 February 2026</time>
+                    <span class="meta-separator">&bull;</span>
+                    <span class="post-author">Sun Changsheng</span>
+                </div>
                 
                 <p class="post-description">A deep dive into the emerging intersection of graph structures and LLM agentic systems, exploring orchestration frameworks, topology-aware design, and the largely unexplored frontier of topology-based security.</p>
                 
