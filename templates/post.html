@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} - Sun Changsheng</title>
+    <meta name="description" content="{{ post.description }}">
+
+    <!-- Blog styles -->
+    <link rel="stylesheet" href="../site.css?v=31c062fb">
+
+    <!-- Custom table styles -->
+    <style>
+        .post-content table {
+            font-size: 0.85em;
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1.5em 0;
+        }
+
+        .post-content table thead th {
+            padding: 0.75em 0.5em;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+
+        .post-content table tbody td {
+            border-top: 1px solid #e8e8e8;
+            padding: 0.75em 0.5em;
+            vertical-align: top;
+        }
+
+        .post-content table tbody tr:first-child td {
+            border-top: 1px solid #e8e8e8;
+        }
+
+        /* Remove all vertical borders */
+        .post-content table th,
+        .post-content table td {
+            border-left: none;
+            border-right: none;
+        }
+    </style>
+
+    {% if post.math %}
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    {% endif %}
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../index.html">&#8962; about me</a>
+        <a href="index.html">&larr; all posts</a>
+    </nav>
+
+    <article class="blog-post">
+        <header class="post-header">
+            <h1>{{ post.title }}</h1>
+            <div class="post-meta">
+                <time datetime="{{ post.date }}">{{ post.date_formatted }}</time>
+                <span class="meta-separator">•</span>
+                <span class="post-author">{{ post.author }}</span>
+            </div>
+        </header>
+
+        <div class="post-content">
+            {{ post.content }}
+        </div>
+
+        <div class="post-disclaimer">
+            <p><strong>Disclaimer.</strong> This post is a collection of my personal study notes. Opinions expressed here are my own. Much of the content is gathered and synthesized from existing literature — credit belongs to the original authors and their respective papers, which are cited throughout. AI tools were used to assist in the writing and editing process. As such, if you intend to reference or cite any material from this post, please verify the information against the original sources and take responsibility for its accuracy.</p>
+        </div>
+
+        <footer class="post-footer">
+            <a href="index.html">&larr; all posts</a>
+        </footer>
+    </article>
+
+    <footer class="site-footer">
+        © Sun Changsheng
+    </footer>
+</body>
+</html>

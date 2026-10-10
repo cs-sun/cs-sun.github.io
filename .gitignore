@@ -1,0 +1,28 @@
+# Jekyll
+.jekyll-cache/
+_site/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+.claude/
+
+.DS_Store
+
+# Keep private CV versions and LaTeX working files out of the public website.
+[cC][vV]*.pdf
+!assets/cv-changsheng-sun-oct2026.pdf
+*.tex
+*.bib
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*[dD]raft*.pdf

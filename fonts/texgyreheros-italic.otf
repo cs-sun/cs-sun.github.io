@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+
+    
+    
+    
+    
+    
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    
+        <base href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/" /><!--[if lt IE 7]></base><![endif]-->
+    
+
+    
+        
+
+  
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.gust.org.pl/portal_css/Sunburst%20Theme/reset-cachekey-31d048e94e266f5ec38c43cb27e7c75b.css" />
+    <style type="text/css" media="screen">@import url(https://www.gust.org.pl/portal_css/Sunburst%20Theme/base-cachekey-e6d9de86cf1540a627329cc43e0d5a34.css);</style>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.gust.org.pl/portal_css/Sunburst%20Theme/collective.js.jqueryui.custom.min-cachekey-e8517f8542266784d2cee3f9fbf90f33.css" />
+    <style type="text/css" media="screen">@import url(https://www.gust.org.pl/portal_css/Sunburst%20Theme/columns-cachekey-48dcb8bfc396c93d187cda87d202c4f9.css);</style>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.gust.org.pl/portal_css/Sunburst%20Theme/resourcetinymce.stylesheetstinymce-cachekey-51e05b4891573eaef6c45a9885e09fe2.css" />
+    <style type="text/css">@import url(https://www.gust.org.pl/portal_css/Sunburst%20Theme/print-cachekey-542d5c65ec2988af1ad88933aa609fd9.css);</style>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.gust.org.pl/portal_css/Sunburst%20Theme/resourceplone.app.discussion.stylesheetsdiscussion-cachekey-1c1a243eaef82f0f981186961a7978b1.css" />
+    <style type="text/css" media="screen">@import url(https://www.gust.org.pl/portal_css/Sunburst%20Theme/resourceplone.app.jquerytools.dateinput-cachekey-08ce483843269f35e83f9ea38fc61695.css);</style>
+    <style type="text/css">@import url(https://www.gust.org.pl/portal_css/Sunburst%20Theme/resourceplonetruegallery-portlet-cachekey-60a64415fa17034a57b3632020b50d8f.css);</style>
+
+  
+  
+    <script type="text/javascript" src="https://www.gust.org.pl/portal_javascripts/Sunburst%20Theme/resourceplone.app.jquery-cachekey-6ebc53142aca08f305d33af8d2a977c0.js"></script>
+    <script type="text/javascript" src="https://www.gust.org.pl/portal_javascripts/Sunburst%20Theme/table_sorter-cachekey-97c087e2c0ff66afc1752feda96537ab.js"></script>
+    <script type="text/javascript" src="https://www.gust.org.pl/portal_javascripts/Sunburst%20Theme/kss-bbb-cachekey-ad70c6ef94056ce58b7aa78c0b1f5bbf.js"></script>
+
+
+<title>Heros &mdash; GUST Web Presence</title>
+        
+    <link rel="canonical" href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros" />
+<script type="text/javascript">
+        jQuery(function($){
+            if (typeof($.datepicker) != "undefined"){
+              $.datepicker.setDefaults(
+                jQuery.extend($.datepicker.regional['pl'],
+                {dateFormat: 'yy-mm-dd'}));
+            }
+        });
+        </script>
+
+
+
+
+    <link rel="search" href="https://www.gust.org.pl/@@search" title="Przeszukaj stronę" />
+
+
+
+  <link rel="alternate" href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros" hreflang="" />
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.gust.org.pl/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://www.gust.org.pl/touch_icon.png" />
+
+
+        
+        
+        
+        
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.6666, maximum-scale=1.0, minimum-scale=0.6666" />
+        <meta name="generator" content="Plone - http://plone.org" />
+    
+</head>
+
+<body data-portal-url="https://www.gust.org.pl" class="template-default_error_message portaltype-folder site-GUST section-projects subsection-e-foundry subsection-e-foundry-tex-gyre subsection-e-foundry-tex-gyre-heros icons-on userrole-anonymous" dir="ltr" data-base-url="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros">
+
+<div id="visual-portal-wrapper">
+
+        <div id="portal-top" class="row">
+<div class="cell width-full position-0">
+            <div id="portal-header">
+    <p class="hiddenStructure">
+  <a accesskey="2" href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhvri.otf#content">Przejdź na skróty do treści.</a> |
+
+  <a accesskey="6" href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhvri.otf#portal-globalnav">Przejdź do nawigacji</a>
+</p>
+
+<div id="portal-personaltools-wrapper">
+
+<p class="hiddenStructure">Narzędzia osobiste</p>
+
+
+
+<ul class="actionMenu deactivated" id="portal-personaltools">
+  <li id="anon-personalbar">
+    
+        <a href="https://www.gust.org.pl/login" id="personaltools-login">Zaloguj</a>
+    
+  </li>
+</ul>
+
+</div>
+
+
+<ul id="portal-languageselector">
+    
+    <li class="language-en">
+        <a href="https://www.gust.org.pl?set_language=en" title="English">
+                <img width="14" height="11" alt="English" src="https://www.gust.org.pl/++resource++country-flags/gb.gif" title="English" />
+            </a>
+    </li>
+    
+    
+    <li class="currentLanguage language-pl">
+        <a href="https://www.gust.org.pl?set_language=pl" title="Polski">
+                <img width="14" height="11" alt="Polski" src="https://www.gust.org.pl/++resource++country-flags/pl.gif" title="Polski" />
+            </a>
+    </li>
+    
+</ul>
+
+
+<div id="portal-searchbox">
+
+    <form id="searchGadget_form" action="https://www.gust.org.pl/@@search">
+
+        <div class="LSBox">
+        <label class="hiddenStructure" for="searchGadget">Szukaj</label>
+
+        <input name="SearchableText" type="text" size="18" title="Szukaj w witrynie" placeholder="Szukaj w witrynie" accesskey="4" class="searchField" id="searchGadget" />
+
+        <input class="searchButton" type="submit" value="Szukaj" />
+
+        <div class="searchSection">
+            <input id="searchbox_currentfolder_only" class="noborder" type="checkbox" name="path" value="/GUST/projects/e-foundry/tex-gyre/heros" />
+            <label for="searchbox_currentfolder_only" style="cursor: pointer">tylko w bieżącym dziale</label>
+        </div>
+
+        <div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
+        </div>
+    </form>
+
+    <div id="portal-advanced-search" class="hiddenStructure">
+        <a href="https://www.gust.org.pl/@@search" accesskey="5">Wyszukiwanie Zaawansowane...</a>
+    </div>
+
+</div>
+
+<a id="portal-logo" title="GUST Web Presence" accesskey="1" href="https://www.gust.org.pl">
+    <img src="https://www.gust.org.pl/logo.png" alt="GUST Web Presence" title="GUST Web Presence" height="70" width="455" /></a>
+
+    <p class="hiddenStructure">Navigation</p>
+
+    <ul id="portal-globalnav"><li id="portaltab-index_html" class="selected"><a href="https://www.gust.org.pl" title="">Start</a></li><li id="portaltab-gust" class="plain"><a href="https://www.gust.org.pl/gust" title="Podstawowe informacje o naszym Stowarzyszeniu i jego aktywnościach.">GUST</a></li><li id="portaltab-przedsiewziecia" class="plain"><a href="https://gust.org.pl/Projekty" title="">Przedsięwzięcia</a></li><li id="portaltab-bachotex-pl" class="plain"><a href="https://bachotex.gust.org.pl/allBachoTeXs/index_pl.html" title="">BachoTeX</a></li><li id="portaltab-doc" class="plain"><a href="https://www.gust.org.pl/doc" title="">Dokumentacje</a></li><li id="portaltab-archives" class="plain"><a href="https://www.gust.org.pl/archives" title="Zasoby oprogramowania GUST/CTAN. Archiwum grupy dyskusujnej GUST-L.">Archiwa GUST i CTAN</a></li><li id="portaltab-faq" class="plain"><a href="https://www.gust.org.pl/faq"
+    title="W sieci Internet istnieje kilka FAQ poświęconych systemowi TeX. Poniżej prezentujemy polski FAQ, polecany przez GUST oraz FAQ zagraniczne.">FAQ</a></li><li id="portaltab-tex_worldwide" class="plain"><a href="https://www.gust.org.pl/tex_worldwide" title="Konferencje, listy dyskusyjne, grupy robocze, stowarzyszenia.">TeX na świecie</a></li><li id="portaltab-czeki-od-donalda-e-knutha" class="plain"><a href="https://gust.org.pl/DEK_checks" title="">Czeki od Donalda E. Knutha</a></li></ul>
+
+
+</div>
+
+</div>
+        </div>
+    <div id="portal-columns" class="row">
+
+        <div id="portal-column-content" class="cell width-full position-0">
+
+            <div id="viewlet-above-content"><div id="portal-breadcrumbs">
+
+    <span id="breadcrumbs-you-are-here">Jesteś w:</span>
+    <span id="breadcrumbs-home">
+        <a href="https://www.gust.org.pl">Start</a>
+        <span class="breadcrumbSeparator">
+            /
+            
+        </span>
+    </span>
+    <span id="breadcrumbs-1" dir="ltr">
+        
+            <a href="https://www.gust.org.pl/projects">Przedsięwzięcia/Projects</a>
+            <span class="breadcrumbSeparator">
+                /
+                
+            </span>
+            
+         
+    </span>
+    <span id="breadcrumbs-2" dir="ltr">
+        
+            <a href="https://www.gust.org.pl/projects/e-foundry">e-foundry</a>
+            <span class="breadcrumbSeparator">
+                /
+                
+            </span>
+            
+         
+    </span>
+    <span id="breadcrumbs-3" dir="ltr">
+        
+            <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre">TeX Gyre Fonts</a>
+            <span class="breadcrumbSeparator">
+                /
+                
+            </span>
+            
+         
+    </span>
+    <span id="breadcrumbs-4" dir="ltr">
+        
+            
+            
+            <span id="breadcrumbs-current">Heros</span>
+         
+    </span>
+
+</div>
+</div>
+
+            
+                <div class="">
+
+                    
+
+                    
+
+    <dl class="portalMessage info" id="kssPortalMessage" style="display:none">
+        <dt>Info</dt>
+        <dd></dd>
+    </dl>
+
+
+
+                    
+                        <div id="content">
+
+                            
+
+                            
+
+        
+
+            
+
+                
+
+                <h1 class="documentFirstHeading">Przykro nam, ale taka strona nie istnieje...</h1>
+
+                <div id="content-core">
+                    <p>Przepraszamy za niedogodności, ale strona, z którą próbujesz się połączyć nie jest dostępna pod tym adresem. Możesz użyć poniższych linków aby odnaleźć to czego szukasz.</p>
+
+                    <p>Jeśli jesteś pewny że podany adres jest poprawny, ale wciąż napotykasz błąd, skontaktuj się proszę z <span> <a href="https://www.gust.org.pl/contact-info">Administracja Witryny</a></span>.</p>
+
+                    <p>Dziękujemy.</p>
+
+                    <!-- Offer search results for suggestions -->
+                    
+
+                        <h3>Być może szukałeś...</h3>
+
+                        <dl>
+
+                        
+                            
+                                <dt class="contenttype-folder">
+                                  
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros" class="state-published">Heros</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+
+                        
+                            
+                                <dt class="contenttype-folder">
+                                  
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros" class="state-published">Heros</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-link">
+                                  
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/obsolete/fonts_quasi/quasi_swiss" class="state-published">TeX Gyre Heros (dawniej QuasiSwiss)</a>
+
+                                    
+
+                                </dt>
+
+                                <dd>Uwaga: rodzina Quasi Swiss z zestawu Quasi została zastąpiona rodziną TeX Gyre Heros i nie będzie już udostępniana przez GUST. TeX Gyre Heros jest należącą do ...</dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-document">
+                                  
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/index_html" class="state-published">TeX Gyre Heros</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-document">
+                                  
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/obsolete/index_html" class="state-published">Obsolete: Quasi fonts</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-file">
+                                  <img width="16" height="16" src="https://www.gust.org.pl/txt.png" alt="Plik Plain Text" />
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/manifest-tex-gyre-heros.txt/view" class="state-">MANIFEST-TeX-Gyre-Heros.txt</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-document">
+                                  
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/whole/index_html" class="state-published">The whole collection</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-file">
+                                  <img width="16" height="16" src="https://www.gust.org.pl/txt.png" alt="Plik Plain Text" />
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tg-math/download/prev-readme-tex-gyre-termes-math.txt/view" class="state-">prev-README-TeX-Gyre-Termes-Math.txt</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-file">
+                                  <img width="16" height="16" src="https://www.gust.org.pl/txt.png" alt="Plik Plain Text" />
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tg-math/download/readme-tex-gyre-termes-math-1502.txt/view" class="state-">README-TeX-Gyre-Termes-Math-1502.txt</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-file">
+                                  <img width="16" height="16" src="https://www.gust.org.pl/txt.png" alt="Plik Plain Text" />
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tg-math/download/readme-tex-gyre-termes-math.txt/view" class="state-">README-TeX-Gyre-Termes-Math.txt</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-file">
+                                  <img width="16" height="16" src="https://www.gust.org.pl/txt.png" alt="Plik Plain Text" />
+                                   <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv-hist.txt/view" class="state-">qhv-hist.txt</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+
+                        </dl>
+
+                    
+                </div>
+            
+
+        
+
+        
+        
+
+
+                        </div>
+                    
+
+                    
+                </div>
+            
+
+            <div id="viewlet-below-content">
+</div>
+        </div>
+
+        
+        
+
+        
+        
+    </div>
+
+
+    <div id="portal-footer-wrapper" class="row">
+        <div class="cell width-full position-0">
+            <div id="portal-footer">
+          <p>
+               <a href="http://plone.org">Plone<sup>&reg;</sup> CMS - Open Source Content Management System</a> – Copyright <abbr title="Copyright">&copy;</abbr> 2000: 2026 by <a href="http://plone.org/foundation">Plone Foundation</a> et al.
+
+               Na licencji <a href="http://creativecommons.org/licenses/GPL/2.0/">licencji GNU GPL</a>
+          </p>
+
+</div>
+
+<div id="portal-colophon">
+<div class="colophonWrapper">
+<ul>
+  <li>
+    <a href="http://plone.org" title="Ta witryna została stworzona przy pomocy systemu zarządzania treścią Plone. Kliknij aby uzyskać więcej informacji.">Wykorzystuje Plone</a>
+  </li>
+</ul>
+</div>
+</div>
+
+<ul id="portal-siteactions">
+
+    <li id="siteaction-sitemap"><a href="https://www.gust.org.pl/sitemap" accesskey="3" title="Mapa witryny">Mapa witryny</a></li>
+    <li id="siteaction-accessibility"><a href="https://www.gust.org.pl/accessibility-info" accesskey="0" title="Dostępność">Dostępność</a></li>
+    <li id="siteaction-contact"><a href="https://www.gust.org.pl/contact-info" accesskey="9" title="Kontakt">Kontakt</a></li>
+</ul>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>
+
+
