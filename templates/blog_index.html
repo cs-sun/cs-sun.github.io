@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Changsheng Sun</title>
+    <link rel="icon" href="../favicon.png">
+</head>
+<body>
+<font face="Helvetica Neue, Helvetica, Arial, sans-serif">
+    <p>
+        <a href="../index.html">About</a>&nbsp;&nbsp;|&nbsp;
+        <a href="../research.html">Research</a>&nbsp;&nbsp;|&nbsp;
+        <a href="index.html">Blog</a>&nbsp;&nbsp;|&nbsp;
+        <a href="../misc.html">Misc</a>
+    </p>
+    <hr>
+
+    <main>
+        {% if posts %}
+        <ul>
+        {% for post in posts %}
+            <li><p>
+                <a href="{{ post.filename }}">{{ post.title }}</a><br>
+                <time datetime="{{ post.date }}">{{ post.date_formatted }}</time>
+            </p></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No posts yet.</p>
+        {% endif %}
+    </main>
+
+    <hr>
+    <p><font size="2">&copy; Changsheng Sun</font></p>
+    <br><br><br>
+</font>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} | Changsheng Sun</title>
+    <link rel="icon" href="../favicon.png">
+    <meta name="description" content="{{ post.description }}">
+    {% if post.math %}{% include "_katex.html" %}{% endif %}
+</head>
+<body>
+<font face="Helvetica Neue, Helvetica, Arial, sans-serif">
+    <p>
+        <a href="../index.html">About</a>&nbsp;&nbsp;|&nbsp;
+        <a href="../research.html">Research</a>&nbsp;&nbsp;|&nbsp;
+        <a href="index.html">Blog</a>&nbsp;&nbsp;|&nbsp;
+        <a href="../misc.html">Misc</a>
+    </p>
+    <hr>
+
+    <article>
+        <h2>{{ post.title }}</h2>
+        <p><time datetime="{{ post.date }}">{{ post.date_formatted }}</time></p>
+
+        {{ post.content }}
+
+        <hr>
+        <p><b>Disclaimer.</b> This post is a collection of my personal study notes. Opinions expressed here are my own. Much of the content is gathered and synthesized from existing literature — credit belongs to the original authors and their respective papers, which are cited throughout. AI tools were used to assist in the writing and editing process. As such, if you intend to reference or cite any material from this post, please verify the information against the original sources and take responsibility for its accuracy.</p>
+    </article>
+
+    <hr>
+    <p><font size="2">&copy; Changsheng Sun</font></p>
+    <br><br><br>
+</font>
+</body>
+</html>
